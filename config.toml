@@ -1,4 +1,4 @@
-base_url = "https://yihong0618.github.io/gitblog/"
+base_url = "https://Quitino.github.io/gitblog/"
 generate_feeds = true
 feed_filenames = ["rss.xml"]
 theme = "even"
@@ -7,14 +7,11 @@ taxonomies = [
     {name = "tags", feed = true},
 ]
 [extra]
-even_title = "yihong0618's Blog"
+even_title = "Quitino’s Blog"
 even_menu = [
     {url = "$BASE_URL", name = "Home"},
     {url = "$BASE_URL/tags/top/", name = "Top"},
-    {url = "$BASE_URL/issue-282/", name = "About"},
-    {url = "$BASE_URL/issue-311/", name = "Things I like"},
-    {url = "$BASE_URL/issue-329/", name = "Things I don’t like "},
-    {url = "$BASE_URL/issue-217/", name = "Friends"},
+    {url = "$BASE_URL/tags/friends/", name = "Friends"},
 ]
 [markdown]
 highlight_code = true
