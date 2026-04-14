@@ -1,8 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<feed xmlns="http://www.w3.org/2005/Atom"><id>https://github.com/Quitino/gitblog</id><title>RSS feed of Quitino's gitblog</title><updated>2026-04-14T11:42:14.939013+00:00</updated><link href="https://github.com/Quitino/gitblog"/><link href="https://raw.githubusercontent.com/Quitino/gitblog/master/feed.xml" rel="self"/><generator uri="https://lkiesow.github.io/python-feedgen" version="1.0.0">python-feedgen</generator><entry><id>https://github.com/Quitino/gitblog/issues/3</id><title>doc_index</title><updated>2026-04-14T11:42:15.302661+00:00</updated><content type="html"><![CDATA[<ul>
+<feed xmlns="http://www.w3.org/2005/Atom"><id>https://github.com/Quitino/gitblog</id><title>RSS feed of Quitino's gitblog</title><updated>2026-04-14T12:31:42.181420+00:00</updated><link href="https://github.com/Quitino/gitblog"/><link href="https://raw.githubusercontent.com/Quitino/gitblog/master/feed.xml" rel="self"/><generator uri="https://lkiesow.github.io/python-feedgen" version="1.0.0">python-feedgen</generator><entry><id>https://github.com/Quitino/gitblog/issues/3</id><title>doc_index</title><updated>2026-04-14T12:31:42.599089+00:00</updated><content type="html"><![CDATA[<ul>
 <li><a href="https://github.com/Quitino/RL_NOTE?tab=readme-ov-file">强化学习</a></li>
+<li><a href="https://quitino.github.io/CPP-Note/">cpp-note</a></li>
 </ul>
-]]></content><link href="https://github.com/Quitino/gitblog/issues/3"/><category term="top"/><published>2026-04-14T11:41:54+00:00</published></entry><entry><id>https://github.com/Quitino/gitblog/issues/2</id><title>同一电脑多git账号配置</title><updated>2026-04-14T11:42:15.446885+00:00</updated><content type="html"><![CDATA[<blockquote>
+]]></content><link href="https://github.com/Quitino/gitblog/issues/3"/><category term="top"/><published>2026-04-14T11:41:54+00:00</published></entry><entry><id>https://github.com/Quitino/gitblog/issues/2</id><title>同一电脑多git账号配置</title><updated>2026-04-14T12:31:42.760942+00:00</updated><content type="html"><![CDATA[<blockquote>
 <p>如果你的电脑全局配置的是公司 Git 账号，但这个项目需要用个人 GitHub 账号，
 需要解决两个问题：<strong>提交身份</strong> 和 <strong>推送认证</strong>。</p>
 </blockquote>
@@ -138,7 +139,7 @@ git remote set-url origin https://Quitino:&lt;TOKEN&gt;@github.com/Quitino/proje
 □ git remote -v 显示 github-personal 别名地址
 □ git push origin master 能成功推送
 </code></pre>
-]]></content><link href="https://github.com/Quitino/gitblog/issues/2"/><category term="技术"/><published>2026-04-14T09:42:11+00:00</published></entry><entry><id>https://github.com/Quitino/gitblog/issues/1</id><title>第一篇博客</title><updated>2026-04-14T11:42:15.600630+00:00</updated><content type="html"><![CDATA[<h1>用 GitHub Issues + GitHub Actions 搭建个人博客教程</h1>
+]]></content><link href="https://github.com/Quitino/gitblog/issues/2"/><category term="技术"/><published>2026-04-14T09:42:11+00:00</published></entry><entry><id>https://github.com/Quitino/gitblog/issues/1</id><title>第一篇博客</title><updated>2026-04-14T12:31:42.946944+00:00</updated><content type="html"><![CDATA[<h1>用 GitHub Issues + GitHub Actions 搭建个人博客教程</h1>
 <blockquote>
 <p>参考仓库：<a href="https://github.com/yihong0618/gitblog">yihong0618/gitblog</a>
 核心思路：用 GitHub Issues 写文章，用 GitHub Actions 自动将 Issues 汇总生成 README，并可选部署为静态网站。</p>

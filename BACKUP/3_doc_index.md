@@ -2,3 +2,4 @@
 
 
 - [强化学习](https://github.com/Quitino/RL_NOTE?tab=readme-ov-file)
+- [cpp-note](https://quitino.github.io/CPP-Note/)
