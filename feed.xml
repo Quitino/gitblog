@@ -1,5 +1,141 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<feed xmlns="http://www.w3.org/2005/Atom"><id>https://github.com/Quitino/gitblog</id><title>RSS feed of Quitino's gitblog</title><updated>2026-04-14T09:28:44.562008+00:00</updated><link href="https://github.com/Quitino/gitblog"/><link href="https://raw.githubusercontent.com/Quitino/gitblog/master/feed.xml" rel="self"/><generator uri="https://lkiesow.github.io/python-feedgen" version="1.0.0">python-feedgen</generator><entry><id>https://github.com/Quitino/gitblog/issues/1</id><title>第一篇博客</title><updated>2026-04-14T09:28:45.186266+00:00</updated><content type="html"><![CDATA[<h1>用 GitHub Issues + GitHub Actions 搭建个人博客教程</h1>
+<feed xmlns="http://www.w3.org/2005/Atom"><id>https://github.com/Quitino/gitblog</id><title>RSS feed of Quitino's gitblog</title><updated>2026-04-14T09:42:35.184564+00:00</updated><link href="https://github.com/Quitino/gitblog"/><link href="https://raw.githubusercontent.com/Quitino/gitblog/master/feed.xml" rel="self"/><generator uri="https://lkiesow.github.io/python-feedgen" version="1.0.0">python-feedgen</generator><entry><id>https://github.com/Quitino/gitblog/issues/2</id><title>同一电脑多git账号配置</title><updated>2026-04-14T09:42:35.768145+00:00</updated><content type="html"><![CDATA[<blockquote>
+<p>如果你的电脑全局配置的是公司 Git 账号，但这个项目需要用个人 GitHub 账号，
+需要解决两个问题：<strong>提交身份</strong> 和 <strong>推送认证</strong>。</p>
+</blockquote>
+<h2>1 设置本项目的提交身份</h2>
+<p>为本项目单独设置用户名和邮箱（不加 <code>--global</code>，不影响公司配置）：</p>
+<pre><code class="language-bash">cd /path/to/project
+
+# 仅对本项目生效
+git config user.name &quot;Quitino&quot;
+git config user.email &quot;booofeng@163.com&quot;
+</code></pre>
+<p>验证：</p>
+<pre><code class="language-bash">git config user.name           # → Quitino（本项目）
+git config --global user.name  # → 公司账号（不受影响）
+</code></pre>
+<h2>2 配置推送认证（SSH 多密钥方案，推荐）</h2>
+<p>公司电脑的 SSH key 绑定的是公司 GitHub 账号，推送到个人仓库会被拒绝。
+用 SSH 多密钥解决：</p>
+<pre><code>原理:
+┌──────────────────────────────────────────────────────┐
+│  ~/.ssh/                                              │
+│                                                       │
+│  id_ed25519          ← 公司 SSH 密钥                  │
+│  │                      绑定公司 GitHub 账号            │
+│  │                      用于: git@github.com:公司/...  │
+│  │                                                    │
+│  id_ed25519_personal ← 个人 SSH 密钥 (新生成)          │
+│                         绑定个人 GitHub 账号            │
+│                         用于: git@github-personal:...  │
+│                                ↑ 自定义别名             │
+│                                                       │
+│  config              ← SSH 配置文件                    │
+│                         根据 Host 别名选择不同密钥       │
+└──────────────────────────────────────────────────────┘
+</code></pre>
+<p><strong>Step 1: 生成个人专用 SSH 密钥</strong></p>
+<pre><code class="language-bash">ssh-keygen -t ed25519 -C &quot;booofeng@163.com&quot; -f ~/.ssh/id_ed25519_personal
+# 提示输入密码时可以直接回车（不设密码）
+</code></pre>
+<p><strong>Step 2: 把公钥添加到个人 GitHub 账号</strong></p>
+<pre><code class="language-bash">cat ~/.ssh/id_ed25519_personal.pub
+# 复制输出的内容
+</code></pre>
+<p>然后在浏览器中：</p>
+<pre><code>GitHub (个人账号登录)
+→ Settings
+→ SSH and GPG keys
+→ New SSH Key
+→ 粘贴公钥，Title 填 &quot;公司电脑&quot;
+→ Add SSH Key
+</code></pre>
+<p><strong>Step 3: 配置 SSH 别名</strong></p>
+<p>编辑（或创建） <code>~/.ssh/config</code> 文件，添加：</p>
+<pre><code># 公司 GitHub（默认，不用改）
+Host github.com
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/id_ed25519
+    IdentitiesOnly yes
+
+# 个人 GitHub（自定义别名 github-personal）
+Host github-personal
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/id_ed25519_personal
+    IdentitiesOnly yes
+</code></pre>
+<p><strong>Step 4: 测试连接</strong></p>
+<pre><code class="language-bash">ssh -T github-personal
+# 期望输出: Hi Quitino! You&#x27;ve been authenticated, but GitHub
+#          does not provide shell access.
+</code></pre>
+<p><strong>Step 5: 修改本项目的 remote 地址</strong></p>
+<pre><code class="language-bash">cd /path/to/project
+
+# 使用别名 github-personal 替代 github.com
+git remote set-url origin git@github-personal:Quitino/project.git
+</code></pre>
+<p>验证：</p>
+<pre><code class="language-bash">git remote -v
+# origin  git@github-personal:Quitino/project.git (fetch)
+# origin  git@github-personal:Quitino/project.git (push)
+</code></pre>
+<p>现在 <code>git push origin master</code> 会自动使用个人 SSH 密钥认证。</p>
+<h2>3 备选：HTTPS + Personal Access Token</h2>
+<p>如果公司网络限制 SSH，可以用 HTTPS + Token 方式：</p>
+<pre><code class="language-bash"># 1. 在个人 GitHub 生成 Token
+#    GitHub → Settings → Developer settings
+#    → Personal access tokens → Tokens (classic)
+#    → Generate new token → 勾选 repo 权限 → 生成
+
+# 1. 修改 remote 地址（把 &lt;TOKEN&gt; 替换为实际 Token）
+git remote set-url origin https://Quitino:&lt;TOKEN&gt;@github.com/Quitino/project.git
+</code></pre>
+<blockquote>
+<p><strong>安全提醒：</strong> Token 会明文存在 <code>.git/config</code> 中。如果公司有代码审查工具
+扫描磁盘文件，SSH 方案更安全。</p>
+</blockquote>
+<h2>4 两种方案对比</h2>
+<table>
+<thead>
+<tr>
+<th>方面</th>
+<th>SSH 多密钥（推荐）</th>
+<th>HTTPS + Token</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>安全性</td>
+<td>高（私钥不离开本机）</td>
+<td>中（Token 明文存在 config）</td>
+</tr>
+<tr>
+<td>配置量</td>
+<td>一次性配置，之后无感</td>
+<td>简单，Token 有过期风险</td>
+</tr>
+<tr>
+<td>网络限制</td>
+<td>需要 22 端口（SSH）</td>
+<td>走 443 端口（HTTPS）</td>
+</tr>
+<tr>
+<td>多项目复用</td>
+<td>所有个人项目共用一个别名</td>
+<td>每个项目单独设 Token URL</td>
+</tr>
+</tbody></table><h2>5 完整配置验证清单</h2>
+<pre><code>□ git config user.name 显示个人账号名
+□ git config user.email 显示个人邮箱
+□ ssh -T github-personal 显示 &quot;Hi Quitino!&quot;
+□ git remote -v 显示 github-personal 别名地址
+□ git push origin master 能成功推送
+</code></pre>
+]]></content><link href="https://github.com/Quitino/gitblog/issues/2"/><category term="技术"/><published>2026-04-14T09:42:11+00:00</published></entry><entry><id>https://github.com/Quitino/gitblog/issues/1</id><title>第一篇博客</title><updated>2026-04-14T09:42:35.967407+00:00</updated><content type="html"><![CDATA[<h1>用 GitHub Issues + GitHub Actions 搭建个人博客教程</h1>
 <blockquote>
 <p>参考仓库：<a href="https://github.com/yihong0618/gitblog">yihong0618/gitblog</a>
 核心思路：用 GitHub Issues 写文章，用 GitHub Actions 自动将 Issues 汇总生成 README，并可选部署为静态网站。</p>
