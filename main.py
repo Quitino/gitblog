@@ -280,7 +280,7 @@ def update_site_config(repo, me, config_path="config.toml"):
         menu_items.append('    {url = "$BASE_URL/tags/friends/", name = "Friends"}')
 
     # 分类页：展示所有标签及其文章数量（Zola 自动生成 /tags/ 页面）
-    menu_items.append('    {url = "$BASE_URL/tags/", name = "分类"}')
+    menu_items.append('    {url = "$BASE_URL/tags/", name = "Tags"}')
 
     new_menu = "even_menu = [\n" + ",\n".join(menu_items) + ",\n]"
     new_content = re.sub(
