@@ -6,19 +6,21 @@ taxonomies = [
     {name = "categories", feed = true},
     {name = "tags", feed = true},
 ]
+
 [extra]
-even_title = "Quitino’s Blog"
-even_description = "舟遥遥以轻飏，风飘飘而吹衣" 
-even_author = "Quitino" 
+even_title = "Quitino's Blog"
+even_description = "舟遥遥以轻飏，风飘飘而吹衣"
+even_author = "Quitino"
+even_github = "Quitino"
+even_license_name = "CC BY-NC-SA 4.0"
+even_license_link = "https://creativecommons.org/licenses/by-nc-sa/4.0/"
 even_menu = [
     {url = "$BASE_URL", name = "Home"},
     {url = "$BASE_URL/tags/top/", name = "Top"},
     {url = "$BASE_URL/tags/", name = "Tags"},
 ]
+
 [markdown]
 highlight_theme = "dracula"
 highlight_code = true
 render_emoji = true
-even_github = "Quitino"
-even_license_name = "CC BY-NC-SA 4.0"
-even_license_link = "https://creativecommons.org/licenses/by-nc-sa/4.0/"
