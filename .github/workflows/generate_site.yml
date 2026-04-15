@@ -57,8 +57,13 @@ jobs:
           gh release download $ZOLA_VERSION --repo getzola/zola -p '*x86_64-unknown-linux*' --output zola.tar.gz
           tar zxf zola.tar.gz && mv zola /usr/local/bin
           cp config.toml output/config.toml
-          # Copy custom template overrides (override even theme defaults)
-          cp -r templates output/templates
+          # Copy custom template overrides into the correct location.
+          # Use explicit file copy to avoid cp -r creating a nested subdirectory
+          # when output/templates/ already exists (created by isite).
+          mkdir -p output/templates
+          cp templates/index.html templates/page.html output/templates/
+          echo "--- template dir after copy ---"
+          ls output/templates/
           cd output && zola build --base-url $BASE_URL
       - name: Setup Pages
         uses: actions/configure-pages@v5
