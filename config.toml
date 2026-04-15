@@ -11,7 +11,7 @@ even_title = "Quitino’s Blog"
 even_menu = [
     {url = "$BASE_URL", name = "Home"},
     {url = "$BASE_URL/tags/top/", name = "Top"},
-    {url = "$BASE_URL/tags/friends/", name = "Friends"},
+    {url = "$BASE_URL/tags/", name = "分类"},
 ]
 [markdown]
 highlight_code = true
