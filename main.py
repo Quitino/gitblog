@@ -186,12 +186,16 @@ def add_md_firends(repo, md, me):
 
 def add_md_recent(repo, md, me, limit=5):
     count = 0
+    top_label_set = {l.lower() for l in TOP_ISSUES_LABELS}
     with open(md, "a+", encoding="utf-8") as md:
         # one the issue that only one issue and delete (pyGitHub raise an exception)
         try:
             md.write("## 最近更新\n")
             for issue in repo.get_issues(sort="created", direction="desc"):
                 if is_me(issue, me):
+                    issue_labels = {l.name.lower() for l in issue.labels}
+                    if issue_labels & top_label_set:
+                        continue
                     add_issue_info(issue, md)
                     count += 1
                     if count >= limit:
@@ -220,30 +224,73 @@ def add_md_label(repo, md, me):
             x.name,
         ),
     )
+    ignore_lower = {l.lower() for l in IGNORE_LABELS}
 
     with open(md, "a+", encoding="utf-8") as md:
         for label in labels:
             # we don't need add top label again
-            if label.name in IGNORE_LABELS:
+            if label.name.lower() in ignore_lower:
                 continue
 
             issues = get_issues_from_label(repo, label)
             issues = list(sorted(issues, key=lambda x: x.created_at, reverse=True))
-            if len(issues) != 0:
-                md.write("## " + label.name + "\n\n")
-            i = 0
-            for issue in issues:
-                if not issue:
-                    continue
-                if is_me(issue, me):
-                    if i == ANCHOR_NUMBER:
-                        md.write("<details><summary>显示更多</summary>\n")
-                        md.write("\n")
-                    add_issue_info(issue, md)
-                    i += 1
-            if i > ANCHOR_NUMBER:
+            my_issues = [issue for issue in issues if issue and is_me(issue, me)]
+            if not my_issues:
+                continue
+
+            md.write(f"## {label.name} ({len(my_issues)})\n\n")
+            for i, issue in enumerate(my_issues):
+                if i == ANCHOR_NUMBER:
+                    md.write("<details><summary>显示更多</summary>\n")
+                    md.write("\n")
+                add_issue_info(issue, md)
+            if len(my_issues) > ANCHOR_NUMBER:
                 md.write("</details>\n")
                 md.write("\n")
+
+
+def add_md_stats(repo, md, me):
+    """Append article count and last-update date to the bottom of README."""
+    issues = [i for i in repo.get_issues() if is_me(i, me) and not i.pull_request]
+    if not issues:
+        return
+    total = len(issues)
+    last_update = format_time(max(i.updated_at for i in issues))
+    with open(md, "a+", encoding="utf-8") as f:
+        f.write("\n---\n")
+        f.write(f"文章总数：**{total}** ｜ 最近更新：**{last_update}**\n")
+
+
+def update_site_config(repo, me, config_path="config.toml"):
+    """Dynamically rewrite even_menu in config.toml based on which special labels
+    actually have articles (request 4), and add a 分类 page link (request 5)."""
+    if not os.path.exists(config_path):
+        return
+    with open(config_path, "r", encoding="utf-8") as f:
+        content = f.read()
+
+    menu_items = ['    {url = "$BASE_URL", name = "Home"}']
+
+    top_issues = [i for i in get_top_issues(repo) if is_me(i, me)]
+    if top_issues:
+        menu_items.append('    {url = "$BASE_URL/tags/top/", name = "Top"}')
+
+    friends_issues = [i for i in repo.get_issues(labels=FRIENDS_LABELS) if is_me(i, me)]
+    if friends_issues:
+        menu_items.append('    {url = "$BASE_URL/tags/friends/", name = "Friends"}')
+
+    # 分类页：展示所有标签及其文章数量（Zola 自动生成 /tags/ 页面）
+    menu_items.append('    {url = "$BASE_URL/tags/", name = "分类"}')
+
+    new_menu = "even_menu = [\n" + ",\n".join(menu_items) + ",\n]"
+    new_content = re.sub(
+        r"even_menu\s*=\s*\[.*?\]",
+        new_menu,
+        content,
+        flags=re.DOTALL,
+    )
+    with open(config_path, "w", encoding="utf-8") as f:
+        f.write(new_content)
 
 
 def get_to_generate_issues(repo, dir_name, issue_number=None):
@@ -296,6 +343,8 @@ def main(token, repo_name, issue_number=None, dir_name=BACKUP_DIR):
     add_md_header("README.md", repo_name)
     for func in [add_md_firends, add_md_top, add_md_recent, add_md_label, add_md_todo]:
         func(repo, "README.md", me)
+    add_md_stats(repo, "README.md", me)
+    update_site_config(repo, me)
 
     generate_rss_feed(repo, "feed.xml", me)
     to_generate_issues = get_to_generate_issues(repo, dir_name, issue_number)
