@@ -39,10 +39,6 @@
         /* ── Layout ── */
         body { min-height: 100vh; display: flex; flex-direction: column; margin: 0; }
         .container { flex: 1; display: flex; flex-direction: column; min-height: 100vh; }
-        .site-description {
-          text-align: center; color: #888; font-size: 0.9rem;
-          padding: 0.2rem 0 0.8rem; letter-spacing: 0.05em;
-        }
         .main-wrapper {
           display: flex; gap: 2rem; max-width: 1100px;
           width: 100%; margin: 0 auto; padding: 0 1.5rem;
@@ -51,10 +47,32 @@
         .content-left { flex: 2; min-width: 0; }
         .sidebar { flex: 0 0 240px; }
 
-        /* ── Header separator ── */
-        #header {
+        /* ── Header wrapper (全宽背景+分割线) ── */
+        .header-wrap {
+          width: 100%;
           background: #f7f7f7;
           border-bottom: 1px solid #ddd;
+        }
+        /* 覆盖 even 主题 #header 自带背景 */
+        #header {
+          background: transparent !important;
+          border-bottom: none !important;
+          padding-top: 6px !important;
+          padding-bottom: 6px !important;
+          height: auto !important;
+          align-items: flex-start !important;
+        }
+        /* 博客名字号缩小 */
+        #header .logo a { font-size: 1.25rem !important; font-weight: 700; }
+        /* 副标题内嵌在 logo 下 */
+        .site-tagline {
+          display: block;
+          font-size: 0.7rem;
+          color: #aaa;
+          font-weight: normal;
+          letter-spacing: 0.04em;
+          line-height: 1.5;
+          margin-top: 1px;
         }
 
         /* ── Sidebar widgets ── */
@@ -109,18 +127,18 @@
         }
         .post-meta-sep { color: #ccc; }
         .post-tag-meta {
-          font-size: 0.72rem; padding: 0.05rem 0.45rem; border-radius: 3px;
-          background: #f0e6f9; color: #9954bb; text-decoration: none; line-height: 1.6;
+          font-size: 0.72rem; padding: 0 0.4rem; border-radius: 3px;
+          background: #f0e6f9; color: #9954bb; text-decoration: none; line-height: 1.5;
         }
         .post-tag-meta:hover { background: #9954bb; color: #fff; }
         .post-source-link { color: #bbb; text-decoration: none; font-size: 0.78rem; }
         .post-source-link:hover { color: #9954bb; }
 
-        /* ── Footer (sticky) ── */
+        /* ── Footer (sticky, compact) ── */
         .footer {
-          text-align: center; padding: 1rem 0;
+          text-align: center; padding: 0.6rem 0;
           border-top: 1px solid #eee; margin-top: auto;
-          color: #aaa; font-size: 0.85rem;
+          color: #aaa; font-size: 0.82rem;
         }
         .footer a { color: #888; margin: 0 0.5rem; text-decoration: none; }
         .footer a:hover { color: #9954bb; }
@@ -156,8 +174,14 @@
               </ul>
             </nav>
 
+            <div class="header-wrap">
             <header id="header">
-                <div class="logo"><a href="{{ config.base_url }}">{{ config.extra.even_title }}</a></div>
+                <div class="logo">
+                  <a href="{{ config.base_url }}">{{ config.extra.even_title }}</a>
+                  {% if config.extra.even_description %}
+                  <span class="site-tagline">{{ config.extra.even_description }}</span>
+                  {% endif %}
+                </div>
                 <nav class="menu">
                     <ul>
                         {% for item in config.extra.even_menu %}
@@ -168,10 +192,7 @@
                     </ul>
                 </nav>
             </header>
-
-            {% if config.extra.even_description %}
-            <div class="site-description">{{ config.extra.even_description }}</div>
-            {% endif %}
+            </div>
 
             {% block content %}
             <div class="main-wrapper">
@@ -265,7 +286,6 @@
             {# ── Footer ── #}
             {% block footer %}
             <footer class="footer">
-              <div>{{ config.extra.even_title | default(value="") }}</div>
               <div class="footer-icons">
                 {% if config.extra.even_github %}
                 <a href="https://github.com/{{ config.extra.even_github }}" target="_blank" rel="noopener" title="GitHub">
