@@ -272,6 +272,49 @@
           .article-layout { flex-direction: column; padding: 0 1rem; }
           .article-toc { position: static; width: 100%; }
         }
+
+        /* ════════════════════════════════════
+           标签页
+           ════════════════════════════════════ */
+        .tag-page-header {
+          display: flex; align-items: baseline; gap: 0.75rem;
+          margin-bottom: 1.2rem; padding-bottom: 0.6rem;
+          border-bottom: 2px solid #9954bb;
+        }
+        .tag-page-title {
+          font-size: 1.35rem; font-weight: 700; margin: 0; color: #222;
+        }
+        .tag-page-hash { color: #9954bb; margin-right: 0.1rem; }
+        .tag-page-count { font-size: 0.82rem; color: #aaa; }
+
+        /* 标签云（/tags/ 页） */
+        .tags-cloud {
+          display: flex; flex-wrap: wrap; gap: 0.6rem;
+          padding: 0.2rem 0;
+        }
+        .tag-cloud-item {
+          display: inline-flex; align-items: center; gap: 0.35rem;
+          background: #f4eefa; border: 1px solid #e2caf5;
+          border-radius: 4px; padding: 0.3rem 0.75rem;
+          color: #7a3da8; text-decoration: none;
+          font-size: 0.88rem; transition: background 0.15s, color 0.15s;
+        }
+        .tag-cloud-item:hover {
+          background: #9954bb; border-color: #9954bb; color: #fff;
+        }
+        .tag-cloud-count {
+          background: #9954bb; color: #fff; border-radius: 50%;
+          width: 18px; height: 18px; display: inline-flex;
+          align-items: center; justify-content: center; font-size: 0.7rem;
+          flex-shrink: 0;
+        }
+        .tag-cloud-item:hover .tag-cloud-count { background: #fff; color: #9954bb; }
+
+        /* 当前激活标签高亮 */
+        .tag-item-active {
+          background: #9954bb !important; color: #fff !important;
+        }
+        .tag-item-active .tag-count { background: #fff !important; color: #9954bb !important; }
       </style>
     </head>
 

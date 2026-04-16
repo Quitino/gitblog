@@ -60,10 +60,12 @@ jobs:
           # Copy custom template overrides into the correct location.
           # Use explicit file copy to avoid cp -r creating a nested subdirectory
           # when output/templates/ already exists (created by isite).
-          mkdir -p output/templates
+          mkdir -p output/templates/tags
           cp templates/index.html templates/page.html output/templates/
+          cp templates/tags/single.html templates/tags/list.html output/templates/tags/
           echo "--- template dir after copy ---"
           ls output/templates/
+          ls output/templates/tags/
           cd output && zola build --base-url $BASE_URL
       - name: Setup Pages
         uses: actions/configure-pages@v5

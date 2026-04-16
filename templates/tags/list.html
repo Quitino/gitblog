@@ -1,0 +1,44 @@
+{% extends "index.html" %}
+
+{% block title %}{{ config.title }} - 所有标签{% endblock title %}
+
+{% block content %}
+<div class="main-wrapper">
+
+  {# ── 左侧：所有标签云 ── #}
+  <div class="content-left">
+    <div class="tag-page-header">
+      <h1 class="tag-page-title">所有标签</h1>
+      <span class="tag-page-count">共 {{ terms | length }} 个</span>
+    </div>
+
+    <div class="tags-cloud">
+      {% for term in terms %}
+      <a class="tag-cloud-item" href="{{ term.permalink | safe }}">
+        <span class="tag-cloud-name">{{ term.name }}</span>
+        <span class="tag-cloud-count">{{ term.pages | length }}</span>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+
+  {# ── 右侧：侧边栏 ── #}
+  <aside class="sidebar">
+
+    {# 搜索 #}
+    <div class="widget">
+      <div class="widget-title">
+        <svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.099zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/></svg>
+        搜索
+      </div>
+      {% if config.extra.even_github %}
+      <form class="search-form" action="https://github.com/{{ config.extra.even_github }}/gitblog/issues" method="get" target="_blank">
+        <input class="search-input" type="text" name="q" placeholder="Search...">
+        <button class="search-btn" type="submit">Go</button>
+      </form>
+      {% endif %}
+    </div>
+
+  </aside>
+</div>
+{% endblock content %}
