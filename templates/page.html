@@ -4,87 +4,79 @@
 {% block title %}{{config.title}} - {{page.title}}{% endblock title %}
 
 {% block content %}
+<div class="article-layout">
 
-{% if page.toc %}
-<div class="post-toc" id="post-toc">
-    <h2 class="post-toc-title">Contents</h2>
-    <div class="post-toc-content always-active">
-        <nav id="TableOfContents">
-            <ul>
-                {% for h1 in page.toc %}
-                <li>
-                    <a href="{{h1.permalink | safe}}" class="toc-link">{{ h1.title }}</a>
-                    {% if h1.children %}
-                    <ul>
-                        {% for h2 in h1.children %}
-                        <li>
-                            <a href="{{h2.permalink | safe}}" class="toc-link">{{ h2.title }}</a>
-                        </li>
-                        {% endfor %}
-                    </ul>
-                    {% endif %}
-                </li>
-                {% endfor %}
-            </ul>
-        </nav>
-    </div>
-</div>
-{% endif %}
-
-<article class="post">
+  {# ── 正文 ── #}
+  <article class="post article-content">
     {{ post_macros::title(page=page) }}
+
     <div class="post-content">
       {{ page.content | safe }}
     </div>
 
-    {% block page_before_footer %}
-    {% endblock page_before_footer %}
-
     <div class="post-footer">
-        {% block page_footer %}
-            {% if page.taxonomies.tags %}
-                <div class="post-tags">
-                    {% for tag in page.taxonomies.tags %}
-                        <a href="{{ get_taxonomy_url(kind="tags", name=tag) }}">#{{ tag }}</a>
-                    {% endfor %}
-                </div>
-            {% endif %}
+      {% block page_footer %}
+        {% if page.taxonomies.tags %}
+        <div class="post-tags">
+          {% for tag in page.taxonomies.tags %}
+          <a href="{{ get_taxonomy_url(kind="tags", name=tag) | safe }}">#{{ tag }}</a>
+          {% endfor %}
+        </div>
+        {% endif %}
 
-            {# ── Author & license ── #}
-            {% if config.extra.even_author or config.extra.even_license_name %}
-            <div class="post-copyright">
-                {% if config.extra.even_author %}
-                <p>作者：{{ config.extra.even_author }}</p>
-                {% endif %}
-                {% if config.extra.even_license_name %}
-                <p>
-                    许可证：
-                    {% if config.extra.even_license_link %}
-                    <a href="{{ config.extra.even_license_link }}" target="_blank" rel="noopener">{{ config.extra.even_license_name }}</a>
-                    {% else %}
-                    {{ config.extra.even_license_name }}
-                    {% endif %}
-                </p>
-                {% endif %}
-            </div>
-            {% endif %}
+        {% if config.extra.even_author or config.extra.even_license_name %}
+        <div class="post-copyright">
+          {% if config.extra.even_author %}
+          <p>作者：{{ config.extra.even_author }}</p>
+          {% endif %}
+          {% if config.extra.even_license_name %}
+          <p>许可证：
+            {% if config.extra.even_license_link %}
+            <a href="{{ config.extra.even_license_link }}" target="_blank" rel="noopener">{{ config.extra.even_license_name }}</a>
+            {% else %}{{ config.extra.even_license_name }}{% endif %}
+          </p>
+          {% endif %}
+        </div>
+        {% endif %}
 
-            {% if page.lower or page.higher %}
-                <div class="post-nav">
-                    {% if page.lower %}
-                        <a class="previous" href="{{ page.lower.permalink }}">‹ {{ page.lower.title }}</a>
-                    {% endif %}
-                    {% if page.higher %}
-                        <a class="next" href="{{ page.higher.permalink }}">{{ page.higher.title }} ›</a>
-                    {% endif %}
-                </div>
-            {% endif %}
-
-        {% endblock page_footer %}
+        {% if page.lower or page.higher %}
+        <div class="post-nav">
+          {% if page.lower %}
+          <a class="previous" href="{{ page.lower.permalink | safe }}">‹ {{ page.lower.title }}</a>
+          {% endif %}
+          {% if page.higher %}
+          <a class="next" href="{{ page.higher.permalink | safe }}">{{ page.higher.title }} ›</a>
+          {% endif %}
+        </div>
+        {% endif %}
+      {% endblock page_footer %}
     </div>
+  </article>
 
-    {% block page_after_footer %}
-    {% endblock page_after_footer %}
-</article>
+  {# ── 右侧目录 ── #}
+  {% if page.toc %}
+  <aside class="article-toc">
+    <div class="toc-inner">
+      <div class="toc-title">目录</div>
+      <nav>
+        <ul>
+          {% for h1 in page.toc %}
+          <li>
+            <a href="{{ h1.permalink | safe }}" class="toc-link">{{ h1.title }}</a>
+            {% if h1.children %}
+            <ul>
+              {% for h2 in h1.children %}
+              <li><a href="{{ h2.permalink | safe }}" class="toc-link">{{ h2.title }}</a></li>
+              {% endfor %}
+            </ul>
+            {% endif %}
+          </li>
+          {% endfor %}
+        </ul>
+      </nav>
+    </div>
+  </aside>
+  {% endif %}
 
+</div>
 {% endblock content %}
