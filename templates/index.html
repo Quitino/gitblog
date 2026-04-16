@@ -37,12 +37,13 @@
 
       <style>
         /* ── Layout ── */
-        body { min-height: 100vh; display: flex; flex-direction: column; margin: 0; }
+        html { height: 100%; }
+        body { min-height: 100vh; display: flex !important; flex-direction: column !important; margin: 0 !important; padding: 0 !important; }
         /* header-wrap 是 body 直接子元素，天然 100% 宽 */
-        .container { flex: 1; display: flex; flex-direction: column; }
+        .container { flex: 1; display: flex; flex-direction: column; width: 100%; }
         .main-wrapper {
           display: flex; gap: 2rem; max-width: 1100px;
-          width: 100%; margin: 0 auto; padding: 0 1.5rem;
+          width: 100%; margin: 1.2rem auto 0; padding: 0 1.5rem;
           flex: 1;
         }
         .content-left { flex: 2; min-width: 0; }
@@ -54,9 +55,17 @@
           background: #f7f7f7;
           border-bottom: 1px solid #ddd;
           box-sizing: border-box;
+          flex-shrink: 0;
         }
-        /* 覆盖 even 主题 #header 自带背景 */
+        /* #header 内容宽度与 .main-wrapper 对齐 */
         #header {
+          max-width: 1100px !important;
+          width: 100% !important;
+          margin-left: auto !important;
+          margin-right: auto !important;
+          padding-left: 1.5rem !important;
+          padding-right: 1.5rem !important;
+          box-sizing: border-box !important;
           background: transparent !important;
           border-bottom: none !important;
           padding-top: 6px !important;
@@ -139,7 +148,7 @@
         /* ── Footer (sticky, compact) ── */
         .footer {
           text-align: center; padding: 0.6rem 0;
-          border-top: 1px solid #eee; margin-top: auto;
+          border-top: 1px solid #eee; margin-top: auto; flex-shrink: 0;
           color: #aaa; font-size: 0.82rem;
         }
         .footer a { color: #888; margin: 0 0.5rem; text-decoration: none; }
