@@ -6,7 +6,6 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta http-equiv="content-type" content="text/html; charset=utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
       {% if config.extra.even_description %}
       <meta name="description" content="{{ config.extra.even_description }}" />
       {% endif %}
@@ -34,18 +33,90 @@
 
       {% block css %}
           <link rel="stylesheet" href="{{ get_url(path="site.css", trailing_slash=false) }}">
-          {% if config.extra.katex_enable %}
-          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
-          {% endif %}
       {% endblock css %}
 
-      {% block extra_head %}
-      {% endblock extra_head %}
+      {% block extra_head %}{% endblock extra_head %}
+
       <style>
-        /* Push footer to the bottom of the viewport */
-        .container { display: flex; flex-direction: column; min-height: 100vh; }
-        main { flex: 1; }
-        .footer { padding: 1rem 0; text-align: center; }
+        /* ── Two-column layout ── */
+        body { min-height: 100vh; display: flex; flex-direction: column; }
+        .container { flex: 1; display: flex; flex-direction: column; }
+        .site-description {
+          text-align: center; color: #888; font-size: 0.95rem;
+          padding: 0.3rem 0 1.2rem; letter-spacing: 0.05em;
+        }
+        .main-wrapper {
+          display: flex; gap: 2rem; max-width: 1100px;
+          width: 100%; margin: 0 auto; padding: 0 1.5rem;
+          flex: 1;
+        }
+        .content-left { flex: 2; min-width: 0; }
+        .sidebar { flex: 0 0 240px; }
+
+        /* ── Sidebar widgets ── */
+        .widget {
+          background: #f9f9f9; border: 1px solid #e8e8e8;
+          border-radius: 4px; padding: 1rem; margin-bottom: 1.2rem;
+        }
+        .widget-title {
+          font-size: 0.9rem; font-weight: bold; margin: 0 0 0.8rem;
+          padding-bottom: 0.4rem; border-bottom: 2px solid #9954bb;
+          display: flex; align-items: center; gap: 0.4rem;
+        }
+        .search-form { display: flex; gap: 0.4rem; }
+        .search-input {
+          flex: 1; padding: 0.3rem 0.6rem; border: 1px solid #ccc;
+          border-radius: 3px; font-size: 0.85rem; outline: none;
+        }
+        .search-btn {
+          padding: 0.3rem 0.6rem; background: #9954bb; color: #fff;
+          border: none; border-radius: 3px; cursor: pointer; font-size: 0.85rem;
+        }
+        .recent-list { list-style: none; margin: 0; padding: 0; }
+        .recent-list li { padding: 0.25rem 0; border-bottom: 1px dashed #eee; font-size: 0.85rem; }
+        .recent-list li:last-child { border-bottom: none; }
+        .recent-list a { color: #555; text-decoration: none; }
+        .recent-list a:hover { color: #9954bb; }
+        .tag-list { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+        .tag-item {
+          display: inline-flex; align-items: center; gap: 0.2rem;
+          background: #eee; border-radius: 3px; padding: 0.15rem 0.5rem;
+          font-size: 0.8rem; color: #555; text-decoration: none;
+        }
+        .tag-item:hover { background: #9954bb; color: #fff; }
+        .tag-count {
+          background: #9954bb; color: #fff; border-radius: 50%;
+          width: 18px; height: 18px; display: inline-flex;
+          align-items: center; justify-content: center; font-size: 0.7rem;
+        }
+        .tag-item:hover .tag-count { background: #fff; color: #9954bb; }
+
+        /* ── Article cards ── */
+        .post { padding: 1.2rem 0; border-bottom: 1px solid #eee; }
+        .post:last-child { border-bottom: none; }
+        .post-description { color: #666; font-size: 0.9rem; margin: 0.4rem 0; }
+        .post-tags-line { margin-top: 0.5rem; display: flex; flex-wrap: wrap; gap: 0.3rem; }
+        .post-tag {
+          font-size: 0.75rem; padding: 0.1rem 0.5rem; border-radius: 3px;
+          background: #f0e6f9; color: #9954bb; text-decoration: none;
+        }
+        .post-tag:hover { background: #9954bb; color: #fff; }
+
+        /* ── Footer ── */
+        .footer {
+          text-align: center; padding: 1.2rem 0;
+          border-top: 1px solid #eee; margin-top: 2rem;
+          color: #aaa; font-size: 0.85rem;
+        }
+        .footer a { color: #888; margin: 0 0.5rem; text-decoration: none; }
+        .footer a:hover { color: #9954bb; }
+        .footer-icons { display: flex; justify-content: center; align-items: center; gap: 1rem; margin-top: 0.4rem; }
+
+        /* ── Mobile ── */
+        @media (max-width: 768px) {
+          .main-wrapper { flex-direction: column; }
+          .sidebar { flex: none; width: 100%; }
+        }
       </style>
     </head>
 
@@ -57,20 +128,16 @@
                 <a href="{{ config.base_url }}" class="logo">{{ config.extra.even_title }}</a>
               </div>
               <div class="mobile-navbar-icon icon-out">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span></span><span></span><span></span>
               </div>
             </div>
 
             <nav id="mobile-menu" class="mobile-menu slideout-menu slideout-menu-left">
               <ul class="mobile-menu-list">
                 {% for item in config.extra.even_menu %}
-                    <li class="mobile-menu-item">
-                        <a href="{{ item.url | replace(from="$BASE_URL", to=config.base_url) }}">
-                            {{ item.name }}
-                        </a>
-                    </li>
+                <li class="mobile-menu-item">
+                  <a href="{{ item.url | replace(from="$BASE_URL", to=config.base_url) }}">{{ item.name }}</a>
+                </li>
                 {% endfor %}
               </ul>
             </nav>
@@ -80,68 +147,133 @@
                 <nav class="menu">
                     <ul>
                         {% for item in config.extra.even_menu %}
-                            <li>
-                                <a href="{{ item.url | replace(from="$BASE_URL", to=config.base_url) }}">
-                                    {{ item.name }}
-                                </a>
-                            </li>
+                        <li>
+                          <a href="{{ item.url | replace(from="$BASE_URL", to=config.base_url) }}">{{ item.name }}</a>
+                        </li>
                         {% endfor %}
                     </ul>
                 </nav>
             </header>
 
-            {# ── Site description subtitle ── #}
             {% if config.extra.even_description %}
             <div class="site-description">{{ config.extra.even_description }}</div>
             {% endif %}
 
-            <main>
-                <div class="content" id="mobile-panel">
-                    {% block content %}
-                        <div class="posts">
-                            {% for page in paginator.pages %}
-                                <article class="post">
-                                    {{ post_macros::title(page=page) }}
-                                    {# Only show summary when present; no "Read more..." link #}
-                                    {% if page.summary %}
-                                    <div class="post__summary">
-                                        {{ page.summary | safe }}
-                                    </div>
-                                    {% endif %}
-                                </article>
-                            {% endfor %}
-                        </div>
-                        <nav class="pagination">
-                            {% if paginator.previous %}
-                                <a class="previous" href="{{ paginator.previous }}">‹ Previous</a>
-                            {% endif %}
-                            {% if paginator.next %}
-                                <a class="next" href="{{ paginator.next }}">Next ›</a>
-                            {% endif %}
-                        </nav>
-                    {% endblock content %}
-                </div>
-            </main>
+            {% block content %}
+            <div class="main-wrapper">
 
-            {# ── Footer with GitHub link and license ── #}
+              {# ── Left: article list ── #}
+              <div class="content-left">
+                <div class="posts">
+                  {% for page in paginator.pages %}
+                  <article class="post">
+                    {{ post_macros::title(page=page) }}
+                    {% if page.description %}
+                    <p class="post-description">{{ page.description }}</p>
+                    {% endif %}
+                    {% if page.taxonomies.tags %}
+                    <div class="post-tags-line">
+                      {% for tag in page.taxonomies.tags %}
+                      <a class="post-tag" href="{{ get_taxonomy_url(kind="tags", name=tag) }}">{{ tag }}</a>
+                      {% endfor %}
+                    </div>
+                    {% endif %}
+                  </article>
+                  {% endfor %}
+                </div>
+
+                <nav class="pagination">
+                  {% if paginator.previous %}
+                  <a class="previous" href="{{ paginator.previous }}">‹ Previous</a>
+                  {% endif %}
+                  {% if paginator.next %}
+                  <a class="next" href="{{ paginator.next }}">Next ›</a>
+                  {% endif %}
+                </nav>
+              </div>
+
+              {# ── Right: sidebar ── #}
+              <aside class="sidebar">
+
+                {# Search #}
+                <div class="widget">
+                  <div class="widget-title">
+                    <svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.099zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/></svg>
+                    搜索
+                  </div>
+                  {% if config.extra.even_github %}
+                  <form class="search-form" action="https://github.com/{{ config.extra.even_github }}/gitblog/issues" method="get" target="_blank">
+                    <input class="search-input" type="text" name="q" placeholder="Search...">
+                    <button class="search-btn" type="submit">Go</button>
+                  </form>
+                  {% endif %}
+                </div>
+
+                {# Recent posts #}
+                <div class="widget">
+                  <div class="widget-title">
+                    <svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor"><path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2H5zm0 1h6a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1z"/><path d="M6 7.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5z"/></svg>
+                    近期文章
+                  </div>
+                  <ul class="recent-list">
+                    {% for page in paginator.pages | slice(end=5) %}
+                    <li><a href="{{ page.permalink }}">{{ page.title }}</a></li>
+                    {% endfor %}
+                  </ul>
+                </div>
+
+                {# Categories (tags) #}
+                {% set tags_taxonomy = get_taxonomy(kind="tags") %}
+                {% if tags_taxonomy.items %}
+                <div class="widget">
+                  <div class="widget-title">
+                    <svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor"><path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z"/></svg>
+                    分类
+                  </div>
+                  <div class="tag-list">
+                    {% for term in tags_taxonomy.items %}
+                    <a class="tag-item" href="{{ term.permalink }}">
+                      {{ term.name }}
+                      <span class="tag-count">{{ term.pages | length }}</span>
+                    </a>
+                    {% endfor %}
+                  </div>
+                </div>
+                {% endif %}
+
+              </aside>
+            </div>
+            {% endblock content %}
+
+            {# ── Footer ── #}
             {% block footer %}
             <footer class="footer">
+              <div>{{ config.extra.even_title | default(value="") }}</div>
+              <div class="footer-icons">
                 {% if config.extra.even_github %}
-                <a href="https://github.com/{{ config.extra.even_github }}" target="_blank" rel="noopener" aria-label="GitHub" style="display:inline-flex;align-items:center;vertical-align:middle;">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="20" height="20" fill="currentColor">
-                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
-                    </svg>
+                <a href="https://github.com/{{ config.extra.even_github }}" target="_blank" rel="noopener" title="GitHub">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="20" height="20" fill="currentColor">
+                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+                  </svg>
                 </a>
                 {% endif %}
-                {% if config.extra.even_license_name %}
-                <span class="footer-license">
-                    {% if config.extra.even_license_link %}
-                    <a href="{{ config.extra.even_license_link }}" target="_blank" rel="noopener">{{ config.extra.even_license_name }}</a>
-                    {% else %}
-                    {{ config.extra.even_license_name }}
-                    {% endif %}
-                </span>
+                {% if config.generate_feeds %}
+                <a href="{{ get_url(path=config.feed_filenames[0]) | safe }}" target="_blank" rel="noopener" title="RSS">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="20" height="20" fill="currentColor">
+                    <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm1.5 2.5c5.523 0 10 4.477 10 10a1 1 0 1 1-2 0 8 8 0 0 0-8-8 1 1 0 0 1 0-2zm0 4a6 6 0 0 1 6 6 1 1 0 1 1-2 0 4 4 0 0 0-4-4 1 1 0 0 1 0-2zm.5 7a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
+                  </svg>
+                </a>
                 {% endif %}
+              </div>
+              {% if config.extra.even_license_name %}
+              <div style="margin-top:0.4rem;font-size:0.8rem;">
+                {% if config.extra.even_license_link %}
+                <a href="{{ config.extra.even_license_link }}" target="_blank" rel="noopener">{{ config.extra.even_license_name }}</a>
+                {% else %}
+                {{ config.extra.even_license_name }}
+                {% endif %}
+              </div>
+              {% endif %}
             </footer>
             {% endblock footer %}
 
@@ -151,5 +283,4 @@
           <script type="text/javascript" src="{{ get_url(path="even.js", trailing_slash=false) }}" ></script>
       {% endblock js_body %}
     </body>
-
 </html>
