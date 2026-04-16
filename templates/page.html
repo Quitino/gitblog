@@ -24,21 +24,6 @@
         </div>
         {% endif %}
 
-        {% if config.extra.even_author or config.extra.even_license_name %}
-        <div class="post-copyright">
-          {% if config.extra.even_author %}
-          <p>作者：{{ config.extra.even_author }}</p>
-          {% endif %}
-          {% if config.extra.even_license_name %}
-          <p>许可证：
-            {% if config.extra.even_license_link %}
-            <a href="{{ config.extra.even_license_link }}" target="_blank" rel="noopener">{{ config.extra.even_license_name }}</a>
-            {% else %}{{ config.extra.even_license_name }}{% endif %}
-          </p>
-          {% endif %}
-        </div>
-        {% endif %}
-
         {% if page.lower or page.higher %}
         <div class="post-nav">
           {% if page.lower %}
