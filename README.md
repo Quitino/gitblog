@@ -5,6 +5,7 @@ My personal blog using issues and GitHub Actions
 ## 置顶文章
 - [doc_index](https://github.com/Quitino/gitblog/issues/3)--2026-04-14
 ## 最近更新
+- [玉渡山转山龙庆峡游水](https://github.com/Quitino/gitblog/issues/4)--2026-04-18
 - [同一电脑多git账号配置](https://github.com/Quitino/gitblog/issues/2)--2026-04-14
 - [第一篇博客](https://github.com/Quitino/gitblog/issues/1)--2026-04-14
 ## 技术 (2)
@@ -13,4 +14,4 @@ My personal blog using issues and GitHub Actions
 - [第一篇博客](https://github.com/Quitino/gitblog/issues/1)--2026-04-14
 
 ---
-文章总数：**3** ｜ 最近更新：**2026-04-15**
+文章总数：**4** ｜ 最近更新：**2026-04-18**
