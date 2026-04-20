@@ -1,5 +1,210 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<feed xmlns="http://www.w3.org/2005/Atom"><id>https://github.com/Quitino/gitblog</id><title>RSS feed of Quitino's gitblog</title><updated>2026-04-18T08:15:39.619936+00:00</updated><link href="https://github.com/Quitino/gitblog"/><link href="https://raw.githubusercontent.com/Quitino/gitblog/master/feed.xml" rel="self"/><generator uri="https://lkiesow.github.io/python-feedgen" version="1.0.0">python-feedgen</generator><entry><id>https://github.com/Quitino/gitblog/issues/4</id><title>玉渡山转山龙庆峡游水</title><updated>2026-04-18T08:15:40.002900+00:00</updated><content type="html"><![CDATA[<p>星期六，整体天气还可以，多云🌤️。徒步的里程有12公里，摆渡船6公里，差不多走了五个小时左右。</p>
+<feed xmlns="http://www.w3.org/2005/Atom"><id>https://github.com/Quitino/gitblog</id><title>RSS feed of Quitino's gitblog</title><updated>2026-04-20T02:00:42.235014+00:00</updated><link href="https://github.com/Quitino/gitblog"/><link href="https://raw.githubusercontent.com/Quitino/gitblog/master/feed.xml" rel="self"/><generator uri="https://lkiesow.github.io/python-feedgen" version="1.0.0">python-feedgen</generator><entry><id>https://github.com/Quitino/gitblog/issues/5</id><title>学习《强化学习》</title><updated>2026-04-20T02:00:42.657264+00:00</updated><content type="html"><![CDATA[<p>学习《强化学习》，以 <a href="https://www.bilibili.com/video/BV1sd4y167NS/?spm_id_from=333.337.search-card.all.click&amp;vd_source=6d96ad3d63238e8488f65de89e674efa">B站教程</a>为主，共 11 课时，加上扩展学习的需求，每日计划约 1.5h 用于学习，每两天学 1 个课时，每周学习五天周末两天为机动时间。</p>
+<ul>
+<li><a href="https://www.bilibili.com/video/BV1sd4y167NS/?spm_id_from=333.337.search-card.all.click&amp;vd_source=6d96ad3d63238e8488f65de89e674efa">B站教学视频链接</a></li>
+<li><a href="https://github.com/MathFoundationRL/Book-Mathematical-Foundation-of-Reinforcement-Learning">对应repo链接</a></li>
+</ul>
+<h1>强化学习课程学习计划（2026年4月20日起）</h1>
+<table>
+<thead>
+<tr>
+<th>日期</th>
+<th>星期</th>
+<th>学习内容</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2026-04-20</td>
+<td>一</td>
+<td>L0: Overview of Reinforcement Learning in 30 Minutes</td>
+<td>第1课时 Day 1</td>
+</tr>
+<tr>
+<td>2026-04-21</td>
+<td>二</td>
+<td>L0: Overview of Reinforcement Learning in 30 Minutes</td>
+<td>第1课时 Day 2</td>
+</tr>
+<tr>
+<td>2026-04-22</td>
+<td>三</td>
+<td>L1: Basic Concepts (P1 &amp; P2)</td>
+<td>第2课时 Day 1</td>
+</tr>
+<tr>
+<td>2026-04-23</td>
+<td>四</td>
+<td>L1: Basic Concepts (P1 &amp; P2)</td>
+<td>第2课时 Day 2</td>
+</tr>
+<tr>
+<td>2026-04-24</td>
+<td>五</td>
+<td>L2: Bellman Equation (P1–P5)</td>
+<td>第3课时 Day 1</td>
+</tr>
+<tr>
+<td>2026-04-25</td>
+<td>六</td>
+<td>——</td>
+<td>机动/复习</td>
+</tr>
+<tr>
+<td>2026-04-26</td>
+<td>日</td>
+<td>——</td>
+<td>机动/复习</td>
+</tr>
+<tr>
+<td>2026-04-27</td>
+<td>一</td>
+<td>L2: Bellman Equation (P1–P5)</td>
+<td>第3课时 Day 2</td>
+</tr>
+<tr>
+<td>2026-04-28</td>
+<td>二</td>
+<td>L3: Bellman Optimality Equation (P1–P4)</td>
+<td>第4课时 Day 1</td>
+</tr>
+<tr>
+<td>2026-04-29</td>
+<td>三</td>
+<td>L3: Bellman Optimality Equation (P1–P4)</td>
+<td>第4课时 Day 2</td>
+</tr>
+<tr>
+<td>2026-04-30</td>
+<td>四</td>
+<td>L4: Value Iteration and Policy Iteration (P1–P3)</td>
+<td>第5课时 Day 1</td>
+</tr>
+<tr>
+<td>2026-05-01</td>
+<td>五</td>
+<td>L4: Value Iteration and Policy Iteration (P1–P3)</td>
+<td>第5课时 Day 2</td>
+</tr>
+<tr>
+<td>2026-05-02</td>
+<td>六</td>
+<td>——</td>
+<td>机动/复习</td>
+</tr>
+<tr>
+<td>2026-05-03</td>
+<td>日</td>
+<td>——</td>
+<td>机动/复习</td>
+</tr>
+<tr>
+<td>2026-05-04</td>
+<td>一</td>
+<td>L5: Monte Carlo Learning (P1–P6)</td>
+<td>第6课时 Day 1</td>
+</tr>
+<tr>
+<td>2026-05-05</td>
+<td>二</td>
+<td>L5: Monte Carlo Learning (P1–P6)</td>
+<td>第6课时 Day 2</td>
+</tr>
+<tr>
+<td>2026-05-06</td>
+<td>三</td>
+<td>L6: Stochastic Approximation and SGD (P1–P7)</td>
+<td>第7课时 Day 1</td>
+</tr>
+<tr>
+<td>2026-05-07</td>
+<td>四</td>
+<td>L6: Stochastic Approximation and SGD (P1–P7)</td>
+<td>第7课时 Day 2</td>
+</tr>
+<tr>
+<td>2026-05-08</td>
+<td>五</td>
+<td>L7: Temporal-Difference Learning (P1–P8)</td>
+<td>第8课时 Day 1</td>
+</tr>
+<tr>
+<td>2026-05-09</td>
+<td>六</td>
+<td>——</td>
+<td>机动/复习</td>
+</tr>
+<tr>
+<td>2026-05-10</td>
+<td>日</td>
+<td>——</td>
+<td>机动/复习</td>
+</tr>
+<tr>
+<td>2026-05-11</td>
+<td>一</td>
+<td>L7: Temporal-Difference Learning (P1–P8)</td>
+<td>第8课时 Day 2</td>
+</tr>
+<tr>
+<td>2026-05-12</td>
+<td>二</td>
+<td>L8: Value Function Approximation (P1–P8)</td>
+<td>第9课时 Day 1</td>
+</tr>
+<tr>
+<td>2026-05-13</td>
+<td>三</td>
+<td>L8: Value Function Approximation (P1–P8)</td>
+<td>第9课时 Day 2</td>
+</tr>
+<tr>
+<td>2026-05-14</td>
+<td>四</td>
+<td>L9: Policy Gradient Methods (P1–P5)</td>
+<td>第10课时 Day 1</td>
+</tr>
+<tr>
+<td>2026-05-15</td>
+<td>五</td>
+<td>L9: Policy Gradient Methods (P1–P5)</td>
+<td>第10课时 Day 2</td>
+</tr>
+<tr>
+<td>2026-05-16</td>
+<td>六</td>
+<td>——</td>
+<td>机动/复习</td>
+</tr>
+<tr>
+<td>2026-05-17</td>
+<td>日</td>
+<td>——</td>
+<td>机动/复习</td>
+</tr>
+<tr>
+<td>2026-05-18</td>
+<td>一</td>
+<td>L10: Actor-Critic Methods (P1–P5)</td>
+<td>第11课时 Day 1</td>
+</tr>
+<tr>
+<td>2026-05-19</td>
+<td>二</td>
+<td>L10: Actor-Critic Methods (P1–P5)</td>
+<td>第11课时 Day 2</td>
+</tr>
+</tbody></table><blockquote>
+<p><strong>总计</strong>：11个课时，覆盖约5周（含4个完整周末）。</p>
+<p><strong>建议</strong>：</p>
+<ul>
+<li>每日学习时间控制在1.5小时左右，可拆分为两个45分钟段；</li>
+<li>周末可用于回顾本周内容、完成练习题或查阅扩展资料；</li>
+<li>若某日进度提前完成，可将后续内容前移，保持节奏灵活。</li>
+</ul>
+</blockquote>
+]]></content><link href="https://github.com/Quitino/gitblog/issues/5"/><category term="todo"/><published>2026-04-20T02:00:22+00:00</published></entry><entry><id>https://github.com/Quitino/gitblog/issues/4</id><title>玉渡山转山龙庆峡游水</title><updated>2026-04-20T02:00:42.783163+00:00</updated><content type="html"><![CDATA[<p>星期六，整体天气还可以，多云🌤️。徒步的里程有12公里，摆渡船6公里，差不多走了五个小时左右。</p>
 <p>中途修整了一次，上了一次厕所。出发前想着距离比较近带个面包和一些水就够了，事实也是这样。全程都在峡谷的河流两岸穿梭。</p>
 <p>四月下旬，北方的山里还是有点荒芜，树木还没完全发芽，有的背阴面上人造冰还没化完。</p>
 <p><img src="https://github.com/user-attachments/assets/614bacd9-10ad-4372-998c-e208df1f24d9" alt="image" /></p>
@@ -11,12 +216,12 @@
 <p><img src="https://github.com/user-attachments/assets/6a9d6936-2244-42a4-95d2-3a1d410c7827" alt="image" /></p>
 <p>在最后景区出口处有一株双生玉兰花，上面有紫色的花和白色的花，很漂亮。</p>
 <p><img src="https://github.com/user-attachments/assets/70676652-653c-4613-8417-9e8b14d57e22" alt="image" /></p>
-]]></content><link href="https://github.com/Quitino/gitblog/issues/4"/><published>2026-04-18T08:15:19+00:00</published></entry><entry><id>https://github.com/Quitino/gitblog/issues/3</id><title>doc_index</title><updated>2026-04-18T08:15:40.112532+00:00</updated><content type="html"><![CDATA[<ul>
+]]></content><link href="https://github.com/Quitino/gitblog/issues/4"/><category term="生活"/><published>2026-04-18T08:15:19+00:00</published></entry><entry><id>https://github.com/Quitino/gitblog/issues/3</id><title>doc_index</title><updated>2026-04-20T02:00:42.903009+00:00</updated><content type="html"><![CDATA[<ul>
 <li><a href="https://github.com/Quitino/RL_NOTE?tab=readme-ov-file">强化学习</a></li>
 <li><a href="https://github.com/Quitino/CPP-Note">cpp-note</a></li>
 <li><a href="https://github.com/Quitino/leetcode-note">leetcode-note</a></li>
 </ul>
-]]></content><link href="https://github.com/Quitino/gitblog/issues/3"/><category term="top"/><published>2026-04-14T11:41:54+00:00</published></entry><entry><id>https://github.com/Quitino/gitblog/issues/2</id><title>同一电脑多git账号配置</title><updated>2026-04-18T08:15:40.231884+00:00</updated><content type="html"><![CDATA[<blockquote>
+]]></content><link href="https://github.com/Quitino/gitblog/issues/3"/><category term="top"/><published>2026-04-14T11:41:54+00:00</published></entry><entry><id>https://github.com/Quitino/gitblog/issues/2</id><title>同一电脑多git账号配置</title><updated>2026-04-20T02:00:43.014066+00:00</updated><content type="html"><![CDATA[<blockquote>
 <p>如果你的电脑全局配置的是公司 Git 账号，但这个项目需要用个人 GitHub 账号，
 需要解决两个问题：<strong>提交身份</strong> 和 <strong>推送认证</strong>。</p>
 </blockquote>
@@ -152,7 +357,7 @@ git remote set-url origin https://Quitino:&lt;TOKEN&gt;@github.com/Quitino/proje
 □ git remote -v 显示 github-personal 别名地址
 □ git push origin master 能成功推送
 </code></pre>
-]]></content><link href="https://github.com/Quitino/gitblog/issues/2"/><category term="技术"/><published>2026-04-14T09:42:11+00:00</published></entry><entry><id>https://github.com/Quitino/gitblog/issues/1</id><title>第一篇博客</title><updated>2026-04-18T08:15:40.353741+00:00</updated><content type="html"><![CDATA[<h1>用 GitHub Issues + GitHub Actions 搭建个人博客教程</h1>
+]]></content><link href="https://github.com/Quitino/gitblog/issues/2"/><category term="技术"/><published>2026-04-14T09:42:11+00:00</published></entry><entry><id>https://github.com/Quitino/gitblog/issues/1</id><title>第一篇博客</title><updated>2026-04-20T02:00:43.131073+00:00</updated><content type="html"><![CDATA[<h1>用 GitHub Issues + GitHub Actions 搭建个人博客教程</h1>
 <blockquote>
 <p>参考仓库：<a href="https://github.com/yihong0618/gitblog">yihong0618/gitblog</a>
 核心思路：用 GitHub Issues 写文章，用 GitHub Actions 自动将 Issues 汇总生成 README，并可选部署为静态网站。</p>
