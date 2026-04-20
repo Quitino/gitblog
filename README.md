@@ -17,7 +17,8 @@ My personal blog using issues and GitHub Actions
 
 - [玉渡山转山龙庆峡游水](https://github.com/Quitino/gitblog/issues/4)--2026-04-18
 ## TODO
-TODO list from [学习《强化学习》](https://github.com/Quitino/gitblog/issues/5) all done
+TODO list from [学习《强化学习》](https://github.com/Quitino/gitblog/issues/5)--1 jobs to do--0 jobs done
+- [ ] 学习《强化学习的数学原理》
 
 
 ---
