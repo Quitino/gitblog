@@ -1,5 +1,16 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<feed xmlns="http://www.w3.org/2005/Atom"><id>https://github.com/Quitino/gitblog</id><title>RSS feed of Quitino's gitblog</title><updated>2026-04-20T02:02:28.119823+00:00</updated><link href="https://github.com/Quitino/gitblog"/><link href="https://raw.githubusercontent.com/Quitino/gitblog/master/feed.xml" rel="self"/><generator uri="https://lkiesow.github.io/python-feedgen" version="1.0.0">python-feedgen</generator><entry><id>https://github.com/Quitino/gitblog/issues/5</id><title>学习《强化学习》</title><updated>2026-04-20T02:02:28.645520+00:00</updated><content type="html"><![CDATA[<ul>
+<feed xmlns="http://www.w3.org/2005/Atom"><id>https://github.com/Quitino/gitblog</id><title>RSS feed of Quitino's gitblog</title><updated>2026-04-20T02:07:27.819671+00:00</updated><link href="https://github.com/Quitino/gitblog"/><link href="https://raw.githubusercontent.com/Quitino/gitblog/master/feed.xml" rel="self"/><generator uri="https://lkiesow.github.io/python-feedgen" version="1.0.0">python-feedgen</generator><entry><id>https://github.com/Quitino/gitblog/issues/6</id><title>脱离混沌</title><updated>2026-04-20T02:07:28.243837+00:00</updated><content type="html"><![CDATA[<p>fork了这个仓库后总会有种想记录的冲动，不知道是好事还是坏事，是为了装 * 还是真的想尝试改变。whatever 先试试。</p>
+<ul>
+<li><input disabled="" type="checkbox"> 个人周总结</li>
+</ul>
+<p>开启个人周总结，形式不限，近期想收拾的一些习惯：</p>
+<ul>
+<li>每周至少一次跑步</li>
+<li>每周的个人学习时长记录或进度反馈</li>
+<li>每周的手机使用时间控制，这个能不能自动化一下</li>
+<li>周末自己做饭？</li>
+</ul>
+]]></content><link href="https://github.com/Quitino/gitblog/issues/6"/><category term="todo"/><published>2026-04-20T02:07:09+00:00</published></entry><entry><id>https://github.com/Quitino/gitblog/issues/5</id><title>学习《强化学习》</title><updated>2026-04-20T02:07:28.371982+00:00</updated><content type="html"><![CDATA[<ul>
 <li><input disabled="" type="checkbox"> 学习《强化学习的数学原理》</li>
 </ul>
 <p>学习《强化学习》，以 <a href="https://www.bilibili.com/video/BV1sd4y167NS/?spm_id_from=333.337.search-card.all.click&amp;vd_source=6d96ad3d63238e8488f65de89e674efa">B站教程</a>为主，共 11 课时，加上扩展学习的需求，每日计划约 1.5h 用于学习，每两天学 1 个课时，每周学习五天周末两天为机动时间。</p>
@@ -207,7 +218,7 @@
 <li>若某日进度提前完成，可将后续内容前移，保持节奏灵活。</li>
 </ul>
 </blockquote>
-]]></content><link href="https://github.com/Quitino/gitblog/issues/5"/><category term="todo"/><published>2026-04-20T02:00:22+00:00</published></entry><entry><id>https://github.com/Quitino/gitblog/issues/4</id><title>玉渡山转山龙庆峡游水</title><updated>2026-04-20T02:02:28.827518+00:00</updated><content type="html"><![CDATA[<p>星期六，整体天气还可以，多云🌤️。徒步的里程有12公里，摆渡船6公里，差不多走了五个小时左右。</p>
+]]></content><link href="https://github.com/Quitino/gitblog/issues/5"/><category term="todo"/><published>2026-04-20T02:00:22+00:00</published></entry><entry><id>https://github.com/Quitino/gitblog/issues/4</id><title>玉渡山转山龙庆峡游水</title><updated>2026-04-20T02:07:28.504392+00:00</updated><content type="html"><![CDATA[<p>星期六，整体天气还可以，多云🌤️。徒步的里程有12公里，摆渡船6公里，差不多走了五个小时左右。</p>
 <p>中途修整了一次，上了一次厕所。出发前想着距离比较近带个面包和一些水就够了，事实也是这样。全程都在峡谷的河流两岸穿梭。</p>
 <p>四月下旬，北方的山里还是有点荒芜，树木还没完全发芽，有的背阴面上人造冰还没化完。</p>
 <p><img src="https://github.com/user-attachments/assets/614bacd9-10ad-4372-998c-e208df1f24d9" alt="image" /></p>
@@ -219,12 +230,12 @@
 <p><img src="https://github.com/user-attachments/assets/6a9d6936-2244-42a4-95d2-3a1d410c7827" alt="image" /></p>
 <p>在最后景区出口处有一株双生玉兰花，上面有紫色的花和白色的花，很漂亮。</p>
 <p><img src="https://github.com/user-attachments/assets/70676652-653c-4613-8417-9e8b14d57e22" alt="image" /></p>
-]]></content><link href="https://github.com/Quitino/gitblog/issues/4"/><category term="生活"/><published>2026-04-18T08:15:19+00:00</published></entry><entry><id>https://github.com/Quitino/gitblog/issues/3</id><title>doc_index</title><updated>2026-04-20T02:02:28.979473+00:00</updated><content type="html"><![CDATA[<ul>
+]]></content><link href="https://github.com/Quitino/gitblog/issues/4"/><category term="生活"/><published>2026-04-18T08:15:19+00:00</published></entry><entry><id>https://github.com/Quitino/gitblog/issues/3</id><title>doc_index</title><updated>2026-04-20T02:07:28.638460+00:00</updated><content type="html"><![CDATA[<ul>
 <li><a href="https://github.com/Quitino/RL_NOTE?tab=readme-ov-file">强化学习</a></li>
 <li><a href="https://github.com/Quitino/CPP-Note">cpp-note</a></li>
 <li><a href="https://github.com/Quitino/leetcode-note">leetcode-note</a></li>
 </ul>
-]]></content><link href="https://github.com/Quitino/gitblog/issues/3"/><category term="top"/><published>2026-04-14T11:41:54+00:00</published></entry><entry><id>https://github.com/Quitino/gitblog/issues/2</id><title>同一电脑多git账号配置</title><updated>2026-04-20T02:02:29.133374+00:00</updated><content type="html"><![CDATA[<blockquote>
+]]></content><link href="https://github.com/Quitino/gitblog/issues/3"/><category term="top"/><published>2026-04-14T11:41:54+00:00</published></entry><entry><id>https://github.com/Quitino/gitblog/issues/2</id><title>同一电脑多git账号配置</title><updated>2026-04-20T02:07:28.756360+00:00</updated><content type="html"><![CDATA[<blockquote>
 <p>如果你的电脑全局配置的是公司 Git 账号，但这个项目需要用个人 GitHub 账号，
 需要解决两个问题：<strong>提交身份</strong> 和 <strong>推送认证</strong>。</p>
 </blockquote>
@@ -360,7 +371,7 @@ git remote set-url origin https://Quitino:&lt;TOKEN&gt;@github.com/Quitino/proje
 □ git remote -v 显示 github-personal 别名地址
 □ git push origin master 能成功推送
 </code></pre>
-]]></content><link href="https://github.com/Quitino/gitblog/issues/2"/><category term="技术"/><published>2026-04-14T09:42:11+00:00</published></entry><entry><id>https://github.com/Quitino/gitblog/issues/1</id><title>第一篇博客</title><updated>2026-04-20T02:02:29.297612+00:00</updated><content type="html"><![CDATA[<h1>用 GitHub Issues + GitHub Actions 搭建个人博客教程</h1>
+]]></content><link href="https://github.com/Quitino/gitblog/issues/2"/><category term="技术"/><published>2026-04-14T09:42:11+00:00</published></entry><entry><id>https://github.com/Quitino/gitblog/issues/1</id><title>第一篇博客</title><updated>2026-04-20T02:07:28.880622+00:00</updated><content type="html"><![CDATA[<h1>用 GitHub Issues + GitHub Actions 搭建个人博客教程</h1>
 <blockquote>
 <p>参考仓库：<a href="https://github.com/yihong0618/gitblog">yihong0618/gitblog</a>
 核心思路：用 GitHub Issues 写文章，用 GitHub Actions 自动将 Issues 汇总生成 README，并可选部署为静态网站。</p>
