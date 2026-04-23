@@ -43,7 +43,7 @@
         background: #fff;
         margin: 0;
         padding: 0;
-        padding-bottom: 110px;
+        padding-bottom: 70px;
         min-height: 100vh;
         position: relative;
         border-top: none !important;
@@ -489,21 +489,25 @@
         box-shadow: 0 -2px 4px 1px rgba(0,0,0,0.5);
         color: #bbb;
         text-align: center;
-        padding: 15px 0;
+        padding: 12px 0;
         font-size: 14px;
       }
       .footer .wrapper {
         max-width: 1140px;
         margin: 0 auto;
         padding: 0 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1.2rem;
+        flex-wrap: nowrap;
       }
-      .footer p { margin: 0; line-height: 1.6; }
+      .footer p { margin: 0; line-height: 1.4; }
       .footer-icons {
         display: flex;
-        justify-content: center;
         align-items: center;
-        gap: 1rem;
-        margin-bottom: 0.4rem;
+        gap: 0.8rem;
+        flex-shrink: 0;
       }
       .footer a { color: #ccc; transition: 0.3s ease; }
       .footer a:hover { color: #fff; }
@@ -520,7 +524,7 @@
 
       /* ── Responsive: Mobile (<770px) ── */
       @media screen and (max-width: 770px) {
-        body { padding-bottom: 150px; }
+        body { padding-bottom: 90px; }
 
         /* Header */
         .header-inner { padding: 0 1rem; }
@@ -744,6 +748,21 @@
           if (!btn.contains(e.target) && !nav.contains(e.target)) {
             nav.classList.remove('nav-open');
             btn.classList.remove('active');
+          }
+        });
+      })();
+
+      // Remove TOC entries for headings that are inside blockquotes
+      (function() {
+        var toc = document.querySelector('.article-toc');
+        if (!toc) return;
+        toc.querySelectorAll('.toc-link').forEach(function(link) {
+          var href = link.getAttribute('href');
+          if (!href || href.charAt(0) !== '#') return;
+          var heading = document.getElementById(href.slice(1));
+          if (heading && heading.closest('blockquote')) {
+            var li = link.closest('li');
+            if (li) li.remove();
           }
         });
       })();
