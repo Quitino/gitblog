@@ -11,17 +11,20 @@ My personal blog using issues and GitHub Actions
 - [玉渡山转山龙庆峡游水](https://github.com/Quitino/gitblog/issues/4)--2026-04-18
 - [同一电脑多git账号配置](https://github.com/Quitino/gitblog/issues/2)--2026-04-14
 - [第一篇博客](https://github.com/Quitino/gitblog/issues/1)--2026-04-14
+## 周记 (1)
+
+- [2026 Weekly Report](https://github.com/Quitino/gitblog/issues/7)--2026-04-23
 ## 技术 (2)
 
 - [同一电脑多git账号配置](https://github.com/Quitino/gitblog/issues/2)--2026-04-14
 - [第一篇博客](https://github.com/Quitino/gitblog/issues/1)--2026-04-14
-## 日记 (1)
-
-- [2026 Weekly Report](https://github.com/Quitino/gitblog/issues/7)--2026-04-23
 ## 生活 (1)
 
 - [玉渡山转山龙庆峡游水](https://github.com/Quitino/gitblog/issues/4)--2026-04-18
 ## TODO
+TODO list from [2026 Weekly Report](https://github.com/Quitino/gitblog/issues/7)--1 jobs to do--0 jobs done
+- [ ] 周末整理近期强化学习的理论知识
+
 TODO list from [脱离混沌](https://github.com/Quitino/gitblog/issues/6)--1 jobs to do--0 jobs done
 - [ ] 个人周总结
 

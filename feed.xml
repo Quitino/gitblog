@@ -1,13 +1,89 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<feed xmlns="http://www.w3.org/2005/Atom"><id>https://github.com/Quitino/gitblog</id><title>RSS feed of Quitino's gitblog</title><updated>2026-04-23T03:09:40.366150+00:00</updated><link href="https://github.com/Quitino/gitblog"/><link href="https://raw.githubusercontent.com/Quitino/gitblog/master/feed.xml" rel="self"/><generator uri="https://lkiesow.github.io/python-feedgen" version="1.0.0">python-feedgen</generator><entry><id>https://github.com/Quitino/gitblog/issues/7</id><title>2026 Weekly Report</title><updated>2026-04-23T03:09:40.820225+00:00</updated><content type="html"><![CDATA[<h2>w16</h2>
+<feed xmlns="http://www.w3.org/2005/Atom"><id>https://github.com/Quitino/gitblog</id><title>RSS feed of Quitino's gitblog</title><updated>2026-04-23T04:51:39.473576+00:00</updated><link href="https://github.com/Quitino/gitblog"/><link href="https://raw.githubusercontent.com/Quitino/gitblog/master/feed.xml" rel="self"/><generator uri="https://lkiesow.github.io/python-feedgen" version="1.0.0">python-feedgen</generator><entry><id>https://github.com/Quitino/gitblog/issues/7</id><title>2026 Weekly Report</title><updated>2026-04-23T04:51:39.985122+00:00</updated><content type="html"><![CDATA[<h2>w16</h2>
 <ul>
 <li>2026年的第十六周，开始记录的第一周，瞎记录，不要给自己定kpi，随缘更新</li>
 <li>最近工作上轻松一点，抓紧时间学点新东西</li>
 <li>强化学习进度符合预期</li>
 <li>周二下班比较早，晚上去跑了个步，10km，有段时间没跑了腿酸了两天</li>
 <li><input disabled="" type="checkbox"> 周末整理近期强化学习的理论知识</li>
+<li>上周末加本周内看了《The beauty》美剧，整体感觉还不错，有脑洞有出其不意。当 cooper 一行想去阻止产品发布给大众的时候，我第一时间就是按照国产剧的剧情脑补：“他们历经种种困难，终于阻止了产品的发布，公司也得到了相应的处罚，over”，我本能的想法是产品一经发布，会有太多不确定的蝴蝶效应展开，社会形态可能会发生剧烈的不可控的转变，然后我的大脑本能的逃避这个路线，倾向于遏止混乱？结果剧情毫不犹豫的就直接发布产品给大众了，剧情衔接好像也挺合理。这也让我联想到内陆和其他地区的教学风格，同一门课程，内地的教学风格好像是在把一件事件讲得复杂化高大上化，其他地区的教授讲解就是化繁为简通俗易懂，而且给一种理解了事物的本质的恍然大悟。有些事情没那么复杂只是想得过于复杂。出现这种情况的原因是什么，是成长环境教育方式的不同还是几千年积累的文化核心不同？就此问题大模型的回复：</li>
 </ul>
-]]></content><link href="https://github.com/Quitino/gitblog/issues/7"/><category term="日记"/><category term="top"/><published>2026-04-23T03:09:21+00:00</published></entry><entry><id>https://github.com/Quitino/gitblog/issues/6</id><title>脱离混沌</title><updated>2026-04-23T03:09:40.941965+00:00</updated><content type="html"><![CDATA[<p>fork了这个仓库后总会有种想记录的冲动，不知道是好事还是坏事，是为了装 * 还是真的想尝试改变。whatever 先试试。</p>
+<blockquote>
+<h3>两种叙事逻辑：秩序优先 vs. 揭示本质:</h3>
+<ul>
+<li>
+<ol>
+<li><strong>秩序优先的逻辑</strong>：这更像是你“本能脑补”的国产剧路线。它的核心是<strong>恢复秩序</strong>。故事的目标是解决一个“问题”（病毒、坏人），消除其对社会的威胁，最终让世界回归到已知的、可控的“正常”状态。这种叙事满足了我们对安全感和确定性的需求，它告诉我们，混乱是坏的，必须被遏制。</li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li><strong>揭示本质的逻辑</strong>：这更像是《The Beauty》采用的路线。它的核心是<strong>揭示一个趋势或人性的本质</strong>。病毒（“美丽毒素”）在这里不是一个需要被解决的“问题”，而是一个<strong>催化剂</strong>或<strong>放大镜</strong>。它的作用是撕开社会的伪装，将人们潜藏的“容貌焦虑”和对美的极端追求推向极致，从而赤裸裸地展现出来。产品发布给大众，正是为了完成这个“揭示”的过程，让观众看到在欲望面前，社会和人性的真实走向。</li>
+</ol>
+</li>
+</ul>
+<h3>根源探析：教育、文化与心态</h3>
+<p>为什么我们的大脑会本能地倾向于第一种逻辑？这背后有多重原因。</p>
+<h4>1. 文化核心：整体思维 vs. 分析思维</h4>
+<p>这背后是更深层次的文化基因差异。</p>
+<ul>
+<li><strong>中华文化中的整体思维</strong>：我们的文化传统强调<strong>整体思维</strong>和<strong>辩证思维</strong>。我们习惯于从全局、长远和相互联系的角度看问题。在面对一个可能引发“蝴蝶效应”的新事物时，整体思维会本能地评估其对整个社会系统稳定性的冲击。为了维护整体的和谐与秩序，最稳妥的选择就是“遏止混乱于萌芽状态”。这种思维塑造了我们强大的集体主义精神和对稳定的珍视。</li>
+<li><strong>西方文化中的分析思维</strong>：相比之下，西方哲学传统更倾向于<strong>分析性思维</strong>。它习惯将事物从背景中分离出来，分析其内在属性和逻辑。在叙事上，这表现为更关注个体的选择、欲望和冲突，并愿意将某个趋势（如对美的追求）推演到极致，来观察其内在的逻辑终点，哪怕结果是混乱和毁灭。</li>
+</ul>
+<h4>2. 社会心态：对不确定性的焦虑</h4>
+<p>我们当下的社会心态也强化了这种倾向。</p>
+<ul>
+<li><strong>智能时代的不确定感</strong>：我们正处在一个技术（尤其是AI）飞速变革的时代，这带来了巨大的不确定感。人们普遍对未来感到焦虑，担心被替代、担心失控。在这种心态下，我们的大脑会本能地“逃避”那些可能引发“不可控转变”的剧情路线，因为它触动了我们对现实不确定性的深层焦虑。我们更渴望看到“问题被解决”、“秩序被恢复”的确定性结局。</li>
+<li><strong>“卷又卷不动，躺又躺不平”的矛盾心态</strong>：这种普遍的矛盾心态，也反映了我们在多元选择下的迷茫。面对复杂的社会问题，我们有时会感到不知所措，因此更倾向于接受一个清晰、明确的“解决方案”，而不是一个开放式的、充满未知的结局。</li>
+</ul>
+</blockquote>
+<p>Q:针对对不确定性的焦虑，如何利用分析思维解决</p>
+<blockquote>
+<h3>核心逻辑：把“未知”变成“已知”</h3>
+<p>焦虑的本质往往是对“失控”的恐惧。分析思维的作用，就是把那个模糊、巨大、可怕的“未知”，拆解成一个个具体、可控、可分析的“已知”模块。</p>
+<h4>1. 拒绝“灾难化”，进行“概率分析”</h4>
+<p>你之前提到“本能地脑补蝴蝶效应导致社会巨变”，这在心理学上叫<strong>灾难化思维</strong>（Catastrophizing）。大脑为了自我保护，会自动把后果放大到最坏。
+<strong>如何用分析思维破解：<strong>像科学家一样列出数据，而不是像编剧一样编故事。你可以尝试赛利格曼提出的</strong>“去灾难化”四步法</strong>，这完全是一个逻辑推演过程：
+| 步骤 | 分析动作 | 你的案例（产品发布） |
+| :--- | :--- | :--- |
+| <strong>1. 最坏结果</strong> | 列出逻辑上可能发生的最坏情况。 | 社会秩序混乱，人类被控制。 |
+| <strong>2. 最好结果</strong> | 列出逻辑上可能的最好情况。 | 人类借此进化，实现永生。 |
+| <strong>3. 最可能结果</strong> | <strong>（关键一步）</strong> 基于现实数据，分析概率最大的情况。 | 部分人沉迷，部分人抵制，社会出现新的法律法规进行监管，最终达到一种新的动态平衡。 |
+| <strong>4. 应对计划</strong> | 针对“最可能结果”制定方案。 | 如果我是主角，我应该去推动监管，而不是试图炸毁实验室。 |</p>
+<p><strong>本质：</strong> 当你把注意力从“最坏”转移到“最可能”时，焦虑感会瞬间下降，因为“最可能”通常都是你可以应对的。</p>
+<h4>2. 区分“不可控”与“可控”</h4>
+<p>分析思维要求我们精准定义变量。面对不确定性，最大的内耗来自于试图控制那些<strong>不可控变量</strong>（比如别人的反应、宏观环境的变化）。
+<strong>如何用分析思维破解：</strong>，做一个<strong>控制二分法</strong>列表：</p>
+<ul>
+<li><strong>外部变量（不可控）：</strong> 产品是否发布、大众是否购买、社会舆论走向。 -&gt; <strong>策略：接受并观察。</strong></li>
+<li><strong>内部变量（可控）：</strong> 我的反应速度、我的备选方案、我当下的准备工作。 -&gt; <strong>策略：全力以赴。</strong></li>
+</ul>
+<p>当你把精力全部收回到“可控”区域时，你就从“受害者”变成了“掌控者”。</p>
+<h4>3. 从“寻找标准答案”转为“假设验证”</h4>
+<p><strong>如何用分析思维破解：</strong>
+采用**“实验心态”**（Experimental Mindset）。</p>
+<ul>
+<li><strong>旧思维：</strong> “我必须做出正确的决定，否则就完了。”</li>
+<li><strong>新思维（分析版）：</strong> “我现在掌握的信息只有60%，我基于此做一个<strong>假设</strong>（方案A），然后去执行，看看反馈数据，再修正我的假设。”</li>
+</ul>
+<p>把人生看作一个实验室，而不是考场。<strong>错误不是失败，而是数据。</strong> 这种思维转换能极大地降低对“犯错”的恐惧。</p>
+<h4>4. 培养“消极能力”</h4>
+<p>诗人济慈提出的**“消极能力”<strong>（Negative Capability），是指“处于不确定、神秘、怀疑之中，而不急于追求事实和理性”的能力。
+听起来这和分析思维相反？其实不然。
+<strong>高阶的分析思维承认“信息不足”。</strong> 当你意识到“我现在无法分析出结果，因为变量太多”时，</strong>“暂停”**本身就是一种理性的分析决策。</p>
+<ul>
+<li><strong>做法：</strong> 告诉自己“我现在感到焦虑，是因为我在等待更多信息。在信息到来之前，我允许这种模糊状态存在。” 这就像程序运行时的 <code>Wait</code> 指令，而不是死机。</li>
+</ul>
+<h3>总结</h3>
+<p>利用分析思维解决焦虑，本质上就是<strong>把“情绪问题”转化为“技术问题”</strong>：</p>
+<ol>
+<li><strong>不做编剧做分析师</strong>：用概率论对抗灾难化想象。</li>
+<li><strong>不做全能做聚焦</strong>：用控制二分法聚焦于可操作变量。</li>
+<li><strong>不做考生做科学家</strong>：用实验迭代代替寻找标准答案。</li>
+</ol>
+<p>下次当你感到“蝴蝶效应”要发生时，试着停下来问自己：<strong>“这是事实，还是我的想象？这是不可控的，还是我可以干预的？”</strong> 这一瞬间的理性回归，就是焦虑的解药。</p>
+</blockquote>
+]]></content><link href="https://github.com/Quitino/gitblog/issues/7"/><category term="todo"/><category term="top"/><category term="周记"/><published>2026-04-23T03:09:21+00:00</published></entry><entry><id>https://github.com/Quitino/gitblog/issues/6</id><title>脱离混沌</title><updated>2026-04-23T04:51:40.163686+00:00</updated><content type="html"><![CDATA[<p>fork了这个仓库后总会有种想记录的冲动，不知道是好事还是坏事，是为了装 * 还是真的想尝试改变。whatever 先试试。</p>
 <ul>
 <li><input disabled="" type="checkbox"> 个人周总结</li>
 </ul>
@@ -18,7 +94,7 @@
 <li>每周的手机使用时间控制，这个能不能自动化一下</li>
 <li>周末自己做饭？</li>
 </ul>
-]]></content><link href="https://github.com/Quitino/gitblog/issues/6"/><category term="todo"/><published>2026-04-20T02:07:09+00:00</published></entry><entry><id>https://github.com/Quitino/gitblog/issues/5</id><title>学习《强化学习》</title><updated>2026-04-23T03:09:41.100590+00:00</updated><content type="html"><![CDATA[<ul>
+]]></content><link href="https://github.com/Quitino/gitblog/issues/6"/><category term="todo"/><published>2026-04-20T02:07:09+00:00</published></entry><entry><id>https://github.com/Quitino/gitblog/issues/5</id><title>学习《强化学习》</title><updated>2026-04-23T04:51:40.320408+00:00</updated><content type="html"><![CDATA[<ul>
 <li><input disabled="" type="checkbox"> 学习《强化学习的数学原理》</li>
 </ul>
 <p>学习《强化学习》，以 <a href="https://www.bilibili.com/video/BV1sd4y167NS/?spm_id_from=333.337.search-card.all.click&amp;vd_source=6d96ad3d63238e8488f65de89e674efa">B站教程</a>为主，共 11 课时，加上扩展学习的需求，每日计划约 1.5h 用于学习，每两天学 1 个课时，每周学习五天周末两天为机动时间。</p>
@@ -257,7 +333,7 @@
 <li>若某日进度提前完成，可将后续内容前移，保持节奏灵活。</li>
 </ul>
 </blockquote>
-]]></content><link href="https://github.com/Quitino/gitblog/issues/5"/><category term="todo"/><published>2026-04-20T02:00:22+00:00</published></entry><entry><id>https://github.com/Quitino/gitblog/issues/4</id><title>玉渡山转山龙庆峡游水</title><updated>2026-04-23T03:09:41.251162+00:00</updated><content type="html"><![CDATA[<p>星期六，整体天气还可以，多云🌤️。徒步的里程有12公里，摆渡船6公里，差不多走了五个小时左右。</p>
+]]></content><link href="https://github.com/Quitino/gitblog/issues/5"/><category term="todo"/><published>2026-04-20T02:00:22+00:00</published></entry><entry><id>https://github.com/Quitino/gitblog/issues/4</id><title>玉渡山转山龙庆峡游水</title><updated>2026-04-23T04:51:40.519212+00:00</updated><content type="html"><![CDATA[<p>星期六，整体天气还可以，多云🌤️。徒步的里程有12公里，摆渡船6公里，差不多走了五个小时左右。</p>
 <p>中途修整了一次，上了一次厕所。出发前想着距离比较近带个面包和一些水就够了，事实也是这样。全程都在峡谷的河流两岸穿梭。</p>
 <p>四月下旬，北方的山里还是有点荒芜，树木还没完全发芽，有的背阴面上人造冰还没化完。</p>
 <p><img src="https://github.com/user-attachments/assets/614bacd9-10ad-4372-998c-e208df1f24d9" alt="image" /></p>
@@ -269,12 +345,12 @@
 <p><img src="https://github.com/user-attachments/assets/6a9d6936-2244-42a4-95d2-3a1d410c7827" alt="image" /></p>
 <p>在最后景区出口处有一株双生玉兰花，上面有紫色的花和白色的花，很漂亮。</p>
 <p><img src="https://github.com/user-attachments/assets/70676652-653c-4613-8417-9e8b14d57e22" alt="image" /></p>
-]]></content><link href="https://github.com/Quitino/gitblog/issues/4"/><category term="生活"/><published>2026-04-18T08:15:19+00:00</published></entry><entry><id>https://github.com/Quitino/gitblog/issues/3</id><title>doc_index</title><updated>2026-04-23T03:09:41.390265+00:00</updated><content type="html"><![CDATA[<ul>
+]]></content><link href="https://github.com/Quitino/gitblog/issues/4"/><category term="生活"/><published>2026-04-18T08:15:19+00:00</published></entry><entry><id>https://github.com/Quitino/gitblog/issues/3</id><title>doc_index</title><updated>2026-04-23T04:51:40.688783+00:00</updated><content type="html"><![CDATA[<ul>
 <li><a href="https://github.com/Quitino/RL_NOTE?tab=readme-ov-file">强化学习</a></li>
 <li><a href="https://github.com/Quitino/CPP-Note">cpp-note</a></li>
 <li><a href="https://github.com/Quitino/leetcode-note">leetcode-note</a></li>
 </ul>
-]]></content><link href="https://github.com/Quitino/gitblog/issues/3"/><category term="top"/><published>2026-04-14T11:41:54+00:00</published></entry><entry><id>https://github.com/Quitino/gitblog/issues/2</id><title>同一电脑多git账号配置</title><updated>2026-04-23T03:09:41.519369+00:00</updated><content type="html"><![CDATA[<blockquote>
+]]></content><link href="https://github.com/Quitino/gitblog/issues/3"/><category term="top"/><published>2026-04-14T11:41:54+00:00</published></entry><entry><id>https://github.com/Quitino/gitblog/issues/2</id><title>同一电脑多git账号配置</title><updated>2026-04-23T04:51:40.860301+00:00</updated><content type="html"><![CDATA[<blockquote>
 <p>如果你的电脑全局配置的是公司 Git 账号，但这个项目需要用个人 GitHub 账号，
 需要解决两个问题：<strong>提交身份</strong> 和 <strong>推送认证</strong>。</p>
 </blockquote>
@@ -410,7 +486,7 @@ git remote set-url origin https://Quitino:&lt;TOKEN&gt;@github.com/Quitino/proje
 □ git remote -v 显示 github-personal 别名地址
 □ git push origin master 能成功推送
 </code></pre>
-]]></content><link href="https://github.com/Quitino/gitblog/issues/2"/><category term="技术"/><published>2026-04-14T09:42:11+00:00</published></entry><entry><id>https://github.com/Quitino/gitblog/issues/1</id><title>第一篇博客</title><updated>2026-04-23T03:09:41.660987+00:00</updated><content type="html"><![CDATA[<h1>用 GitHub Issues + GitHub Actions 搭建个人博客教程</h1>
+]]></content><link href="https://github.com/Quitino/gitblog/issues/2"/><category term="技术"/><published>2026-04-14T09:42:11+00:00</published></entry><entry><id>https://github.com/Quitino/gitblog/issues/1</id><title>第一篇博客</title><updated>2026-04-23T04:51:41.056395+00:00</updated><content type="html"><![CDATA[<h1>用 GitHub Issues + GitHub Actions 搭建个人博客教程</h1>
 <blockquote>
 <p>参考仓库：<a href="https://github.com/yihong0618/gitblog">yihong0618/gitblog</a>
 核心思路：用 GitHub Issues 写文章，用 GitHub Actions 自动将 Issues 汇总生成 README，并可选部署为静态网站。</p>
