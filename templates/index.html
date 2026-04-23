@@ -37,9 +37,9 @@
     <style>
       /* ── Reset & Base ── */
       *, *::before, *::after { box-sizing: border-box; }
-      /* Hide browser scrollbar on all pages */
-      html { scrollbar-width: none; -ms-overflow-style: none; }
-      html::-webkit-scrollbar { display: none; }
+      /* Hide scrollbar on all elements, all browsers */
+      html, body { scrollbar-width: none !important; -ms-overflow-style: none !important; }
+      ::-webkit-scrollbar { display: none !important; width: 0 !important; height: 0 !important; }
       body {
         font-family: 'Helvetica Neue', Helvetica, Arial, 'Microsoft YaHei', sans-serif;
         color: #333;
