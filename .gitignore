@@ -3,3 +3,6 @@ nohup.out
 .git-credentials
 venv/
 .claude/
+.github/
+.vscode/
+openspec/

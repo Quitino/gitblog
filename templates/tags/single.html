@@ -5,7 +5,7 @@
 {% block content %}
 <div class="main-wrapper">
 
-  {# ── 左侧：该标签下的文章列表 ── #}
+  {# ── Left: articles under this tag ── #}
   <div class="content-left">
     <div class="tag-page-header">
       <h1 class="tag-page-title">
@@ -28,7 +28,7 @@
           {% endif %}
           {% if page.extra.issue_url %}
             <span class="post-meta-sep">·</span>
-            <a class="post-source-link" href="{{ page.extra.issue_url | safe }}" target="_blank" rel="noopener">read the source issue</a>
+            <a class="post-source-link" href="{{ page.extra.issue_url | safe }}" target="_blank" rel="noopener">source</a>
           {% endif %}
         </div>
       </article>
@@ -36,10 +36,10 @@
     </div>
   </div>
 
-  {# ── 右侧：侧边栏 ── #}
+  {# ── Right: sidebar ── #}
   <aside class="sidebar">
 
-    {# 搜索 #}
+    {# Search #}
     <div class="widget">
       <div class="widget-title">
         <svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.099zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/></svg>
@@ -53,7 +53,7 @@
       {% endif %}
     </div>
 
-    {# 所有分类 #}
+    {# All tags #}
     {% set tags_taxonomy = get_taxonomy(kind="tags") %}
     {% if tags_taxonomy.items %}
     <div class="widget">

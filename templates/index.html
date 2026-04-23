@@ -1,490 +1,717 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta http-equiv="content-type" content="text/html; charset=utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      {% if config.extra.even_description %}
-      <meta name="description" content="{{ config.extra.even_description }}" />
-      {% endif %}
+<html lang="zh-CN">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% if config.extra.even_description %}
+    <meta name="description" content="{{ config.extra.even_description }}" />
+    {% endif %}
 
-      <title>{% block title %}{{ config.title }}{% endblock title %}</title>
+    <title>{% block title %}{{ config.title }}{% endblock title %}</title>
 
-      {% if config.generate_feeds %}
-          {% for feed in config.feed_filenames %}
-          <link rel="alternate" type={% if feed == "atom.xml" %}"application/atom+xml"{% else %}"application/rss+xml"{% endif %} title="RSS" href="{{ get_url(path=feed) | safe }}">
-          {% endfor %}
-      {% endif %}
+    {% if config.generate_feeds %}
+        {% for feed in config.feed_filenames %}
+        <link rel="alternate" type={% if feed == "atom.xml" %}"application/atom+xml"{% else %}"application/rss+xml"{% endif %} title="RSS" href="{{ get_url(path=feed) | safe }}">
+        {% endfor %}
+    {% endif %}
 
-      {% block js %}
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
-          {% if config.extra.katex_enable %}
-          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
-          <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
-          <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/contrib/mathtex-script-type.min.js" integrity="sha384-zWYbd0NBwgTsgIdFKVprSfTh1mbMPe5Hz1X3yY4Sd1h/K1cQoUe36OGwAGz/PcDy" crossorigin="anonymous"></script>
-              {% if config.extra.katex_auto_render %}
-          <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"
-                  onload="renderMathInElement(document.body);"></script>
-              {% endif %}
-          {% endif %}
-      {% endblock js %}
+    {% block js %}
+        {% if config.extra.katex_enable %}
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/contrib/mathtex-script-type.min.js" integrity="sha384-zWYbd0NBwgTsgIdFKVprSfTh1mbMPe5Hz1X3yY4Sd1h/K1cQoUe36OGwAGz/PcDy" crossorigin="anonymous"></script>
+            {% if config.extra.katex_auto_render %}
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"
+                onload="renderMathInElement(document.body);"></script>
+            {% endif %}
+        {% endif %}
+    {% endblock js %}
 
-      {% block css %}
-          <link rel="stylesheet" href="{{ get_url(path="site.css", trailing_slash=false) }}">
-      {% endblock css %}
+    {% block css %}
+        <link rel="stylesheet" href="{{ get_url(path="site.css", trailing_slash=false) }}">
+    {% endblock css %}
 
-      {% block extra_head %}{% endblock extra_head %}
+    {% block extra_head %}{% endblock extra_head %}
 
-      <style>
-        /* ── Layout ── */
-        body { min-height: 100vh; display: flex !important; flex-direction: column !important; margin: 0 !important; padding: 0 !important; }
-        /* header-wrap 是 body 直接子元素，天然 100% 宽 */
-        .container { flex: 1; display: flex; flex-direction: column; width: 100%; padding-bottom: 0 !important; margin-bottom: 0 !important; }
-        .main-wrapper {
-          display: flex; gap: 2rem; max-width: 1100px;
-          width: 100%; margin: 1.2rem auto 0; padding: 0 1.5rem;
-          flex: 1;
+    <style>
+      /* ── Reset & Base ── */
+      *, *::before, *::after { box-sizing: border-box; }
+      body {
+        font-family: 'Helvetica Neue', Helvetica, Arial, 'Microsoft YaHei', sans-serif;
+        color: #333;
+        background: #fff;
+        margin: 0;
+        padding: 0;
+        padding-bottom: 110px;
+        min-height: 100vh;
+        position: relative;
+      }
+      a { text-decoration: none; }
+      hr { border: 0; border-top: 1px solid #eee; margin: 20px 0; }
+
+      /* ── Header ── */
+      #header {
+        background: #222;
+        height: 52px;
+        box-shadow: 0 2px 4px 1px rgba(0,0,0,0.5);
+        position: relative;
+        z-index: 100;
+      }
+      .header-inner {
+        max-width: 1140px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+        height: 52px;
+        display: flex;
+        align-items: center;
+      }
+      .brand {
+        flex: 1;
+        display: flex;
+        align-items: baseline;
+        gap: 0.75rem;
+        line-height: 52px;
+        overflow: hidden;
+      }
+      .brand a {
+        color: #9d9d9d;
+        font-size: 18px;
+        font-weight: 400;
+        white-space: nowrap;
+        transition: 0.2s ease;
+      }
+      .brand a:hover { color: #fff; }
+      .brand small {
+        font-size: 13px;
+        color: #555;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .main-nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+      }
+      .main-nav ul li a {
+        display: inline-block;
+        padding: 0 12px;
+        height: 52px;
+        line-height: 52px;
+        color: #9d9d9d;
+        font-size: 14px;
+        transition: 0.2s ease;
+      }
+      .main-nav ul li a:hover { background: #000; color: #fff; }
+
+      /* ── Hamburger toggle (mobile only) ── */
+      .menu-toggle {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        background: #333;
+        border: 1px solid #444;
+        border-radius: 4px;
+        padding: 6px 10px;
+        cursor: pointer;
+        flex-shrink: 0;
+        margin-left: 0.5rem;
+      }
+      .menu-toggle span {
+        display: block;
+        width: 18px;
+        height: 2px;
+        background: #c9c9c9;
+        transition: 0.3s ease;
+      }
+      .menu-toggle.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+      .menu-toggle.active span:nth-child(2) { opacity: 0; }
+      .menu-toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+      /* ── Main layout wrapper ── */
+      .main-wrapper {
+        max-width: 1140px;
+        width: 100%;
+        margin: 1.5rem auto 0;
+        padding: 0 1.5rem;
+        display: flex;
+        gap: 2rem;
+        align-items: flex-start;
+      }
+      .content-left { flex: 0 0 75%; min-width: 0; }
+      .sidebar { flex: 1; min-width: 0; }
+
+      /* ── Post list cards ── */
+      .post { padding: 0.75rem 0; border-bottom: 1px solid #eee; }
+      .post:last-child { border-bottom: none; }
+      .post-title {
+        font-size: 1.05rem;
+        font-weight: 400;
+        margin: 0 0 0.3rem;
+        line-height: 1.4;
+      }
+      .post-title a { color: #4d6dad; transition: 0.5s ease; }
+      .post-title a:hover { color: #223253; }
+      .post-meta-compact {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+        font-size: 0.8rem;
+        color: #999;
+      }
+      .post-meta-sep { color: #ccc; }
+      .post-tag-meta {
+        font-size: 0.72rem;
+        padding: 0.05rem 0.4rem;
+        border-radius: 3px;
+        background: #e8eff8;
+        color: #4d6dad;
+        line-height: 1.5;
+        transition: 0.2s;
+      }
+      .post-tag-meta:hover { background: #4d6dad; color: #fff; }
+      .post-source-link { color: #bbb; font-size: 0.78rem; }
+      .post-source-link:hover { color: #4d6dad; }
+
+      /* ── Sidebar widgets ── */
+      .widget {
+        background: #f8f8fd;
+        border: 1px solid #e0e8f0;
+        border-radius: 4px;
+        padding: 1rem;
+        margin-bottom: 1.2rem;
+      }
+      .widget-title {
+        font-size: 0.88rem;
+        font-weight: bold;
+        margin: 0 0 0.8rem;
+        padding-bottom: 0.4rem;
+        border-bottom: 2px solid #4d6dad;
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        color: #333;
+      }
+      .search-form { display: flex; gap: 0.4rem; }
+      .search-input {
+        flex: 1;
+        padding: 0.3rem 0.6rem;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        font-size: 0.85rem;
+        outline: none;
+      }
+      .search-btn {
+        padding: 0.3rem 0.7rem;
+        background: #4d6dad;
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        font-size: 0.85rem;
+        transition: 0.2s;
+      }
+      .search-btn:hover { background: #223253; }
+      .recent-list { list-style: none; margin: 0; padding: 0; }
+      .recent-list li {
+        padding: 0.25rem 0;
+        border-bottom: 1px dashed #e0e8f0;
+        font-size: 0.85rem;
+      }
+      .recent-list li:last-child { border-bottom: none; }
+      .recent-list a { color: #555; }
+      .recent-list a:hover { color: #4d6dad; }
+      .tag-list { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+      .tag-item {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.25rem;
+        background: #e8eff8;
+        border-radius: 3px;
+        padding: 0.15rem 0.5rem;
+        font-size: 0.8rem;
+        color: #4d6dad;
+        transition: 0.2s;
+      }
+      .tag-item:hover { background: #4d6dad; color: #fff; }
+      .tag-count {
+        background: #4d6dad;
+        color: #fff;
+        border-radius: 50%;
+        width: 17px;
+        height: 17px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.65rem;
+      }
+      .tag-item:hover .tag-count { background: #fff; color: #4d6dad; }
+      .tag-item-active { background: #4d6dad !important; color: #fff !important; }
+      .tag-item-active .tag-count { background: #fff !important; color: #4d6dad !important; }
+
+      /* ── Pagination ── */
+      .pagination {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 1rem;
+        font-size: 0.9rem;
+        padding: 0.5rem 0;
+      }
+      .pagination a { color: #4d6dad; }
+      .pagination a:hover { color: #223253; }
+
+      /* ── Tag pages ── */
+      .tag-page-header {
+        display: flex;
+        align-items: baseline;
+        gap: 0.75rem;
+        margin-bottom: 1.2rem;
+        padding-bottom: 0.6rem;
+        border-bottom: 2px solid #4d6dad;
+      }
+      .tag-page-title { font-size: 1.35rem; font-weight: 700; margin: 0; color: #222; }
+      .tag-page-hash { color: #4d6dad; margin-right: 0.1rem; }
+      .tag-page-count { font-size: 0.82rem; color: #aaa; }
+      .tags-cloud { display: flex; flex-wrap: wrap; gap: 0.6rem; padding: 0.2rem 0; }
+      .tag-cloud-item {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        background: #e8eff8;
+        border: 1px solid #c8d8f0;
+        border-radius: 4px;
+        padding: 0.3rem 0.75rem;
+        color: #4d6dad;
+        transition: 0.2s;
+      }
+      .tag-cloud-item:hover { background: #4d6dad; border-color: #4d6dad; color: #fff; }
+      .tag-cloud-count {
+        background: #4d6dad;
+        color: #fff;
+        border-radius: 50%;
+        width: 17px;
+        height: 17px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.65rem;
+        flex-shrink: 0;
+      }
+      .tag-cloud-item:hover .tag-cloud-count { background: #fff; color: #4d6dad; }
+      .tag-sm  { font-size: 0.82rem; }
+      .tag-md  { font-size: 0.96rem; }
+      .tag-lg  { font-size: 1.12rem; }
+      .tag-xl  { font-size: 1.28rem; font-weight: 600; }
+
+      /* ── Article page layout ── */
+      .article-layout {
+        max-width: 1140px;
+        width: 100%;
+        margin: 1.5rem auto 0;
+        padding: 0 1.5rem;
+        display: flex;
+        gap: 2rem;
+        align-items: flex-start;
+      }
+      .article-content { flex: 1; min-width: 0; overflow-x: hidden; }
+
+      /* Right TOC */
+      .article-toc {
+        flex: 0 0 200px;
+        position: sticky;
+        top: 1rem;
+        align-self: flex-start;
+      }
+      .toc-inner {
+        background: #f8f8fd;
+        border: 1px solid #e0e8f0;
+        border-radius: 4px;
+        padding: 0.7rem 0.9rem;
+      }
+      .toc-title {
+        font-size: 0.82rem;
+        font-weight: 700;
+        color: #444;
+        margin: 0 0 0.45rem;
+        padding-bottom: 0.3rem;
+        border-bottom: 2px solid #4d6dad;
+      }
+      .article-toc ul { list-style: none; margin: 0; padding: 0; }
+      .article-toc ul ul { padding-left: 0.9rem; margin-top: 0.1rem; }
+      .article-toc li { padding: 0.15rem 0; line-height: 1.4; }
+      .toc-link { color: #888; font-size: 0.78rem; display: block; }
+      .toc-link:hover { color: #4d6dad; }
+      .post-toc { display: none !important; }
+
+      /* Article title & meta */
+      .article-content .post-title {
+        font-size: 1.5rem;
+        font-weight: 400;
+        margin: 0 0 0.3rem;
+        line-height: 1.3;
+      }
+      .article-content .post-title a { color: #333; }
+      .article-content .post-title a:hover { color: #4d6dad; }
+      .article-content .post-meta {
+        font-size: 0.82rem;
+        color: #aaa;
+        margin-bottom: 1.4rem;
+        padding-bottom: 0.8rem;
+        border-bottom: 1px solid #eee;
+      }
+      .article-content .post-meta a { color: #bbb; }
+      .article-content .post-meta a:hover { color: #4d6dad; }
+
+      /* Article body typography */
+      .post-content { font-size: 0.95rem; line-height: 1.9; color: #333; }
+      .post-content h1, .post-content h2,
+      .post-content h3, .post-content h4 {
+        line-height: 1.3; color: #222; margin: 1.6rem 0 0.55rem;
+        font-weight: 400;
+      }
+      .post-content h1 { font-size: 1.5rem; border-bottom: 1px solid #eee; padding-bottom: 0.25rem; }
+      .post-content h2 { font-size: 1.3rem; border-bottom: 1px solid #eee; padding-bottom: 0.2rem; }
+      .post-content h3 { font-size: 1.1rem; }
+      .post-content h4 { font-size: 1rem; }
+      .post-content p { margin: 0.75rem 0; }
+      .post-content ul, .post-content ol { padding-left: 1.5rem; margin: 0.5rem 0; }
+      .post-content li { margin: 0.2rem 0; color: #333; }
+      .post-content blockquote {
+        color: #444;
+        border-left: 5px solid #D6DBDF;
+        background: rgba(112, 138, 153, 0.1);
+        padding: 10px 20px;
+        margin: 1rem 0;
+        border-radius: 0 4px 4px 0;
+      }
+      .post-content blockquote p { margin: 0.2rem 0; }
+      .post-content a { color: #4d6dad; transition: 0.5s ease; }
+      .post-content a:hover { color: #223253; background-color: #f4efeb; }
+      .post-content :not(pre) > code {
+        background: #f5f5f5;
+        border: 1px solid #e2e2e2;
+        border-radius: 3px;
+        padding: 0.08em 0.35em;
+        font-size: 0.86em;
+        color: #c0392b;
+      }
+      .post-content pre {
+        margin: 1rem 0;
+        border-radius: 6px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        font-size: 0.875rem;
+      }
+      .post-content pre code { background: transparent; border: none; padding: 0; color: inherit; }
+      .post-content table {
+        width: 100%;
+        border-top: 2px solid #777;
+        border-bottom: 2px solid #777;
+        border-collapse: collapse;
+        margin: 1rem 0;
+        font-size: 0.9rem;
+      }
+      .post-content thead { border-bottom: 1px solid #777; background-color: #aaa; color: #fff; }
+      .post-content th, .post-content td { padding: 4px 10px; text-align: left; }
+      .post-content tbody tr:nth-child(odd)  { background: #f8f8fd; }
+      .post-content tbody tr:nth-child(even) { background: #e5eaed; }
+      .post-content img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 1rem auto;
+      }
+      .post-content hr { border: none; border-top: 1px solid #eee; margin: 1.5rem 0; }
+
+      /* Post footer (tags + prev/next) */
+      .post-footer { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #eee; }
+      .post-tags { margin-bottom: 0.8rem; }
+      .post-tags a {
+        display: inline-block;
+        margin: 0 0.3rem 0.3rem 0;
+        padding: 0.1rem 0.55rem;
+        background: #e8eff8;
+        color: #4d6dad;
+        border-radius: 3px;
+        font-size: 0.82rem;
+      }
+      .post-tags a:hover { background: #4d6dad; color: #fff; }
+      .post-nav { display: flex; justify-content: space-between; font-size: 0.88rem; margin-top: 0.6rem; }
+      .post-nav a { color: #4d6dad; }
+      .post-nav a:hover { color: #223253; text-decoration: underline; }
+
+      /* ── Footer ── */
+      .footer {
+        position: absolute;
+        left: 0; right: 0; bottom: 0;
+        background: #2b2b3c;
+        box-shadow: 0 -2px 4px 1px rgba(0,0,0,0.5);
+        color: #bbb;
+        text-align: center;
+        padding: 15px 0;
+        font-size: 14px;
+      }
+      .footer .wrapper {
+        max-width: 1140px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+      }
+      .footer p { margin: 0; line-height: 1.6; }
+      .footer-icons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 0.4rem;
+      }
+      .footer a { color: #ccc; transition: 0.3s ease; }
+      .footer a:hover { color: #fff; }
+      .footer .power a { color: #8F90C5; }
+      .footer .power a:hover { color: #fff; }
+
+      /* ── Responsive: Tablet (770–1200px) ── */
+      @media screen and (max-width: 1200px) and (min-width: 770px) {
+        .header-inner          { padding: 0 1rem; max-width: 100%; }
+        .main-wrapper          { max-width: 100%; width: 90%; padding: 0; }
+        .article-layout        { max-width: 100%; width: 90%; padding: 0; }
+        .footer .wrapper       { width: 90%; }
+      }
+
+      /* ── Responsive: Mobile (<770px) ── */
+      @media screen and (max-width: 770px) {
+        body { padding-bottom: 150px; }
+
+        /* Header */
+        .header-inner { padding: 0 1rem; }
+        .brand small  { display: none; }
+        .menu-toggle  { display: flex; }
+        .main-nav {
+          display: none;
+          position: absolute;
+          top: 52px;
+          right: 0;
+          background: #222;
+          border-radius: 0 0 4px 4px;
+          box-shadow: 0 3px 6px rgba(0,0,0,0.5);
+          min-width: 140px;
+          z-index: 200;
         }
-        .content-left { flex: 2; min-width: 0; }
-        .sidebar { flex: 0 0 240px; }
-
-        /* ── Header wrapper (全宽背景+分割线) ── */
-        .header-wrap {
-          width: 100%;
-          background: #f7f7f7;
-          border-bottom: 1px solid #ddd;
-          box-sizing: border-box;
-          flex-shrink: 0;
-        }
-        /* #header 内容宽度与 .main-wrapper 对齐 */
-        #header {
-          max-width: 1100px !important;
-          width: 100% !important;
-          margin-left: auto !important;
-          margin-right: auto !important;
-          padding-left: 1.5rem !important;
-          padding-right: 1.5rem !important;
-          box-sizing: border-box !important;
-          background: transparent !important;
-          border-bottom: none !important;
-          padding-top: 6px !important;
-          padding-bottom: 6px !important;
-          height: auto !important;
-          align-items: flex-start !important;
-        }
-        /* 博客名字号缩小 */
-        #header .logo a { font-size: 1.25rem !important; font-weight: 700; }
-        /* 副标题内嵌在 logo 下 */
-        .site-tagline {
+        .main-nav.nav-open { display: block; }
+        .main-nav ul { flex-direction: column; }
+        .main-nav ul li { border-bottom: 1px solid #333; }
+        .main-nav ul li:last-child { border-bottom: none; }
+        .main-nav ul li a {
           display: block;
-          font-size: 0.7rem;
-          color: #aaa;
-          font-weight: normal;
-          letter-spacing: 0.04em;
-          line-height: 1.5;
-          margin-top: 1px;
+          height: 40px;
+          line-height: 40px;
+          padding: 0 1.2rem;
         }
 
-        /* ── Sidebar widgets ── */
-        .widget {
-          background: #f9f9f9; border: 1px solid #e8e8e8;
-          border-radius: 4px; padding: 1rem; margin-bottom: 1.2rem;
+        /* Layout */
+        .main-wrapper {
+          flex-direction: column;
+          margin: 1rem auto 0;
+          padding: 0 1rem;
+          width: 100%;
+          max-width: 100%;
         }
-        .widget-title {
-          font-size: 0.9rem; font-weight: bold; margin: 0 0 0.8rem;
-          padding-bottom: 0.4rem; border-bottom: 2px solid #9954bb;
-          display: flex; align-items: center; gap: 0.4rem;
-        }
-        .search-form { display: flex; gap: 0.4rem; }
-        .search-input {
-          flex: 1; padding: 0.3rem 0.6rem; border: 1px solid #ccc;
-          border-radius: 3px; font-size: 0.85rem; outline: none;
-        }
-        .search-btn {
-          padding: 0.3rem 0.6rem; background: #9954bb; color: #fff;
-          border: none; border-radius: 3px; cursor: pointer; font-size: 0.85rem;
-        }
-        .recent-list { list-style: none; margin: 0; padding: 0; }
-        .recent-list li { padding: 0.25rem 0; border-bottom: 1px dashed #eee; font-size: 0.85rem; }
-        .recent-list li:last-child { border-bottom: none; }
-        .recent-list a { color: #555; text-decoration: none; }
-        .recent-list a:hover { color: #9954bb; }
-        .tag-list { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-        .tag-item {
-          display: inline-flex; align-items: center; gap: 0.2rem;
-          background: #eee; border-radius: 3px; padding: 0.15rem 0.5rem;
-          font-size: 0.8rem; color: #555; text-decoration: none;
-        }
-        .tag-item:hover { background: #9954bb; color: #fff; }
-        .tag-count {
-          background: #9954bb; color: #fff; border-radius: 50%;
-          width: 18px; height: 18px; display: inline-flex;
-          align-items: center; justify-content: center; font-size: 0.7rem;
-        }
-        .tag-item:hover .tag-count { background: #fff; color: #9954bb; }
+        .content-left { flex: none; width: 100%; }
+        .sidebar      { flex: none; width: 100%; }
 
-        /* ── Article cards (compact) ── */
-        .post { padding: 0.65rem 0; border-bottom: 1px solid #eee; }
-        .post:last-child { border-bottom: none; }
-        .post-title {
-          font-size: 1.05rem; font-weight: 600; margin: 0 0 0.2rem; line-height: 1.4;
-        }
-        .post-title a { color: #9954bb; text-decoration: none; }
-        .post-title a:hover { text-decoration: underline; }
-        .post-meta-compact {
-          display: flex; align-items: center; flex-wrap: wrap;
-          gap: 0.4rem; font-size: 0.8rem; color: #999;
-        }
-        .post-meta-sep { color: #ccc; }
-        .post-tag-meta {
-          font-size: 0.72rem; padding: 0 0.4rem; border-radius: 3px;
-          background: #f0e6f9; color: #9954bb; text-decoration: none; line-height: 1.5;
-        }
-        .post-tag-meta:hover { background: #9954bb; color: #fff; }
-        .post-source-link { color: #bbb; text-decoration: none; font-size: 0.78rem; }
-        .post-source-link:hover { color: #9954bb; }
-
-        /* ── Footer (sticky, compact) ── */
-        .footer {
-          text-align: center; padding: 0.6rem 0;
-          border-top: 1px solid #eee; margin-top: auto; flex-shrink: 0;
-          color: #aaa; font-size: 0.82rem;
-        }
-        .footer a { color: #888; margin: 0 0.5rem; text-decoration: none; }
-        .footer a:hover { color: #9954bb; }
-        .footer-icons { display: flex; justify-content: center; align-items: center; gap: 1rem; margin-top: 0.4rem; }
-
-        /* ── Mobile ── */
-        @media (max-width: 768px) {
-          .main-wrapper { flex-direction: column; }
-          .sidebar { flex: none; width: 100%; }
-        }
-
-        /* ════════════════════════════════════
-           文章页布局
-           ════════════════════════════════════ */
+        /* Article */
         .article-layout {
-          max-width: 1100px; width: 100%;
-          margin: 1.2rem auto 0; padding: 0 1.5rem;
-          display: flex; gap: 2rem; flex: 1;
-          box-sizing: border-box; align-items: flex-start;
+          flex-direction: column;
+          margin: 1rem auto 0;
+          padding: 0 1rem;
+          width: 100%;
+          max-width: 100%;
         }
-        .article-content { flex: 1; min-width: 0; }
+        .article-toc { display: none; }
+        .article-content .post-title { font-size: 1.25rem; }
+        .post-content              { font-size: 0.9rem; }
+        .post-content h2           { font-size: 1.15rem; }
+        .post-content h3           { font-size: 1rem; }
+        .post-content h4           { font-size: 0.95rem; }
 
-        /* 右侧目录 */
-        .article-toc {
-          flex: 0 0 210px;
-          position: sticky; top: 1rem;
-          align-self: flex-start;
-        }
-        .toc-inner {
-          background: #f9f9f9; border: 1px solid #e8e8e8;
-          border-radius: 4px; padding: 0.7rem 0.9rem;
-        }
-        .toc-title {
-          font-size: 0.82rem; font-weight: 700; color: #444;
-          margin: 0 0 0.45rem; padding-bottom: 0.3rem;
-          border-bottom: 2px solid #9954bb;
-        }
-        .article-toc ul { list-style: none; margin: 0; padding: 0; }
-        .article-toc ul ul { padding-left: 0.9rem; margin-top: 0.1rem; }
-        .article-toc li { padding: 0.15rem 0; line-height: 1.4; }
-        .toc-link { color: #888; text-decoration: none; font-size: 0.78rem; display: block; }
-        .toc-link:hover { color: #9954bb; }
+        /* Footer */
+        .footer .wrapper { width: 90%; }
+      }
+    </style>
+  </head>
 
-        /* even 主题原生 .post-toc 隐藏（已用 .article-toc 替代） */
-        .post-toc { display: none !important; }
+  <body>
 
-        /* 文章标题与 meta */
-        .article-content .post-title { font-size: 1.5rem; margin: 0 0 0.3rem; line-height: 1.3; }
-        .article-content .post-title a { color: #333; text-decoration: none; }
-        .article-content .post-title a:hover { color: #9954bb; }
-        .article-content .post-meta {
-          font-size: 0.82rem; color: #aaa;
-          margin-bottom: 1.4rem; padding-bottom: 0.8rem;
-          border-bottom: 1px solid #eee;
-        }
-        .article-content .post-meta a { color: #bbb; text-decoration: none; }
-        .article-content .post-meta a:hover { color: #9954bb; }
-
-        /* 正文排版 */
-        .post-content { font-size: 0.95rem; line-height: 1.9; color: #333; }
-        .post-content h1, .post-content h2,
-        .post-content h3, .post-content h4 {
-          margin: 1.6rem 0 0.55rem; line-height: 1.3; color: #222;
-        }
-        .post-content h1 { font-size: 1.4rem; border-bottom: 1px solid #eee; padding-bottom: 0.25rem; }
-        .post-content h2 { font-size: 1.2rem; border-bottom: 1px solid #eee; padding-bottom: 0.2rem; }
-        .post-content h3 { font-size: 1.05rem; }
-        .post-content h4 { font-size: 0.95rem; }
-        .post-content p { margin: 0.75rem 0; }
-        .post-content ul, .post-content ol { padding-left: 1.5rem; margin: 0.5rem 0; }
-        .post-content li { margin: 0.2rem 0; }
-        .post-content blockquote {
-          margin: 1rem 0; padding: 0.5rem 1rem;
-          border-left: 3px solid #9954bb;
-          background: #faf7fd; color: #666;
-          border-radius: 0 4px 4px 0;
-        }
-        .post-content blockquote p { margin: 0.2rem 0; }
-        .post-content a { color: #9954bb; }
-        .post-content a:hover { text-decoration: underline; }
-        /* 行内代码 */
-        .post-content :not(pre) > code {
-          background: #f5f5f5; border: 1px solid #e2e2e2;
-          border-radius: 3px; padding: 0.08em 0.35em;
-          font-size: 0.86em; color: #c0392b;
-        }
-        /* 代码块（pre 里的 code 用 zola highlight，不重复着色） */
-        .post-content pre {
-          margin: 1rem 0; border-radius: 6px;
-          overflow-x: auto; font-size: 0.875rem;
-        }
-        .post-content pre code { background: transparent; border: none; padding: 0; color: inherit; }
-        /* 表格 */
-        .post-content table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.9rem; }
-        .post-content th, .post-content td { border: 1px solid #ddd; padding: 0.4rem 0.8rem; text-align: left; }
-        .post-content th { background: #f5f5f5; font-weight: 600; }
-        .post-content img { max-width: 100%; height: auto; border-radius: 4px; display: block; margin: 0.8rem 0; }
-        .post-content hr { border: none; border-top: 1px solid #eee; margin: 1.5rem 0; }
-
-        /* 文章尾部 */
-        .post-footer { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #eee; }
-        .post-tags { margin-bottom: 0.8rem; }
-        .post-tags a {
-          display: inline-block; margin: 0 0.3rem 0.3rem 0;
-          padding: 0.1rem 0.55rem; background: #f0e6f9;
-          color: #9954bb; border-radius: 3px; font-size: 0.82rem; text-decoration: none;
-        }
-        .post-tags a:hover { background: #9954bb; color: #fff; }
-        .post-copyright {
-          background: #faf7fd; border: 1px solid #e8d8f8;
-          border-radius: 4px; padding: 0.55rem 1rem;
-          font-size: 0.82rem; color: #666; margin-bottom: 1rem;
-        }
-        .post-copyright p { margin: 0.15rem 0; }
-        .post-nav { display: flex; justify-content: space-between; font-size: 0.88rem; margin-top: 0.6rem; }
-        .post-nav a { color: #9954bb; text-decoration: none; }
-        .post-nav a:hover { text-decoration: underline; }
-
-        /* 文章页 mobile */
-        @media (max-width: 768px) {
-          .article-layout { flex-direction: column; padding: 0 1rem; }
-          .article-toc { position: static; width: 100%; }
-        }
-
-        /* ════════════════════════════════════
-           标签页
-           ════════════════════════════════════ */
-        .tag-page-header {
-          display: flex; align-items: baseline; gap: 0.75rem;
-          margin-bottom: 1.2rem; padding-bottom: 0.6rem;
-          border-bottom: 2px solid #9954bb;
-        }
-        .tag-page-title {
-          font-size: 1.35rem; font-weight: 700; margin: 0; color: #222;
-        }
-        .tag-page-hash { color: #9954bb; margin-right: 0.1rem; }
-        .tag-page-count { font-size: 0.82rem; color: #aaa; }
-
-        /* 标签云（/tags/ 页） */
-        .tags-cloud {
-          display: flex; flex-wrap: wrap; gap: 0.6rem;
-          padding: 0.2rem 0;
-        }
-        .tag-cloud-item {
-          display: inline-flex; align-items: center; gap: 0.35rem;
-          background: #f4eefa; border: 1px solid #e2caf5;
-          border-radius: 4px; padding: 0.3rem 0.75rem;
-          color: #7a3da8; text-decoration: none;
-          font-size: 0.88rem; transition: background 0.15s, color 0.15s;
-        }
-        .tag-cloud-item:hover {
-          background: #9954bb; border-color: #9954bb; color: #fff;
-        }
-        .tag-cloud-count {
-          background: #9954bb; color: #fff; border-radius: 50%;
-          width: 18px; height: 18px; display: inline-flex;
-          align-items: center; justify-content: center; font-size: 0.7rem;
-          flex-shrink: 0;
-        }
-        .tag-cloud-item:hover .tag-cloud-count { background: #fff; color: #9954bb; }
-
-        /* 当前激活标签高亮 */
-        .tag-item-active {
-          background: #9954bb !important; color: #fff !important;
-        }
-        .tag-item-active .tag-count { background: #fff !important; color: #9954bb !important; }
-      </style>
-    </head>
-
-    <body>
-
-        <div id="mobile-navbar" class="mobile-navbar">
-          <div class="mobile-header-logo">
-            <a href="{{ config.base_url }}" class="logo">{{ config.extra.even_title }}</a>
-          </div>
-          <div class="mobile-navbar-icon icon-out">
-            <span></span><span></span><span></span>
-          </div>
+    <header id="header">
+      <div class="header-inner">
+        <div class="brand">
+          <a href="{{ config.base_url }}">{{ config.extra.even_title }}</a>
+          {% if config.extra.even_description %}
+          <small>{{ config.extra.even_description }}</small>
+          {% endif %}
         </div>
-
-        <nav id="mobile-menu" class="mobile-menu slideout-menu slideout-menu-left">
-          <ul class="mobile-menu-list">
+        <nav class="main-nav" id="main-nav">
+          <ul>
             {% for item in config.extra.even_menu %}
-            <li class="mobile-menu-item">
+            <li>
               <a href="{{ item.url | replace(from="$BASE_URL", to=config.base_url) }}">{{ item.name }}</a>
             </li>
             {% endfor %}
           </ul>
         </nav>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
 
-        <div class="header-wrap">
-          <header id="header">
-              <div class="logo">
-                <a href="{{ config.base_url }}">{{ config.extra.even_title }}</a>
-                {% if config.extra.even_description %}
-                <span class="site-tagline">{{ config.extra.even_description }}</span>
-                {% endif %}
-              </div>
-              <nav class="menu">
-                  <ul>
-                      {% for item in config.extra.even_menu %}
-                      <li>
-                        <a href="{{ item.url | replace(from="$BASE_URL", to=config.base_url) }}">{{ item.name }}</a>
-                      </li>
-                      {% endfor %}
-                  </ul>
-              </nav>
-          </header>
-        </div>
+    {% block content %}
+    <div class="main-wrapper">
 
-        <div class="container">
-
-            {% block content %}
-            <div class="main-wrapper">
-
-              {# ── Left: article list ── #}
-              <div class="content-left">
-              <div class="posts">
-                  {% for page in paginator.pages %}
-                  <article class="post">
-                    <h2 class="post-title"><a href="{{ page.permalink | safe }}">{{ page.title }}</a></h2>
-                    <div class="post-meta-compact">
-                      <span class="post-time">{{ page.date | date(format="%Y-%m-%d") }}</span>
-                      {% if page.taxonomies.tags %}
-                        <span class="post-meta-sep">·</span>
-                        {% for tag in page.taxonomies.tags %}
-                        <a class="post-tag-meta" href="{{ get_taxonomy_url(kind="tags", name=tag) | safe }}">{{ tag }}</a>
-                        {% endfor %}
-                      {% endif %}
-                      {% if page.extra.issue_url %}
-                        <span class="post-meta-sep">·</span>
-                        <a class="post-source-link" href="{{ page.extra.issue_url | safe }}" target="_blank" rel="noopener">read the source issue</a>
-                      {% endif %}
-                    </div>
-                  </article>
-                  {% endfor %}
-                </div>
-
-                <nav class="pagination">
-                  {% if paginator.previous %}
-                  <a class="previous" href="{{ paginator.previous }}">‹ Previous</a>
-                  {% endif %}
-                  {% if paginator.next %}
-                  <a class="next" href="{{ paginator.next }}">Next ›</a>
-                  {% endif %}
-                </nav>
-              </div>
-
-              {# ── Right: sidebar ── #}
-              <aside class="sidebar">
-
-                {# Search #}
-                <div class="widget">
-                  <div class="widget-title">
-                    <svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.099zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/></svg>
-                    搜索
-                  </div>
-                  {% if config.extra.even_github %}
-                  <form class="search-form" action="https://github.com/{{ config.extra.even_github }}/gitblog/issues" method="get" target="_blank">
-                    <input class="search-input" type="text" name="q" placeholder="Search...">
-                    <button class="search-btn" type="submit">Go</button>
-                  </form>
-                  {% endif %}
-                </div>
-
-                {# Recent posts #}
-                <div class="widget">
-                  <div class="widget-title">
-                    <svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor"><path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2H5zm0 1h6a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1z"/><path d="M6 7.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5z"/></svg>
-                    近期文章
-                  </div>
-                  <ul class="recent-list">
-                    {% for page in paginator.pages | slice(end=5) %}
-                    <li><a href="{{ page.permalink }}">{{ page.title }}</a></li>
-                    {% endfor %}
-                  </ul>
-                </div>
-
-                {# Categories (tags) #}
-                {% set tags_taxonomy = get_taxonomy(kind="tags") %}
-                {% if tags_taxonomy.items %}
-                <div class="widget">
-                  <div class="widget-title">
-                    <svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor"><path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z"/></svg>
-                    分类
-                  </div>
-                  <div class="tag-list">
-                    {% for term in tags_taxonomy.items %}
-                    <a class="tag-item" href="{{ term.permalink }}">
-                      {{ term.name }}
-                      <span class="tag-count">{{ term.pages | length }}</span>
-                    </a>
-                    {% endfor %}
-                  </div>
-                </div>
-                {% endif %}
-
-              </aside>
-            </div>
-            {% endblock content %}
-
-            {# ── Footer ── #}
-            {% block footer %}
-            <footer class="footer">
-              <div class="footer-icons">
-                {% if config.extra.even_github %}
-                <a href="https://github.com/{{ config.extra.even_github }}" target="_blank" rel="noopener" title="GitHub">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="20" height="20" fill="currentColor">
-                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
-                  </svg>
-                </a>
-                {% endif %}
-                {% if config.generate_feeds %}
-                <a href="{{ get_url(path=config.feed_filenames[0]) | safe }}" target="_blank" rel="noopener" title="RSS">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="20" height="20" fill="currentColor">
-                    <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm1.5 2.5c5.523 0 10 4.477 10 10a1 1 0 1 1-2 0 8 8 0 0 0-8-8 1 1 0 0 1 0-2zm0 4a6 6 0 0 1 6 6 1 1 0 1 1-2 0 4 4 0 0 0-4-4 1 1 0 0 1 0-2zm.5 7a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
-                  </svg>
-                </a>
-                {% endif %}
-              </div>
-              {% if config.extra.even_license_name %}
-              <div style="margin-top:0.4rem;font-size:0.8rem;">
-                {% if config.extra.even_license_link %}
-                <a href="{{ config.extra.even_license_link }}" target="_blank" rel="noopener">{{ config.extra.even_license_name }}</a>
-                {% else %}
-                {{ config.extra.even_license_name }}
-                {% endif %}
-              </div>
+      {# ── Left: article list ── #}
+      <div class="content-left">
+        <div class="posts">
+          {% for page in paginator.pages %}
+          <article class="post">
+            <h2 class="post-title"><a href="{{ page.permalink | safe }}">{{ page.title }}</a></h2>
+            <div class="post-meta-compact">
+              <span class="post-time">{{ page.date | date(format="%Y-%m-%d") }}</span>
+              {% if page.taxonomies.tags %}
+                <span class="post-meta-sep">·</span>
+                {% for tag in page.taxonomies.tags %}
+                <a class="post-tag-meta" href="{{ get_taxonomy_url(kind="tags", name=tag) | safe }}">{{ tag }}</a>
+                {% endfor %}
               {% endif %}
-            </footer>
-            {% endblock footer %}
-
+              {% if page.extra.issue_url %}
+                <span class="post-meta-sep">·</span>
+                <a class="post-source-link" href="{{ page.extra.issue_url | safe }}" target="_blank" rel="noopener">source</a>
+              {% endif %}
+            </div>
+          </article>
+          {% endfor %}
         </div>
 
-      {% block js_body %}
-          <script type="text/javascript" src="{{ get_url(path="even.js", trailing_slash=false) }}" ></script>
-      {% endblock js_body %}
-    </body>
+        <nav class="pagination">
+          {% if paginator.previous %}
+          <a class="previous" href="{{ paginator.previous }}">‹ 上一页</a>
+          {% else %}<span></span>{% endif %}
+          {% if paginator.next %}
+          <a class="next" href="{{ paginator.next }}">下一页 ›</a>
+          {% endif %}
+        </nav>
+      </div>
+
+      {# ── Right: sidebar ── #}
+      <aside class="sidebar">
+
+        {# Search #}
+        <div class="widget">
+          <div class="widget-title">
+            <svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.099zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/></svg>
+            搜索
+          </div>
+          {% if config.extra.even_github %}
+          <form class="search-form" action="https://github.com/{{ config.extra.even_github }}/gitblog/issues" method="get" target="_blank">
+            <input class="search-input" type="text" name="q" placeholder="Search...">
+            <button class="search-btn" type="submit">Go</button>
+          </form>
+          {% endif %}
+        </div>
+
+        {# Recent posts #}
+        <div class="widget">
+          <div class="widget-title">
+            <svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor"><path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2H5zm0 1h6a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1z"/><path d="M6 7.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5z"/></svg>
+            近期文章
+          </div>
+          <ul class="recent-list">
+            {% for page in paginator.pages | slice(end=8) %}
+            <li><a href="{{ page.permalink }}">{{ page.title }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+
+        {# Tags / categories #}
+        {% set tags_taxonomy = get_taxonomy(kind="tags") %}
+        {% if tags_taxonomy.items %}
+        <div class="widget">
+          <div class="widget-title">
+            <svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor"><path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z"/></svg>
+            分类
+          </div>
+          <div class="tag-list">
+            {% for term in tags_taxonomy.items %}
+            <a class="tag-item" href="{{ term.permalink }}">
+              {{ term.name }}
+              <span class="tag-count">{{ term.pages | length }}</span>
+            </a>
+            {% endfor %}
+          </div>
+        </div>
+        {% endif %}
+
+      </aside>
+    </div>
+    {% endblock content %}
+
+    {# ── Footer ── #}
+    {% block footer %}
+    <footer class="footer">
+      <div class="wrapper">
+        <div class="footer-icons">
+          {% if config.extra.even_github %}
+          <a href="https://github.com/{{ config.extra.even_github }}" target="_blank" rel="noopener" title="GitHub">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="20" height="20" fill="currentColor">
+              <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+            </svg>
+          </a>
+          {% endif %}
+          {% if config.generate_feeds %}
+          <a href="{{ get_url(path=config.feed_filenames[0]) | safe }}" target="_blank" rel="noopener" title="RSS">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="20" height="20" fill="currentColor">
+              <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm1.5 2.5c5.523 0 10 4.477 10 10a1 1 0 1 1-2 0 8 8 0 0 0-8-8 1 1 0 0 1 0-2zm0 4a6 6 0 0 1 6 6 1 1 0 1 1-2 0 4 4 0 0 0-4-4 1 1 0 0 1 0-2zm.5 7a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
+            </svg>
+          </a>
+          {% endif %}
+        </div>
+        <p class="power">
+          {% if config.extra.even_license_name %}
+            {% if config.extra.even_license_link %}
+            <a href="{{ config.extra.even_license_link }}" target="_blank" rel="noopener">{{ config.extra.even_license_name }}</a>
+            &nbsp;·&nbsp;
+            {% else %}
+            {{ config.extra.even_license_name }} &nbsp;·&nbsp;
+            {% endif %}
+          {% endif %}
+          <a href="https://github.com/{{ config.extra.even_github }}/gitblog" target="_blank" rel="noopener">{{ config.extra.even_title }}</a>
+        </p>
+      </div>
+    </footer>
+    {% endblock footer %}
+
+    {% block js_body %}
+    <script type="text/javascript" src="{{ get_url(path="even.js", trailing_slash=false) }}"></script>
+    <script>
+      (function() {
+        var btn = document.getElementById('menu-toggle');
+        var nav = document.getElementById('main-nav');
+        if (!btn || !nav) return;
+        btn.addEventListener('click', function() {
+          nav.classList.toggle('nav-open');
+          btn.classList.toggle('active');
+        });
+        document.addEventListener('click', function(e) {
+          if (!btn.contains(e.target) && !nav.contains(e.target)) {
+            nav.classList.remove('nav-open');
+            btn.classList.remove('active');
+          }
+        });
+      })();
+    </script>
+    {% endblock js_body %}
+
+  </body>
 </html>

@@ -6,7 +6,7 @@
 {% block content %}
 <div class="article-layout">
 
-  {# ── 正文 ── #}
+  {# ── Article body ── #}
   <article class="post article-content">
     {{ post_macros::title(page=page) }}
 
@@ -28,7 +28,7 @@
         <div class="post-nav">
           {% if page.lower %}
           <a class="previous" href="{{ page.lower.permalink | safe }}">‹ {{ page.lower.title }}</a>
-          {% endif %}
+          {% else %}<span></span>{% endif %}
           {% if page.higher %}
           <a class="next" href="{{ page.higher.permalink | safe }}">{{ page.higher.title }} ›</a>
           {% endif %}
@@ -38,7 +38,7 @@
     </div>
   </article>
 
-  {# ── 右侧目录 ── #}
+  {# ── Right TOC (desktop only, hidden on mobile via CSS) ── #}
   {% if page.toc %}
   <aside class="article-toc">
     <div class="toc-inner">

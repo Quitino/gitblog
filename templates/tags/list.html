@@ -5,7 +5,7 @@
 {% block content %}
 <div class="main-wrapper">
 
-  {# ── 左侧：所有标签云 ── #}
+  {# ── Left: tag cloud with proportional sizes ── #}
   <div class="content-left">
     <div class="tag-page-header">
       <h1 class="tag-page-title">所有标签</h1>
@@ -14,18 +14,28 @@
 
     <div class="tags-cloud">
       {% for term in terms %}
-      <a class="tag-cloud-item" href="{{ term.permalink | safe }}">
-        <span class="tag-cloud-name">{{ term.name }}</span>
-        <span class="tag-cloud-count">{{ term.pages | length }}</span>
-      </a>
+        {% set count = term.pages | length %}
+        {% if count > 15 %}
+          {% set sz = "tag-xl" %}
+        {% elif count > 8 %}
+          {% set sz = "tag-lg" %}
+        {% elif count > 3 %}
+          {% set sz = "tag-md" %}
+        {% else %}
+          {% set sz = "tag-sm" %}
+        {% endif %}
+        <a class="tag-cloud-item {{ sz }}" href="{{ term.permalink | safe }}">
+          <span>{{ term.name }}</span>
+          <span class="tag-cloud-count">{{ count }}</span>
+        </a>
       {% endfor %}
     </div>
   </div>
 
-  {# ── 右侧：侧边栏 ── #}
+  {# ── Right: sidebar ── #}
   <aside class="sidebar">
 
-    {# 搜索 #}
+    {# Search #}
     <div class="widget">
       <div class="widget-title">
         <svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.099zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/></svg>
