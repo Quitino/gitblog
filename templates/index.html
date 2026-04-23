@@ -50,11 +50,19 @@
       a { text-decoration: none; }
       hr { border: 0; border-top: 1px solid #eee; margin: 20px 0; }
 
-      /* ── Header ── */
+      /* ── Header (use !important to fully override even theme) ── */
       #header {
-        background: #222;
-        height: 52px;
-        box-shadow: 0 2px 4px 1px rgba(0,0,0,0.5);
+        background: #222 !important;
+        height: 52px !important;
+        min-height: 52px !important;
+        max-height: 52px !important;
+        overflow: hidden !important;
+        display: block !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        border: none !important;
+        box-shadow: 0 2px 4px 1px rgba(0,0,0,0.5) !important;
+        box-sizing: border-box !important;
         position: relative;
         z-index: 100;
       }
@@ -63,7 +71,9 @@
         margin: 0 auto;
         padding: 0 1.5rem;
         height: 52px;
-        display: flex;
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
         align-items: center;
       }
       .brand {
@@ -105,6 +115,12 @@
         transition: 0.2s ease;
       }
       .main-nav ul li a:hover { background: #000; color: #fff; }
+      /* even.js marks current-page link with .active — override even theme's black-box style */
+      .main-nav ul li a.active {
+        background: rgba(255,255,255,0.12) !important;
+        color: #fff !important;
+        box-shadow: none !important;
+      }
 
       /* ── Hamburger toggle (mobile only) ── */
       .menu-toggle {
@@ -206,16 +222,19 @@
         outline: none;
       }
       .search-btn {
-        padding: 0.3rem 0.7rem;
-        background: #4d6dad;
-        color: #fff;
-        border: none;
-        border-radius: 3px;
+        padding: 0.3rem 0.7rem !important;
+        background: #4d6dad !important;
+        color: #fff !important;
+        border: none !important;
+        border-radius: 3px !important;
         cursor: pointer;
         font-size: 0.85rem;
         transition: 0.2s;
+        box-shadow: none !important;
+        height: auto !important;
+        line-height: normal !important;
       }
-      .search-btn:hover { background: #223253; }
+      .search-btn:hover { background: #223253 !important; }
       .recent-list { list-style: none; margin: 0; padding: 0; }
       .recent-list li {
         padding: 0.25rem 0;
@@ -488,7 +507,7 @@
         /* Header */
         .header-inner { padding: 0 1rem; }
         .brand small  { display: none; }
-        .menu-toggle  { display: flex; }
+        .menu-toggle  { display: flex !important; }
         .main-nav {
           display: none;
           position: absolute;
