@@ -460,10 +460,12 @@
       .post-content tbody tr:nth-child(odd)  { background: #f8f8fd; }
       .post-content tbody tr:nth-child(even) { background: #e5eaed; }
       .post-content img {
-        max-width: 100%;
+        max-width: min(100%, 600px);
         height: auto;
         display: block;
         margin: 1rem auto;
+        border-radius: 8px;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.12);
       }
       .post-content hr { border: none; border-top: 1px solid #eee; margin: 1.5rem 0; }
 
