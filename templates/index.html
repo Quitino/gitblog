@@ -37,6 +37,9 @@
     <style>
       /* ── Reset & Base ── */
       *, *::before, *::after { box-sizing: border-box; }
+      /* Hide browser scrollbar on all pages */
+      html { scrollbar-width: none; -ms-overflow-style: none; }
+      html::-webkit-scrollbar { display: none; }
       body {
         font-family: 'Helvetica Neue', Helvetica, Arial, 'Microsoft YaHei', sans-serif;
         color: #333;
@@ -758,8 +761,12 @@
         if (!toc) return;
         toc.querySelectorAll('.toc-link').forEach(function(link) {
           var href = link.getAttribute('href');
-          if (!href || href.charAt(0) !== '#') return;
-          var heading = document.getElementById(href.slice(1));
+          if (!href) return;
+          // Zola toc permalink is a full URL; extract the fragment
+          var hashIdx = href.indexOf('#');
+          if (hashIdx === -1) return;
+          var id = href.slice(hashIdx + 1);
+          var heading = document.getElementById(id);
           if (heading && heading.closest('blockquote')) {
             var li = link.closest('li');
             if (li) li.remove();
