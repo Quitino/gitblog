@@ -18,12 +18,10 @@ My personal blog using issues and GitHub Actions
 
 - [同一电脑多git账号配置](https://github.com/Quitino/gitblog/issues/2)--2026-04-14
 - [第一篇博客](https://github.com/Quitino/gitblog/issues/1)--2026-04-14
-## 生活 (1)
-
-- [玉渡山转山龙庆峡游水](https://github.com/Quitino/gitblog/issues/4)--2026-04-18
-## 游玩 (1)
+## 游玩 (2)
 
 - [中轴线citywalk](https://github.com/Quitino/gitblog/issues/8)--2026-04-28
+- [玉渡山转山龙庆峡游水](https://github.com/Quitino/gitblog/issues/4)--2026-04-18
 ## TODO
 TODO list from [2026 Weekly Report](https://github.com/Quitino/gitblog/issues/7) all done
 
