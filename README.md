@@ -22,8 +22,7 @@ My personal blog using issues and GitHub Actions
 
 - [玉渡山转山龙庆峡游水](https://github.com/Quitino/gitblog/issues/4)--2026-04-18
 ## TODO
-TODO list from [2026 Weekly Report](https://github.com/Quitino/gitblog/issues/7)--1 jobs to do--0 jobs done
-- [ ] 周末整理近期强化学习的理论知识
+TODO list from [2026 Weekly Report](https://github.com/Quitino/gitblog/issues/7) all done
 
 TODO list from [脱离混沌](https://github.com/Quitino/gitblog/issues/6)--1 jobs to do--0 jobs done
 - [ ] 个人周总结
@@ -33,4 +32,4 @@ TODO list from [学习《强化学习》](https://github.com/Quitino/gitblog/iss
 
 
 ---
-文章总数：**7** ｜ 最近更新：**2026-04-23**
+文章总数：**7** ｜ 最近更新：**2026-04-28**
