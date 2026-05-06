@@ -6,11 +6,11 @@ My personal blog using issues and GitHub Actions
 - [2026 Weekly Report](https://github.com/Quitino/gitblog/issues/7)--2026-04-23
 - [doc_index](https://github.com/Quitino/gitblog/issues/3)--2026-04-14
 ## 最近更新
+- [五一烟台](https://github.com/Quitino/gitblog/issues/9)--2026-05-06
 - [中轴线citywalk](https://github.com/Quitino/gitblog/issues/8)--2026-04-28
 - [脱离混沌](https://github.com/Quitino/gitblog/issues/6)--2026-04-20
 - [学习《强化学习》](https://github.com/Quitino/gitblog/issues/5)--2026-04-20
 - [玉渡山转山龙庆峡游水](https://github.com/Quitino/gitblog/issues/4)--2026-04-18
-- [同一电脑多git账号配置](https://github.com/Quitino/gitblog/issues/2)--2026-04-14
 ## 周记 (1)
 
 - [2026 Weekly Report](https://github.com/Quitino/gitblog/issues/7)--2026-04-23
@@ -18,8 +18,9 @@ My personal blog using issues and GitHub Actions
 
 - [同一电脑多git账号配置](https://github.com/Quitino/gitblog/issues/2)--2026-04-14
 - [第一篇博客](https://github.com/Quitino/gitblog/issues/1)--2026-04-14
-## 游玩 (2)
+## 游玩 (3)
 
+- [五一烟台](https://github.com/Quitino/gitblog/issues/9)--2026-05-06
 - [中轴线citywalk](https://github.com/Quitino/gitblog/issues/8)--2026-04-28
 - [玉渡山转山龙庆峡游水](https://github.com/Quitino/gitblog/issues/4)--2026-04-18
 ## TODO
@@ -33,4 +34,4 @@ TODO list from [学习《强化学习》](https://github.com/Quitino/gitblog/iss
 
 
 ---
-文章总数：**8** ｜ 最近更新：**2026-04-28**
+文章总数：**9** ｜ 最近更新：**2026-05-06**
