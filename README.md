@@ -23,7 +23,7 @@ My personal blog using issues and GitHub Actions
 
 - [五一烟台](https://github.com/Quitino/gitblog/issues/9)--2026-05-06
 - [中轴线citywalk](https://github.com/Quitino/gitblog/issues/8)--2026-04-28
-- [玉渡山转山龙庆峡游水](https://github.com/Quitino/gitblog/issues/4)--2026-04-18
+- [北京延庆区玉渡山转山龙庆峡游水](https://github.com/Quitino/gitblog/issues/4)--2026-04-18
 ## TODO
 TODO list from [2026 Weekly Report](https://github.com/Quitino/gitblog/issues/7) all done
 
