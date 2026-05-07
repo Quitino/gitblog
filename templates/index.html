@@ -459,10 +459,9 @@
       .post-content th, .post-content td { padding: 4px 10px; text-align: left; }
       .post-content tbody tr:nth-child(odd)  { background: #f8f8fd; }
       .post-content tbody tr:nth-child(even) { background: #e5eaed; }
-      /* Zola wraps standalone images in <p><img></p> — center via text-align */
-      .post-content p:has(> img) { text-align: center !important; }
       .post-content img {
-        display: inline-block !important;
+        display: block !important;
+        margin: 0 auto !important;
         max-width: min(100%, 400px) !important;
         height: auto !important;
         border-radius: 8px;
