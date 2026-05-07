@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<feed xmlns="http://www.w3.org/2005/Atom"><id>https://github.com/Quitino/gitblog</id><title>RSS feed of Quitino's gitblog</title><updated>2026-05-07T10:55:51.548142+00:00</updated><link href="https://github.com/Quitino/gitblog"/><link href="https://raw.githubusercontent.com/Quitino/gitblog/master/feed.xml" rel="self"/><generator uri="https://lkiesow.github.io/python-feedgen" version="1.0.0">python-feedgen</generator><entry><id>https://github.com/Quitino/gitblog/issues/10</id><title>AI Agent 横向对比：OpenClaw / Hermes Agent / Codex / Claude Code</title><updated>2026-05-07T10:55:51.954486+00:00</updated><content type="html"><![CDATA[<h2>一、项目概览</h2>
+<feed xmlns="http://www.w3.org/2005/Atom"><id>https://github.com/Quitino/gitblog</id><title>RSS feed of Quitino's gitblog</title><updated>2026-05-07T10:56:46.945495+00:00</updated><link href="https://github.com/Quitino/gitblog"/><link href="https://raw.githubusercontent.com/Quitino/gitblog/master/feed.xml" rel="self"/><generator uri="https://lkiesow.github.io/python-feedgen" version="1.0.0">python-feedgen</generator><entry><id>https://github.com/Quitino/gitblog/issues/10</id><title>AI Agent 横向对比：OpenClaw / Hermes Agent / Codex / Claude Code</title><updated>2026-05-07T10:56:47.735629+00:00</updated><content type="html"><![CDATA[<h2>一、项目概览</h2>
 <table>
 <thead>
 <tr>
@@ -875,7 +875,7 @@ your-project/
 <td>Rust</td>
 <td>TypeScript</td>
 </tr>
-</tbody></table>]]></content><link href="https://github.com/Quitino/gitblog/issues/10"/><category term="技术"/><published>2026-05-07T07:01:02+00:00</published></entry><entry><id>https://github.com/Quitino/gitblog/issues/9</id><title>五一山东烟台</title><updated>2026-05-07T10:55:52.153622+00:00</updated><content type="html"><![CDATA[<h2>1.旅程</h2>
+</tbody></table>]]></content><link href="https://github.com/Quitino/gitblog/issues/10"/><category term="技术"/><published>2026-05-07T07:01:02+00:00</published></entry><entry><id>https://github.com/Quitino/gitblog/issues/9</id><title>五一山东烟台</title><updated>2026-05-07T10:56:47.983893+00:00</updated><content type="html"><![CDATA[<h2>1.旅程</h2>
 <p>五一去的烟台游玩，报的三天的团，没有养马岛安排。第一二天去的长岛，长岛是一个群岛的统称，有32个岛屿，其中十个岛屿有居民居住。</p>
 <ul>
 <li>“忽闻海上有仙山，山在虚无缥缈间”</li>
@@ -909,13 +909,13 @@ your-project/
 <ul>
 <li>海鲜确实很鲜美</li>
 </ul>
-<img width="2073" height="1170" alt="Image" src="https://github.com/user-attachments/assets/99159ace-105c-492f-8b8f-45cd926df535" />]]></content><link href="https://github.com/Quitino/gitblog/issues/9"/><category term="游玩"/><published>2026-05-06T11:06:14+00:00</published></entry><entry><id>https://github.com/Quitino/gitblog/issues/8</id><title>北京中轴线citywalk</title><updated>2026-05-07T10:55:52.293695+00:00</updated><content type="html"><![CDATA[<h2>1.旅程</h2>
+<img width="2073" height="1170" alt="Image" src="https://github.com/user-attachments/assets/99159ace-105c-492f-8b8f-45cd926df535" />]]></content><link href="https://github.com/Quitino/gitblog/issues/9"/><category term="游玩"/><published>2026-05-06T11:06:14+00:00</published></entry><entry><id>https://github.com/Quitino/gitblog/issues/8</id><title>北京中轴线citywalk</title><updated>2026-05-07T10:56:48.174915+00:00</updated><content type="html"><![CDATA[<h2>1.旅程</h2>
 <p>2026.04.26.周末反穿了中轴线，从森林公园南门出发，原计划走到永定门。实际情况从森林公园南门出发途径鸟巢、水立方、中轴线北广场、钟楼、鼓楼、烟袋斜街、什刹海、景山公园、故宫博物院、中山公园、天安门广场（需要提前一天预约，没进；捡了一个带花的梧桐树枝别在背包上，被告知不让带鲜花进天安门广场）、国家大剧院、纪念堂，然后时间比较晚了，过了纪念堂就骑上单车到国贸附近吃晚饭了。全程 26km，徒步20km，汽车6km. 午饭和晚饭都是吃的川菜馆。</p>
 <p>早上出门时天气是阴着的，结果刚开始走没多久就开始出太阳了，被迫买了帽子，有太阳的徒步不带墨镜走到下半程也会有点头晕恍惚。周末奥森人不是特别多，到了钟楼鼓楼到天安门那段核心旅游区人就多起来了，也有较多的境外游客，还是挺好玩的，值得二刷，天坛地坛还没刷到。</p>
 <h2>2.轨迹图</h2>
 <img width="1525" height="937" alt="Image" src="https://github.com/user-attachments/assets/de93f7d6-fd2f-46aa-9502-df3fe6113770" />
 <p>整体路线如上图所示。</p>
-]]></content><link href="https://github.com/Quitino/gitblog/issues/8"/><category term="游玩"/><published>2026-04-28T03:04:38+00:00</published></entry><entry><id>https://github.com/Quitino/gitblog/issues/7</id><title>2026 Weekly Report</title><updated>2026-05-07T10:55:52.432554+00:00</updated><content type="html"><![CDATA[<h2>w17</h2>
+]]></content><link href="https://github.com/Quitino/gitblog/issues/8"/><category term="游玩"/><published>2026-04-28T03:04:38+00:00</published></entry><entry><id>https://github.com/Quitino/gitblog/issues/7</id><title>2026 Weekly Report</title><updated>2026-05-07T10:56:48.359814+00:00</updated><content type="html"><![CDATA[<h2>w17</h2>
 <ul>
 <li>之前看了本书，好像没看完，叫《5%的改变》，核心主张：<code>不必颠覆自己，只需在当前行为模式上做出 5% 的微小改变，即可触发系统性转变。</code>，不要给自己定太多 kpi，上周开始跑步开始学习算是好的开头，玩手机的时间没控制下来没关系，这周的任务是保持上周的改变，临近五一假期安排也会有些影响。</li>
 <li>规划五一出游，初步计划去山东烟台</li>
@@ -1005,7 +1005,7 @@ your-project/
 </ol>
 <p>下次当你感到“蝴蝶效应”要发生时，试着停下来问自己：<strong>“这是事实，还是我的想象？这是不可控的，还是我可以干预的？”</strong> 这一瞬间的理性回归，就是焦虑的解药。</p>
 </blockquote>
-]]></content><link href="https://github.com/Quitino/gitblog/issues/7"/><category term="todo"/><category term="top"/><category term="周记"/><published>2026-04-23T03:09:21+00:00</published></entry><entry><id>https://github.com/Quitino/gitblog/issues/6</id><title>脱离混沌</title><updated>2026-05-07T10:55:52.585577+00:00</updated><content type="html"><![CDATA[<p>fork了这个仓库后总会有种想记录的冲动，不知道是好事还是坏事，是为了装 * 还是真的想尝试改变。whatever 先试试。</p>
+]]></content><link href="https://github.com/Quitino/gitblog/issues/7"/><category term="todo"/><category term="top"/><category term="周记"/><published>2026-04-23T03:09:21+00:00</published></entry><entry><id>https://github.com/Quitino/gitblog/issues/6</id><title>脱离混沌</title><updated>2026-05-07T10:56:48.551935+00:00</updated><content type="html"><![CDATA[<p>fork了这个仓库后总会有种想记录的冲动，不知道是好事还是坏事，是为了装 * 还是真的想尝试改变。whatever 先试试。</p>
 <ul>
 <li><input disabled="" type="checkbox"> 个人周总结</li>
 </ul>
@@ -1016,7 +1016,7 @@ your-project/
 <li>每周的手机使用时间控制，这个能不能自动化一下</li>
 <li>周末自己做饭？</li>
 </ul>
-]]></content><link href="https://github.com/Quitino/gitblog/issues/6"/><category term="todo"/><published>2026-04-20T02:07:09+00:00</published></entry><entry><id>https://github.com/Quitino/gitblog/issues/5</id><title>学习《强化学习》</title><updated>2026-05-07T10:55:52.717576+00:00</updated><content type="html"><![CDATA[<ul>
+]]></content><link href="https://github.com/Quitino/gitblog/issues/6"/><category term="todo"/><published>2026-04-20T02:07:09+00:00</published></entry><entry><id>https://github.com/Quitino/gitblog/issues/5</id><title>学习《强化学习》</title><updated>2026-05-07T10:56:48.766763+00:00</updated><content type="html"><![CDATA[<ul>
 <li><input disabled="" type="checkbox"> 学习《强化学习的数学原理》</li>
 </ul>
 <p>学习《强化学习》，以 <a href="https://www.bilibili.com/video/BV1sd4y167NS/?spm_id_from=333.337.search-card.all.click&amp;vd_source=6d96ad3d63238e8488f65de89e674efa">B站教程</a>为主，共 11 课时，加上扩展学习的需求，每日计划约 1.5h 用于学习，每两天学 1 个课时，每周学习五天周末两天为机动时间。</p>
@@ -1255,9 +1255,11 @@ your-project/
 <li>若某日进度提前完成，可将后续内容前移，保持节奏灵活。</li>
 </ul>
 </blockquote>
-]]></content><link href="https://github.com/Quitino/gitblog/issues/5"/><category term="todo"/><published>2026-04-20T02:00:22+00:00</published></entry><entry><id>https://github.com/Quitino/gitblog/issues/4</id><title>北京延庆区玉渡山转山龙庆峡游水</title><updated>2026-05-07T10:55:52.872075+00:00</updated><content type="html"><![CDATA[<p>星期六，整体天气还可以，多云🌤️。徒步的里程有12公里，摆渡船6公里，差不多走了五个小时左右。</p>
+]]></content><link href="https://github.com/Quitino/gitblog/issues/5"/><category term="todo"/><published>2026-04-20T02:00:22+00:00</published></entry><entry><id>https://github.com/Quitino/gitblog/issues/4</id><title>北京延庆区玉渡山转山龙庆峡游水</title><updated>2026-05-07T10:56:48.979266+00:00</updated><content type="html"><![CDATA[<h2>1.旅程</h2>
+<p>星期六，整体天气还可以，多云🌤️。徒步的里程有12公里，摆渡船6公里，差不多走了五个小时左右。</p>
 <p>中途修整了一次，上了一次厕所。出发前想着距离比较近带个面包和一些水就够了，事实也是这样。全程都在峡谷的河流两岸穿梭。</p>
 <p>四月下旬，北方的山里还是有点荒芜，树木还没完全发芽，有的背阴面上人造冰还没化完。</p>
+<h2>2.贴几张图</h2>
 <p><img src="https://github.com/user-attachments/assets/614bacd9-10ad-4372-998c-e208df1f24d9" alt="image" /></p>
 <p>不认识的花，还挺好看的。</p>
 <p><img src="https://github.com/user-attachments/assets/85cee035-c17c-403f-8015-733362c07f74" alt="image" /></p>
@@ -1267,12 +1269,12 @@ your-project/
 <p><img src="https://github.com/user-attachments/assets/6a9d6936-2244-42a4-95d2-3a1d410c7827" alt="image" /></p>
 <p>在最后景区出口处有一株双生玉兰花，上面有紫色的花和白色的花，很漂亮。</p>
 <p><img src="https://github.com/user-attachments/assets/70676652-653c-4613-8417-9e8b14d57e22" alt="image" /></p>
-]]></content><link href="https://github.com/Quitino/gitblog/issues/4"/><category term="游玩"/><published>2026-04-18T08:15:19+00:00</published></entry><entry><id>https://github.com/Quitino/gitblog/issues/3</id><title>doc_index</title><updated>2026-05-07T10:55:53.006342+00:00</updated><content type="html"><![CDATA[<ul>
+]]></content><link href="https://github.com/Quitino/gitblog/issues/4"/><category term="游玩"/><published>2026-04-18T08:15:19+00:00</published></entry><entry><id>https://github.com/Quitino/gitblog/issues/3</id><title>doc_index</title><updated>2026-05-07T10:56:49.175376+00:00</updated><content type="html"><![CDATA[<ul>
 <li><a href="https://github.com/Quitino/RL_NOTE?tab=readme-ov-file">强化学习</a></li>
 <li><a href="https://github.com/Quitino/CPP-Note">cpp-note</a></li>
 <li><a href="https://github.com/Quitino/leetcode-note">leetcode-note</a></li>
 </ul>
-]]></content><link href="https://github.com/Quitino/gitblog/issues/3"/><category term="top"/><published>2026-04-14T11:41:54+00:00</published></entry><entry><id>https://github.com/Quitino/gitblog/issues/2</id><title>同一电脑多git账号配置</title><updated>2026-05-07T10:55:53.130556+00:00</updated><content type="html"><![CDATA[<blockquote>
+]]></content><link href="https://github.com/Quitino/gitblog/issues/3"/><category term="top"/><published>2026-04-14T11:41:54+00:00</published></entry><entry><id>https://github.com/Quitino/gitblog/issues/2</id><title>同一电脑多git账号配置</title><updated>2026-05-07T10:56:49.373359+00:00</updated><content type="html"><![CDATA[<blockquote>
 <p>如果你的电脑全局配置的是公司 Git 账号，但这个项目需要用个人 GitHub 账号，
 需要解决两个问题：<strong>提交身份</strong> 和 <strong>推送认证</strong>。</p>
 </blockquote>
@@ -1408,7 +1410,7 @@ git remote set-url origin https://Quitino:&lt;TOKEN&gt;@github.com/Quitino/proje
 □ git remote -v 显示 github-personal 别名地址
 □ git push origin master 能成功推送
 </code></pre>
-]]></content><link href="https://github.com/Quitino/gitblog/issues/2"/><category term="技术"/><published>2026-04-14T09:42:11+00:00</published></entry><entry><id>https://github.com/Quitino/gitblog/issues/1</id><title>第一篇博客</title><updated>2026-05-07T10:55:53.281357+00:00</updated><content type="html"><![CDATA[<h1>用 GitHub Issues + GitHub Actions 搭建个人博客教程</h1>
+]]></content><link href="https://github.com/Quitino/gitblog/issues/2"/><category term="技术"/><published>2026-04-14T09:42:11+00:00</published></entry><entry><id>https://github.com/Quitino/gitblog/issues/1</id><title>第一篇博客</title><updated>2026-05-07T10:56:49.576159+00:00</updated><content type="html"><![CDATA[<h1>用 GitHub Issues + GitHub Actions 搭建个人博客教程</h1>
 <blockquote>
 <p>参考仓库：<a href="https://github.com/yihong0618/gitblog">yihong0618/gitblog</a>
 核心思路：用 GitHub Issues 写文章，用 GitHub Actions 自动将 Issues 汇总生成 README，并可选部署为静态网站。</p>
