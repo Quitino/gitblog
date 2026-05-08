@@ -1,5 +1,1152 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<feed xmlns="http://www.w3.org/2005/Atom"><id>https://github.com/Quitino/gitblog</id><title>RSS feed of Quitino's gitblog</title><updated>2026-05-08T02:22:19.803857+00:00</updated><link href="https://github.com/Quitino/gitblog"/><link href="https://raw.githubusercontent.com/Quitino/gitblog/master/feed.xml" rel="self"/><generator uri="https://lkiesow.github.io/python-feedgen" version="1.0.0">python-feedgen</generator><entry><id>https://github.com/Quitino/gitblog/issues/10</id><title>AI Agent 横向对比：OpenClaw / Hermes Agent / Codex / Claude Code</title><updated>2026-05-08T02:22:20.309045+00:00</updated><content type="html"><![CDATA[<h2>一、项目概览</h2>
+<feed xmlns="http://www.w3.org/2005/Atom"><id>https://github.com/Quitino/gitblog</id><title>RSS feed of Quitino's gitblog</title><updated>2026-05-08T02:40:07.588150+00:00</updated><link href="https://github.com/Quitino/gitblog"/><link href="https://raw.githubusercontent.com/Quitino/gitblog/master/feed.xml" rel="self"/><generator uri="https://lkiesow.github.io/python-feedgen" version="1.0.0">python-feedgen</generator><entry><id>https://github.com/Quitino/gitblog/issues/11</id><title>2026饮食参考</title><updated>2026-05-08T02:40:08.086778+00:00</updated><content type="html"><![CDATA[<blockquote>
+<p>场景：工作日食堂就餐，周末自做 | 以季度为周期覆盖全年 | 最小周转单位：周</p>
+</blockquote>
+<hr />
+<h2>一、营养素补充周期总览</h2>
+<table>
+<thead>
+<tr>
+<th>营养素</th>
+<th>补充频率</th>
+<th>主要食物来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>蛋白质、膳食纤维</td>
+<td>每日</td>
+<td>蛋、豆腐、肉、鱼、全谷物、蔬菜</td>
+</tr>
+<tr>
+<td>维生素 C</td>
+<td>每日</td>
+<td><strong>应季水果</strong>（柑橘/草莓/桃/苹果）、深色蔬菜</td>
+</tr>
+<tr>
+<td>钙</td>
+<td>每日</td>
+<td>豆腐、牛奶/酸奶、深绿叶菜</td>
+</tr>
+<tr>
+<td>镁</td>
+<td>每日</td>
+<td>坚果、全谷物、深色蔬菜</td>
+</tr>
+<tr>
+<td>铁</td>
+<td>每周</td>
+<td>红肉、动物肝脏、菠菜+维C促吸收（<strong>配柑橘类水果</strong>）</td>
+</tr>
+<tr>
+<td>锌</td>
+<td>每周</td>
+<td>牡蛎、红肉、南瓜籽</td>
+</tr>
+<tr>
+<td>花青素（抗氧化）</td>
+<td>每周</td>
+<td><strong>蓝莓/桑葚/樱桃/葡萄</strong>（夏秋季集中补）</td>
+</tr>
+<tr>
+<td>Omega-3</td>
+<td>每月</td>
+<td>三文鱼、鳕鱼、沙丁鱼、亚麻籽</td>
+</tr>
+<tr>
+<td>维生素 D</td>
+<td>每月</td>
+<td>深海鱼、蛋黄、晒太阳（日晒香菇）</td>
+</tr>
+<tr>
+<td>维生素 B12</td>
+<td>每月</td>
+<td>动物内脏、肉类、蛋、发酵食品</td>
+</tr>
+<tr>
+<td>碘</td>
+<td>每月</td>
+<td>碘盐（日常）+ 海带/紫菜</td>
+</tr>
+<tr>
+<td>硒</td>
+<td>每月</td>
+<td>香菇（日晒）、海鲜、蛋</td>
+</tr>
+<tr>
+<td>维生素 A（视黄醇）</td>
+<td>每季度</td>
+<td>猪肝/鸡肝（一次性大量储备）</td>
+</tr>
+<tr>
+<td>胶原蛋白</td>
+<td>每季度</td>
+<td>骨头汤、猪蹄、鸡爪</td>
+</tr>
+</tbody></table><hr />
+<h2>二、四季时蔬 &amp; 水果指南</h2>
+<h3>蔬菜</h3>
+<table>
+<thead>
+<tr>
+<th>季节</th>
+<th>主要蔬菜</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Q1 冬（1-3月）</strong></td>
+<td>大白菜、白萝卜、胡萝卜、土豆、菠菜（大棚）、韭黄、番茄（大棚）、洋葱</td>
+</tr>
+<tr>
+<td><strong>Q2 春（4-6月）</strong></td>
+<td>韭菜、菠菜、荠菜、莴笋、豌豆苗、<strong>香椿（仅4月初2周）</strong>、竹笋、油麦菜</td>
+</tr>
+<tr>
+<td><strong>Q3 夏（7-9月）</strong></td>
+<td>番茄、黄瓜、茄子、豇豆、苦瓜、玉米、毛豆、冬瓜、丝瓜、秋葵</td>
+</tr>
+<tr>
+<td><strong>Q4 秋（10-12月）</strong></td>
+<td>胡萝卜、南瓜、红薯、芋头、莲藕、花椰菜、大白菜、白萝卜、山药</td>
+</tr>
+</tbody></table><h3>应季水果月历（北京）</h3>
+<table>
+<thead>
+<tr>
+<th>月份</th>
+<th>当令水果</th>
+<th>营养亮点</th>
+<th>怎么吃</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1月</strong></td>
+<td>脐橙、砂糖橘、柚子、苹果（冷库）、猕猴桃</td>
+<td>维C（橙/猕猴桃）、膳食纤维（苹果）</td>
+<td>每日1个橙子或1个猕猴桃</td>
+</tr>
+<tr>
+<td><strong>2月</strong></td>
+<td>脐橙（尾声）、砂糖橘、猕猴桃、<strong>草莓（大棚初上）</strong></td>
+<td>维C爆表（草莓/猕猴桃）</td>
+<td>草莓一出现立刻开买</td>
+</tr>
+<tr>
+<td><strong>3月</strong></td>
+<td><strong>草莓（大棚旺季）</strong>、猕猴桃、苹果</td>
+<td>草莓维C是苹果5倍</td>
+<td>草莓+酸奶，早餐最佳</td>
+</tr>
+<tr>
+<td><strong>4月</strong></td>
+<td><strong>草莓（露天旺季，最甜）</strong>、桑葚（月末开始）</td>
+<td>草莓维C、桑葚花青素</td>
+<td>草莓大量买，每日100-200g</td>
+</tr>
+<tr>
+<td><strong>5月</strong></td>
+<td>草莓（尾声）、<strong>桑葚</strong>、<strong>樱桃（中旬开始）</strong>、枇杷（月末）</td>
+<td>桑葚+樱桃花青素极高</td>
+<td>桑葚可一次多买冻起来</td>
+</tr>
+<tr>
+<td><strong>6月</strong></td>
+<td><strong>樱桃（初）</strong>、<strong>枇杷</strong>、杏、李子（月末）</td>
+<td>枇杷润肺止咳（β-胡萝卜素）、杏维A</td>
+<td>枇杷剥皮吃，樱桃别过量（糖高）</td>
+</tr>
+<tr>
+<td><strong>7月</strong></td>
+<td><strong>西瓜（旺季）</strong>、桃子（水蜜桃/蟠桃）、蓝莓、李子</td>
+<td>西瓜补钾、蓝莓花青素王者</td>
+<td>蓝莓每日一小把（50g），西瓜不超500g/天</td>
+</tr>
+<tr>
+<td><strong>8月</strong></td>
+<td>西瓜（尾声）、<strong>葡萄（开始）</strong>、<strong>蓝莓</strong>、哈密瓜、桃子</td>
+<td>葡萄白藜芦醇、蓝莓花青素</td>
+<td>葡萄带籽吃、不去皮</td>
+</tr>
+<tr>
+<td><strong>9月</strong></td>
+<td><strong>葡萄（旺季）</strong>、苹果（新鲜上市）、梨（开始）、<strong>石榴</strong></td>
+<td>石榴多酚抗氧化、苹果果胶</td>
+<td>石榴一季吃3-4次</td>
+</tr>
+<tr>
+<td><strong>10月</strong></td>
+<td><strong>苹果（富士旺季）</strong>、<strong>梨</strong>、柿子、山楂、石榴、葡萄（尾声）</td>
+<td>山楂助消化/降血脂、梨润燥</td>
+<td>山楂泡水或直接吃5-6颗</td>
+</tr>
+<tr>
+<td><strong>11月</strong></td>
+<td>苹果、<strong>雪梨</strong>、山楂、柚子（开始）、橙子（开始）、猕猴桃</td>
+<td>雪梨润肺（秋燥期）、柚子维C</td>
+<td>银耳雪梨汤每周1次</td>
+</tr>
+<tr>
+<td><strong>12月</strong></td>
+<td><strong>橙子/脐橙</strong>、柚子、苹果（冷库）、猕猴桃</td>
+<td>维C过冬（柑橘类接力）</td>
+<td>每日1个橙子保底维C</td>
+</tr>
+</tbody></table><blockquote>
+<p><strong>关键规律</strong>：维C全年不断供——冬靠柑橘、春靠草莓、夏靠桃番茄、秋靠猕猴桃梨；花青素集中在5-9月（桑葚→蓝莓→葡萄），这段时间每周必有一次。</p>
+</blockquote>
+<hr />
+<h2>三、每周基础搭配模板（四季通用）</h2>
+<blockquote>
+<p>工作日靠食堂打底，<strong>周末2天是主动补充营养的核心窗口</strong></p>
+</blockquote>
+<h3>每周必须覆盖的食物清单</h3>
+<table>
+<thead>
+<tr>
+<th>类别</th>
+<th>食材</th>
+<th>周目标</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>优质蛋白—蛋</td>
+<td>鸡蛋</td>
+<td>5-7个</td>
+<td>食堂+早餐都可以</td>
+</tr>
+<tr>
+<td>优质蛋白—红肉</td>
+<td>牛肉/猪肉</td>
+<td>150-200g</td>
+<td>周末做1次</td>
+</tr>
+<tr>
+<td>优质蛋白—鱼虾</td>
+<td>鱼类/虾</td>
+<td>200g</td>
+<td>周末必做1次</td>
+</tr>
+<tr>
+<td>深色蔬菜</td>
+<td>菠菜/西兰花/油菜等</td>
+<td>每日1种</td>
+<td>食堂选菜时优先</td>
+</tr>
+<tr>
+<td>豆制品</td>
+<td>豆腐/豆浆</td>
+<td>3次/周</td>
+<td>周末早餐豆浆</td>
+</tr>
+<tr>
+<td>全谷物</td>
+<td>燕麦/糙米/小米</td>
+<td>2-3次/周</td>
+<td>周末早餐</td>
+</tr>
+<tr>
+<td>坚果</td>
+<td>核桃/杏仁/腰果</td>
+<td>30g/天</td>
+<td>每日一小把（加餐）</td>
+</tr>
+<tr>
+<td><strong>应季水果</strong></td>
+<td><strong>见月历</strong></td>
+<td><strong>每日1-2种</strong></td>
+<td><strong>工作日带1个，周末餐后吃</strong></td>
+</tr>
+</tbody></table><h3>周末标准食谱（含四季水果替换）</h3>
+<p><strong>周六</strong></p>
+<table>
+<thead>
+<tr>
+<th>餐次</th>
+<th>通用食谱</th>
+<th>冬（Q1）水果</th>
+<th>春（Q2）水果</th>
+<th>夏（Q3）水果</th>
+<th>秋（Q4）水果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>早</td>
+<td>燕麦粥 + 豆浆 + 坚果</td>
+<td>橙子/砂糖橘</td>
+<td>草莓 100g</td>
+<td>蓝莓 50g</td>
+<td>苹果/梨</td>
+</tr>
+<tr>
+<td>午后</td>
+<td>餐后水果</td>
+<td>猕猴桃</td>
+<td>桑葚（5月）/樱桃（5-6月）</td>
+<td>桃子/西瓜</td>
+<td>石榴/柿子</td>
+</tr>
+<tr>
+<td>晚</td>
+<td>番茄豆腐汤 + 凉拌蔬菜 + 蒸蛋</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>山楂5颗（助消化）</td>
+</tr>
+</tbody></table><p><strong>周日</strong></p>
+<table>
+<thead>
+<tr>
+<th>餐次</th>
+<th>通用食谱</th>
+<th>冬（Q1）水果</th>
+<th>春（Q2）水果</th>
+<th>夏（Q3）水果</th>
+<th>秋（Q4）水果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>早</td>
+<td>小米粥 + 全麦馒头 + 煮鸡蛋</td>
+<td>柚子一瓣</td>
+<td>草莓 + 酸奶</td>
+<td>蓝莓 + 酸奶</td>
+<td>苹果</td>
+</tr>
+<tr>
+<td>午后</td>
+<td>餐后水果</td>
+<td>苹果（冷库）</td>
+<td>枇杷（6月）</td>
+<td>葡萄（8-9月）</td>
+<td>雪梨/猕猴桃</td>
+</tr>
+</tbody></table><hr />
+<h2>四、每月特别补充（4周滚动循环）</h2>
+<blockquote>
+<p>全年每月按此4周节奏执行，<strong>第4周酸奶搭配水果随季节替换</strong></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>当月第几周</th>
+<th>补充目标</th>
+<th>食材</th>
+<th>做法</th>
+<th>搭配水果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>第1周</strong></td>
+<td>Omega-3 + 维生素D</td>
+<td>三文鱼/鳕鱼/沙丁鱼罐头</td>
+<td>周末清蒸或香煎 200-250g</td>
+<td>餐后柑橘/猕猴桃（维C促铁吸收）</td>
+</tr>
+<tr>
+<td><strong>第2周</strong></td>
+<td>碘 + 矿物质</td>
+<td>海带/裙带菜/紫菜</td>
+<td>凉拌海带丝、紫菜蛋花汤</td>
+<td>无特定搭配</td>
+</tr>
+<tr>
+<td><strong>第3周</strong></td>
+<td>硒 + 免疫 + 维生素D</td>
+<td>日晒香菇/木耳</td>
+<td>香菇炒肉、木耳凉拌</td>
+<td>无特定搭配</td>
+</tr>
+<tr>
+<td><strong>第4周</strong></td>
+<td>肠道健康 + 抗氧化</td>
+<td>酸奶/泡菜/纳豆 + <strong>应季水果</strong></td>
+<td>餐后酸奶配水果</td>
+<td><strong>见下表</strong></td>
+</tr>
+</tbody></table><h3>第4周酸奶配果按季替换</h3>
+<table>
+<thead>
+<tr>
+<th>月份</th>
+<th>酸奶搭配水果</th>
+<th>营养组合亮点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1月</td>
+<td>酸奶 + 猕猴桃</td>
+<td>益生菌 + 维C</td>
+</tr>
+<tr>
+<td>2月</td>
+<td>酸奶 + 草莓（大棚）</td>
+<td>益生菌 + 维C</td>
+</tr>
+<tr>
+<td>3月</td>
+<td>酸奶 + 草莓</td>
+<td>益生菌 + 维C</td>
+</tr>
+<tr>
+<td>4月</td>
+<td>酸奶 + 草莓大量</td>
+<td>益生菌 + 高维C</td>
+</tr>
+<tr>
+<td>5月</td>
+<td>酸奶 + 桑葚</td>
+<td>益生菌 + 花青素</td>
+</tr>
+<tr>
+<td>6月</td>
+<td>酸奶 + 樱桃/枇杷</td>
+<td>益生菌 + 花青素/润肺</td>
+</tr>
+<tr>
+<td>7月</td>
+<td>酸奶 + 蓝莓</td>
+<td>益生菌 + 花青素（最强组合）</td>
+</tr>
+<tr>
+<td>8月</td>
+<td>酸奶 + 蓝莓/葡萄</td>
+<td>益生菌 + 花青素</td>
+</tr>
+<tr>
+<td>9月</td>
+<td>酸奶 + 石榴粒</td>
+<td>益生菌 + 多酚</td>
+</tr>
+<tr>
+<td>10月</td>
+<td>酸奶 + 苹果丁</td>
+<td>益生菌 + 果胶（双重肠道）</td>
+</tr>
+<tr>
+<td>11月</td>
+<td>酸奶 + 猕猴桃</td>
+<td>益生菌 + 维C</td>
+</tr>
+<tr>
+<td>12月</td>
+<td>酸奶 + 橙子</td>
+<td>益生菌 + 维C</td>
+</tr>
+</tbody></table><hr />
+<h2>五、每季度特别补充</h2>
+<blockquote>
+<p>每季度开始时（第1个周末）安排肝脏，季末安排胶原蛋白/牡蛎；<strong>搭配当季高维C水果促铁吸收</strong></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>食材</th>
+<th>营养重点</th>
+<th>时机</th>
+<th>做法</th>
+<th>搭配水果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>猪肝/鸡肝</strong></td>
+<td>维A大量储备、铁、B12</td>
+<td>每季首月第1周周末</td>
+<td>爆炒猪肝配洋葱（热锅快炒）</td>
+<td><strong>同餐吃橙子/猕猴桃</strong>（维C促铁吸收）</td>
+</tr>
+<tr>
+<td><strong>骨头汤</strong></td>
+<td>胶原蛋白、钙、骨髓</td>
+<td>每季末周末</td>
+<td>慢炖4小时，可分装冷冻</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>牡蛎/生蚝</strong></td>
+<td>锌（免疫+性激素合成）</td>
+<td>每季末（秋末最佳）</td>
+<td>蒸熟或烤，4-6个</td>
+<td>柠檬汁（促锌吸收+去腥）</td>
+</tr>
+</tbody></table><hr />
+<h2>六、全年四季详细计划</h2>
+<hr />
+<h3>Q1：冬季（1月-3月）</h3>
+<p><strong>季节特点</strong>：寒冷，需要热量和免疫力；应季以根茎、大棚蔬菜为主</p>
+<p><strong>本季饮食重点</strong></p>
+<ul>
+<li>温热食材：姜、葱、羊肉、韭黄</li>
+<li>免疫强化：大蒜（每天1-2瓣）、洋葱</li>
+<li><strong>水果护城河</strong>：柑橘类接力（橙→砂糖橘→柚子）+ 猕猴桃，2月末草莓一出现就买</li>
+</ul>
+<p><strong>Q1 水果时间线</strong></p>
+<table>
+<thead>
+<tr>
+<th>时段</th>
+<th>主打水果</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1月</td>
+<td>脐橙 + 猕猴桃</td>
+<td>每日1个橙 + 隔日1个猕猴桃</td>
+</tr>
+<tr>
+<td>2月上</td>
+<td>砂糖橘/脐橙 + 猕猴桃</td>
+<td>砂糖橘快上市末尾</td>
+</tr>
+<tr>
+<td>2月下</td>
+<td><strong>大棚草莓开始</strong></td>
+<td>一上市就买，维C储备切换</td>
+</tr>
+<tr>
+<td>3月</td>
+<td>草莓（旺季开始）+ 苹果</td>
+<td>草莓每周100-200g</td>
+</tr>
+</tbody></table><h4>周末食材轮换（冬季版）</h4>
+<table>
+<thead>
+<tr>
+<th>周次</th>
+<th>主菜推荐</th>
+<th>当周水果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>第1周</td>
+<td>三文鱼清蒸 + 菠菜蒜蓉 + 胡萝卜</td>
+<td>橙子/脐橙</td>
+</tr>
+<tr>
+<td>第2周</td>
+<td>海带萝卜排骨汤 + 炒韭黄</td>
+<td>猕猴桃</td>
+</tr>
+<tr>
+<td>第3周</td>
+<td>日晒香菇炖鸡 + 清炒菠菜</td>
+<td>柚子</td>
+</tr>
+<tr>
+<td>第4周</td>
+<td>番茄豆腐 + 萝卜羊肉汤</td>
+<td>酸奶 + 猕猴桃/草莓（3月）</td>
+</tr>
+</tbody></table><h4>月度安排（1-3月）</h4>
+<table>
+<thead>
+<tr>
+<th>月份</th>
+<th>第1周（鱼+水果）</th>
+<th>第2周（海藻）</th>
+<th>第3周（香菇）</th>
+<th>第4周（酸奶+水果）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1月</td>
+<td>三文鱼 + <strong>橙子</strong></td>
+<td>海带汤</td>
+<td>日晒香菇炒肉</td>
+<td>酸奶 + <strong>猕猴桃</strong></td>
+</tr>
+<tr>
+<td>2月</td>
+<td>鳕鱼 + <strong>橙子/猕猴桃</strong></td>
+<td>裙带菜沙拉</td>
+<td>木耳凉拌</td>
+<td>酸奶 + <strong>草莓（如已上市）</strong></td>
+</tr>
+<tr>
+<td>3月</td>
+<td>沙丁鱼 + <strong>草莓</strong></td>
+<td>紫菜蛋花汤</td>
+<td>蘑菇炖鸡</td>
+<td>酸奶 + <strong>草莓</strong></td>
+</tr>
+</tbody></table><h4>季度特补</h4>
+<ul>
+<li><strong>1月第1周周末</strong>：猪肝爆炒（维A + 铁），<strong>同餐吃脐橙1个促铁吸收</strong></li>
+<li><strong>3月末周末</strong>：猪蹄花生汤（胶原蛋白）</li>
+</ul>
+<hr />
+<h3>Q2：春季（4月-6月）</h3>
+<p><strong>季节特点</strong>：肝气旺盛，护肝养肝；<strong>水果最集中的宝藏季节</strong>，每种都是时令精品</p>
+<p><strong>本季饮食重点</strong></p>
+<ul>
+<li>护肝：绿色蔬菜为主，减少油腻</li>
+<li><strong>香椿（仅4月上旬约2周）</strong>：每周至少做2次，过了就没了</li>
+<li><strong>水果黄金期</strong>：草莓→桑葚→樱桃→枇杷→杏，每两周换一种</li>
+</ul>
+<p><strong>Q2 水果时间线</strong></p>
+<table>
+<thead>
+<tr>
+<th>时段</th>
+<th>主打水果</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4月上</td>
+<td><strong>草莓（露天旺季，一年最甜）</strong></td>
+<td>每日150-200g，是全年维C最高峰</td>
+</tr>
+<tr>
+<td>4月末-5月中</td>
+<td><strong>桑葚</strong></td>
+<td>花青素极高，可一次多买冷冻存</td>
+</tr>
+<tr>
+<td>5月中-6月初</td>
+<td><strong>樱桃</strong></td>
+<td>铁含量高（水果中罕见），别过量</td>
+</tr>
+<tr>
+<td>5-6月</td>
+<td><strong>枇杷</strong></td>
+<td>β-胡萝卜素高，润肺，皮薄别削</td>
+</tr>
+<tr>
+<td>6月</td>
+<td><strong>杏</strong></td>
+<td>维A来源，别吃核仁</td>
+</tr>
+</tbody></table><h4>周末食材轮换（春季版）</h4>
+<table>
+<thead>
+<tr>
+<th>周次</th>
+<th>主菜推荐</th>
+<th>当周水果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>第1-2周（4月）</td>
+<td><strong>香椿拌豆腐</strong> / <strong>香椿炒鸡蛋</strong>（时令必吃）</td>
+<td>草莓 100-200g</td>
+</tr>
+<tr>
+<td>第3周（4-5月）</td>
+<td>清蒸鲈鱼 + 炒豌豆苗</td>
+<td>草莓（尾声）+ 桑葚</td>
+</tr>
+<tr>
+<td>第4周（5-6月）</td>
+<td>番茄牛肉 + 莴笋凉拌</td>
+<td>樱桃 + 枇杷</td>
+</tr>
+<tr>
+<td>第5周（6月末）</td>
+<td>清蒸虾 + 苦瓜炒蛋（夏季过渡）</td>
+<td>杏 + 李子（初）</td>
+</tr>
+</tbody></table><h4>月度安排（4-6月）</h4>
+<table>
+<thead>
+<tr>
+<th>月份</th>
+<th>第1周（鱼+水果）</th>
+<th>第2周（海藻+时令）</th>
+<th>第3周（香菇）</th>
+<th>第4周（酸奶+水果）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4月</td>
+<td>三文鱼 + <strong>草莓大量</strong></td>
+<td>海带 + <strong>香椿豆腐</strong>（时令双击）</td>
+<td>香菇炒肉</td>
+<td>酸奶 + <strong>草莓</strong></td>
+</tr>
+<tr>
+<td>5月</td>
+<td>鳕鱼 + <strong>草莓/桑葚</strong></td>
+<td>紫菜蛋花汤</td>
+<td>蘑菇炒蛋</td>
+<td>酸奶 + <strong>桑葚</strong></td>
+</tr>
+<tr>
+<td>6月</td>
+<td>沙丁鱼 + <strong>樱桃</strong></td>
+<td>裙带菜凉拌</td>
+<td>木耳炒鸡蛋</td>
+<td>酸奶 + <strong>枇杷/樱桃</strong></td>
+</tr>
+</tbody></table><h4>季度特补</h4>
+<ul>
+<li><strong>4月第1周周末</strong>：鸡肝炒韭菜（维A + 铁），<strong>同餐吃草莓100g促铁吸收</strong></li>
+<li><strong>6月末周末</strong>：猪蹄花生汤（胶原蛋白）</li>
+</ul>
+<hr />
+<h3>Q3：夏季（7月-9月）</h3>
+<p><strong>季节特点</strong>：炎热出汗多，注意电解质；<strong>花青素主力补充季</strong>（蓝莓+葡萄）</p>
+<p><strong>本季饮食重点</strong></p>
+<ul>
+<li>补钾防抽筋：香蕉（全年）、番茄、豇豆、西瓜</li>
+<li>清热解暑：苦瓜、冬瓜、丝瓜</li>
+<li><strong>花青素集中爆发</strong>：蓝莓（7-8月）→ 葡萄（8-9月），一年中最好的抗氧化窗口</li>
+</ul>
+<p><strong>Q3 水果时间线</strong></p>
+<table>
+<thead>
+<tr>
+<th>时段</th>
+<th>主打水果</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>7月</td>
+<td><strong>西瓜</strong> + <strong>蓝莓</strong> + <strong>桃子（水蜜桃/蟠桃）</strong></td>
+<td>蓝莓每日50g，西瓜不超500g（糖高）</td>
+</tr>
+<tr>
+<td>8月</td>
+<td><strong>蓝莓（尾声）</strong> + <strong>葡萄（开始）</strong> + 哈密瓜</td>
+<td>葡萄带皮带籽吃，白藜芦醇在皮籽中</td>
+</tr>
+<tr>
+<td>9月</td>
+<td><strong>葡萄（旺季）</strong> + <strong>石榴（上市）</strong> + 苹果（新鲜）</td>
+<td>石榴多酚极高，一季吃3-4次</td>
+</tr>
+</tbody></table><h4>周末食材轮换（夏季版）</h4>
+<table>
+<thead>
+<tr>
+<th>周次</th>
+<th>主菜推荐</th>
+<th>当周水果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>第1周（7月）</td>
+<td>清蒸虾 + 苦瓜炒蛋 + 蒸玉米</td>
+<td><strong>蓝莓 50g</strong> + 西瓜</td>
+</tr>
+<tr>
+<td>第2周（7-8月）</td>
+<td>三文鱼 + 黄瓜凉拌 + 毛豆</td>
+<td><strong>蓝莓 50g</strong> + 桃子</td>
+</tr>
+<tr>
+<td>第3周（8月）</td>
+<td>番茄牛肉 + 丝瓜豆腐汤</td>
+<td><strong>蓝莓/葡萄</strong> + 哈密瓜</td>
+</tr>
+<tr>
+<td>第4周（9月）</td>
+<td>鳕鱼 + 豇豆炒肉 + 冬瓜排骨汤</td>
+<td><strong>葡萄</strong> + <strong>石榴</strong></td>
+</tr>
+</tbody></table><h4>月度安排（7-9月）</h4>
+<table>
+<thead>
+<tr>
+<th>月份</th>
+<th>第1周（鱼+水果）</th>
+<th>第2周（海藻）</th>
+<th>第3周（香菇）</th>
+<th>第4周（酸奶+水果）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>7月</td>
+<td>虾/生蚝 + <strong>蓝莓</strong></td>
+<td>海带冬瓜汤</td>
+<td>日晒香菇炒</td>
+<td>酸奶 + <strong>蓝莓</strong>（花青素最强）</td>
+</tr>
+<tr>
+<td>8月</td>
+<td>三文鱼 + <strong>蓝莓/葡萄</strong></td>
+<td>紫菜蛋花汤</td>
+<td>蘑菇炒肉</td>
+<td>酸奶 + <strong>葡萄</strong></td>
+</tr>
+<tr>
+<td>9月</td>
+<td>鳕鱼 + <strong>葡萄/石榴</strong></td>
+<td>裙带菜凉拌</td>
+<td>木耳炒鸡蛋</td>
+<td>酸奶 + <strong>石榴粒</strong></td>
+</tr>
+</tbody></table><h4>季度特补</h4>
+<ul>
+<li><strong>7月第1周周末</strong>：猪肝爆炒（维A + 铁），<strong>同餐吃猕猴桃/橙子促铁吸收</strong></li>
+<li><strong>9月末周末</strong>：<strong>牡蛎/生蚝</strong>（锌大量补充，&quot;R月份&quot;品质最佳）挤柠檬汁 + 骨头汤</li>
+</ul>
+<hr />
+<h3>Q4：秋季（10月-12月）</h3>
+<p><strong>季节特点</strong>：秋燥润肺，储备入冬；根茎营养密度高；<strong>水果从丰盛转向柑橘接力</strong></p>
+<p><strong>本季饮食重点</strong></p>
+<ul>
+<li>润肺滋阴：<strong>梨（雪梨煮汤/银耳梨汤）</strong>、白萝卜、银耳、百合</li>
+<li>根茎储能：南瓜、红薯、芋头（β-胡萝卜素丰富）</li>
+<li><strong>山楂</strong>：10月上市，每周5-6颗，助消化 + 降血脂</li>
+<li><strong>柿子</strong>（软柿子）：10月，维C高，空腹别吃</li>
+</ul>
+<p><strong>Q4 水果时间线</strong></p>
+<table>
+<thead>
+<tr>
+<th>时段</th>
+<th>主打水果</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10月</td>
+<td><strong>苹果（富士旺季）</strong> + <strong>梨</strong> + <strong>柿子</strong> + <strong>山楂</strong> + 石榴</td>
+<td>山楂每周5-6颗，柿子软化后吃</td>
+</tr>
+<tr>
+<td>11月</td>
+<td><strong>雪梨</strong> + 苹果 + 山楂 + <strong>猕猴桃</strong> + 柚子（开始）</td>
+<td>银耳雪梨汤每周1次</td>
+</tr>
+<tr>
+<td>12月</td>
+<td><strong>脐橙/橙子</strong> + <strong>柚子</strong> + 苹果（冷库）+ 猕猴桃</td>
+<td>柑橘接棒，维C不断</td>
+</tr>
+</tbody></table><h4>周末食材轮换（秋季版）</h4>
+<table>
+<thead>
+<tr>
+<th>周次</th>
+<th>主菜推荐</th>
+<th>当周水果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>第1周（10月）</td>
+<td>三文鱼 + 南瓜炖肉</td>
+<td><strong>苹果</strong> + <strong>山楂5颗</strong></td>
+</tr>
+<tr>
+<td>第2周（10-11月）</td>
+<td>鳕鱼 + 莲藕排骨汤 + 花椰菜</td>
+<td><strong>梨</strong> + 石榴</td>
+</tr>
+<tr>
+<td>第3周（11月）</td>
+<td>番茄牛腩 + 蘑菇炖鸡</td>
+<td><strong>雪梨</strong>（银耳梨汤）+ 猕猴桃</td>
+</tr>
+<tr>
+<td>第4周（12月）</td>
+<td>白萝卜炖排骨 + 红薯</td>
+<td><strong>脐橙</strong> + 猕猴桃</td>
+</tr>
+</tbody></table><h4>月度安排（10-12月）</h4>
+<table>
+<thead>
+<tr>
+<th>月份</th>
+<th>第1周（鱼+水果）</th>
+<th>第2周（海藻）</th>
+<th>第3周（香菇）</th>
+<th>第4周（酸奶+水果）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10月</td>
+<td>三文鱼 + <strong>苹果/山楂</strong></td>
+<td>海带排骨汤</td>
+<td>香菇炒肉</td>
+<td>酸奶 + <strong>苹果丁</strong></td>
+</tr>
+<tr>
+<td>11月</td>
+<td>鳕鱼 + <strong>梨/猕猴桃</strong></td>
+<td>紫菜豆腐汤</td>
+<td>木耳炒蛋</td>
+<td>酸奶 + <strong>猕猴桃</strong></td>
+</tr>
+<tr>
+<td>12月</td>
+<td>沙丁鱼罐头 + <strong>橙子</strong></td>
+<td>裙带菜汤</td>
+<td>蘑菇炖鸡</td>
+<td>酸奶 + <strong>橙子</strong></td>
+</tr>
+</tbody></table><h4>季度特补</h4>
+<ul>
+<li><strong>10月第1周周末</strong>：猪肝爆炒（维A + 铁），<strong>同餐吃猕猴桃1个促铁吸收</strong></li>
+<li><strong>12月末周末</strong>：猪蹄花生汤（胶原蛋白，冬季皮肤防干燥）</li>
+</ul>
+<hr />
+<h2>七、全年营养素覆盖验证</h2>
+<table>
+<thead>
+<tr>
+<th>营养素</th>
+<th>覆盖方式</th>
+<th>覆盖频率</th>
+<th>状态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>蛋白质</td>
+<td>食堂肉菜 + 周末鱼肉 + 每日鸡蛋</td>
+<td>每日</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>维生素 C</td>
+<td>柑橘（冬12-3月）→ 草莓（3-5月）→ 蓝莓/桃（6-8月）→ 猕猴桃/橙（9-11月）</td>
+<td>每日</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>花青素</td>
+<td>桑葚（5月）→ 蓝莓（7-8月）→ 葡萄（8-9月）→ 石榴（9-10月）</td>
+<td>每周（夏秋季）</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>果胶/膳食纤维（水果端）</td>
+<td>苹果（带皮）、梨、山楂</td>
+<td>每日</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>钙</td>
+<td>豆腐 + 酸奶 + 深绿叶菜</td>
+<td>每日</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>镁</td>
+<td>坚果 + 全谷物 + 深色蔬菜</td>
+<td>每日</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>维生素 A（β-胡萝卜素）</td>
+<td>胡萝卜/南瓜/菠菜/枇杷/杏</td>
+<td>每日</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>维生素 A（视黄醇储备）</td>
+<td>猪肝/鸡肝</td>
+<td>每季1次</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>铁</td>
+<td>红肉 + 肝脏（每季）+ 樱桃（5-6月）</td>
+<td>每周</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>铁吸收促进</td>
+<td>每次吃肝脏/菠菜时搭配维C水果</td>
+<td>每次摄铁时</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>锌</td>
+<td>虾/生蚝 + 红肉 + 牡蛎（每季）</td>
+<td>每周/每季</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Omega-3</td>
+<td>三文鱼/鳕鱼（每月第1周）</td>
+<td>每月</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>维生素 D</td>
+<td>深海鱼 + 日晒香菇 + 晒太阳</td>
+<td>每月</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>B12</td>
+<td>肝脏 + 肉 + 蛋 + 发酵食品</td>
+<td>每月</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>碘</td>
+<td>碘盐（日常）+ 海带/紫菜（每月第2周）</td>
+<td>每月</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>硒</td>
+<td>香菇（第3周）+ 海鲜 + 蛋</td>
+<td>每月</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>胶原蛋白</td>
+<td>骨头汤/猪蹄</td>
+<td>每季1次</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>益生菌</td>
+<td>酸奶 + 泡菜（每月第4周）</td>
+<td>每月</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>多酚/白藜芦醇</td>
+<td>葡萄（带皮）、石榴、山楂</td>
+<td>秋季每周</td>
+<td>✓</td>
+</tr>
+</tbody></table><hr />
+<h2>八、操作手册</h2>
+<h3>食堂选菜原则（工作日）</h3>
+<ol>
+<li><strong>优先选</strong>：深色蔬菜（菠菜/油菜/西兰花）、豆腐、鸡蛋、鱼类</li>
+<li><strong>每天换菜</strong>：避免连续吃同一种蔬菜</li>
+<li><strong>有鱼必选</strong>：食堂有清蒸鱼/炖鱼时优先选</li>
+<li><strong>有汤必喝</strong>：豆腐汤/蛋花汤/蔬菜汤补充水分和矿物质</li>
+<li><strong>带水果上班</strong>：当日买当日吃，1-2种随季轮换</li>
+</ol>
+<h3>周末备餐技巧</h3>
+<ul>
+<li><strong>骨头汤</strong>：一次多炖（4-6小时），分装冷冻，按季解冻使用</li>
+<li><strong>日晒香菇</strong>：买新鲜香菇切片，日晒2小时后炒菜，维D增加10倍以上</li>
+<li><strong>坚果分装</strong>：提前按30g/天装好小包，避免一次吃太多</li>
+<li><strong>桑葚冷冻</strong>：5月桑葚大量上市时多买，清洗晾干冷冻，冬天解冻拌酸奶</li>
+</ul>
+<h3>每日保底清单（无论食堂吃什么）</h3>
+<table>
+<thead>
+<tr>
+<th>食物</th>
+<th>量</th>
+<th>补充营养</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>鸡蛋</td>
+<td>1个</td>
+<td>蛋白质、B12、VD、胆碱</td>
+</tr>
+<tr>
+<td>坚果</td>
+<td>30g（1小把）</td>
+<td>镁、锌、Omega-3（核桃）</td>
+</tr>
+<tr>
+<td><strong>应季水果</strong></td>
+<td><strong>1-2种</strong></td>
+<td><strong>维C、花青素、果胶、钾</strong></td>
+</tr>
+<tr>
+<td>深色蔬菜</td>
+<td>食堂1-2份</td>
+<td>维A、维K、叶酸、铁</td>
+</tr>
+<tr>
+<td>饮水</td>
+<td>2000ml</td>
+<td>代谢</td>
+</tr>
+</tbody></table><h3>购物清单参考（周末常备）</h3>
+<p><strong>常备储粮</strong>（不易过期）</p>
+<ul>
+<li>燕麦片、糙米、小米、全麦馒头/面包</li>
+<li>核桃、杏仁、腰果（混合坚果）</li>
+<li>沙丁鱼罐头（月底 Omega-3 备用）</li>
+<li><strong>冷冻桑葚</strong>（5月批量购入）</li>
+</ul>
+<p><strong>周采购</strong>（新鲜）</p>
+<ul>
+<li>鸡蛋 10个</li>
+<li>当季蔬菜 2-3种</li>
+<li><strong>当季水果 2种</strong>（见月历）</li>
+<li>豆腐 2块</li>
+</ul>
+<p><strong>月采购</strong>（按月特补节奏）</p>
+<ul>
+<li>第1周：新鲜三文鱼/鳕鱼柳</li>
+<li>第2周：干海带/裙带菜/紫菜</li>
+<li>第3周：新鲜香菇/木耳</li>
+<li>第4周：无糖酸奶/泡菜 + <strong>当月对应水果</strong></li>
+</ul>
+<h3>应季水果关键时间提醒</h3>
+<table>
+<thead>
+<tr>
+<th>时间</th>
+<th>提醒</th>
+<th>原因</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2月下旬</td>
+<td>关注草莓是否上市</td>
+<td>大棚草莓一出现就是全年维C切换点</td>
+</tr>
+<tr>
+<td>4月初</td>
+<td>露天草莓旺季开始</td>
+<td>一年最甜、性价比最高，大量买</td>
+</tr>
+<tr>
+<td>5月</td>
+<td>桑葚上市即多买冷冻</td>
+<td>窗口期仅2-3周，冷冻可用到秋天</td>
+</tr>
+<tr>
+<td>7月</td>
+<td>蓝莓开始</td>
+<td>全年花青素最高峰，每日50g</td>
+</tr>
+<tr>
+<td>8-9月</td>
+<td>葡萄买带籽品种</td>
+<td>葡萄籽/皮中白藜芦醇是主要抗氧化来源</td>
+</tr>
+<tr>
+<td>10月</td>
+<td>买山楂</td>
+<td>仅秋天有新鲜山楂，全年最佳助消化时机</td>
+</tr>
+</tbody></table><hr />
+<p><em>制定时间：2026年5月 | 建议每年春季（3-4月）根据当年物价和身体状况更新一次</em></p>
+]]></content><link href="https://github.com/Quitino/gitblog/issues/11"/><category term="生活"/><published>2026-05-08T02:21:21+00:00</published></entry><entry><id>https://github.com/Quitino/gitblog/issues/10</id><title>AI Agent 横向对比：OpenClaw / Hermes Agent / Codex / Claude Code</title><updated>2026-05-08T02:40:08.308866+00:00</updated><content type="html"><![CDATA[<h2>一、项目概览</h2>
 <table>
 <thead>
 <tr>
@@ -875,7 +2022,7 @@ your-project/
 <td>Rust</td>
 <td>TypeScript</td>
 </tr>
-</tbody></table>]]></content><link href="https://github.com/Quitino/gitblog/issues/10"/><category term="技术"/><published>2026-05-07T07:01:02+00:00</published></entry><entry><id>https://github.com/Quitino/gitblog/issues/9</id><title>五一山东烟台</title><updated>2026-05-08T02:22:20.576094+00:00</updated><content type="html"><![CDATA[<h2>1.旅程</h2>
+</tbody></table>]]></content><link href="https://github.com/Quitino/gitblog/issues/10"/><category term="技术"/><published>2026-05-07T07:01:02+00:00</published></entry><entry><id>https://github.com/Quitino/gitblog/issues/9</id><title>五一山东烟台</title><updated>2026-05-08T02:40:08.567518+00:00</updated><content type="html"><![CDATA[<h2>1.旅程</h2>
 <p>五一去的烟台游玩，报的三天的团，没有养马岛安排。第一二天去的长岛，长岛是一个群岛的统称，有32个岛屿，其中十个岛屿有居民居住。</p>
 <ul>
 <li>“忽闻海上有仙山，山在虚无缥缈间”</li>
@@ -909,13 +2056,13 @@ your-project/
 <ul>
 <li>海鲜确实很鲜美</li>
 </ul>
-<img width="2073" height="1170" alt="Image" src="https://github.com/user-attachments/assets/99159ace-105c-492f-8b8f-45cd926df535" />]]></content><link href="https://github.com/Quitino/gitblog/issues/9"/><category term="游玩"/><published>2026-05-06T11:06:14+00:00</published></entry><entry><id>https://github.com/Quitino/gitblog/issues/8</id><title>北京中轴线citywalk</title><updated>2026-05-08T02:22:20.751560+00:00</updated><content type="html"><![CDATA[<h2>1.旅程</h2>
+<img width="2073" height="1170" alt="Image" src="https://github.com/user-attachments/assets/99159ace-105c-492f-8b8f-45cd926df535" />]]></content><link href="https://github.com/Quitino/gitblog/issues/9"/><category term="游玩"/><published>2026-05-06T11:06:14+00:00</published></entry><entry><id>https://github.com/Quitino/gitblog/issues/8</id><title>北京中轴线citywalk</title><updated>2026-05-08T02:40:08.742081+00:00</updated><content type="html"><![CDATA[<h2>1.旅程</h2>
 <p>2026.04.26.周末反穿了中轴线，从森林公园南门出发，原计划走到永定门。实际情况从森林公园南门出发途径鸟巢、水立方、中轴线北广场、钟楼、鼓楼、烟袋斜街、什刹海、景山公园、故宫博物院、中山公园、天安门广场（需要提前一天预约，没进；捡了一个带花的梧桐树枝别在背包上，被告知不让带鲜花进天安门广场）、国家大剧院、纪念堂，然后时间比较晚了，过了纪念堂就骑上单车到国贸附近吃晚饭了。全程 26km，徒步20km，汽车6km. 午饭和晚饭都是吃的川菜馆。</p>
 <p>早上出门时天气是阴着的，结果刚开始走没多久就开始出太阳了，被迫买了帽子，有太阳的徒步不带墨镜走到下半程也会有点头晕恍惚。周末奥森人不是特别多，到了钟楼鼓楼到天安门那段核心旅游区人就多起来了，也有较多的境外游客，还是挺好玩的，值得二刷，天坛地坛还没刷到。</p>
 <h2>2.轨迹图</h2>
 <img width="1525" height="937" alt="Image" src="https://github.com/user-attachments/assets/de93f7d6-fd2f-46aa-9502-df3fe6113770" />
 <p>整体路线如上图所示。</p>
-]]></content><link href="https://github.com/Quitino/gitblog/issues/8"/><category term="游玩"/><published>2026-04-28T03:04:38+00:00</published></entry><entry><id>https://github.com/Quitino/gitblog/issues/7</id><title>2026 Weekly Report</title><updated>2026-05-08T02:22:20.941272+00:00</updated><content type="html"><![CDATA[<h2>w17</h2>
+]]></content><link href="https://github.com/Quitino/gitblog/issues/8"/><category term="游玩"/><published>2026-04-28T03:04:38+00:00</published></entry><entry><id>https://github.com/Quitino/gitblog/issues/7</id><title>2026 Weekly Report</title><updated>2026-05-08T02:40:08.911109+00:00</updated><content type="html"><![CDATA[<h2>w17</h2>
 <ul>
 <li>之前看了本书，好像没看完，叫《5%的改变》，核心主张：<code>不必颠覆自己，只需在当前行为模式上做出 5% 的微小改变，即可触发系统性转变。</code>，不要给自己定太多 kpi，上周开始跑步开始学习算是好的开头，玩手机的时间没控制下来没关系，这周的任务是保持上周的改变，临近五一假期安排也会有些影响。</li>
 <li>规划五一出游，初步计划去山东烟台</li>
@@ -1005,7 +2152,7 @@ your-project/
 </ol>
 <p>下次当你感到“蝴蝶效应”要发生时，试着停下来问自己：<strong>“这是事实，还是我的想象？这是不可控的，还是我可以干预的？”</strong> 这一瞬间的理性回归，就是焦虑的解药。</p>
 </blockquote>
-]]></content><link href="https://github.com/Quitino/gitblog/issues/7"/><category term="todo"/><category term="top"/><category term="周记"/><published>2026-04-23T03:09:21+00:00</published></entry><entry><id>https://github.com/Quitino/gitblog/issues/6</id><title>脱离混沌</title><updated>2026-05-08T02:22:21.136678+00:00</updated><content type="html"><![CDATA[<p>fork了这个仓库后总会有种想记录的冲动，不知道是好事还是坏事，是为了装 * 还是真的想尝试改变。whatever 先试试。</p>
+]]></content><link href="https://github.com/Quitino/gitblog/issues/7"/><category term="todo"/><category term="top"/><category term="周记"/><published>2026-04-23T03:09:21+00:00</published></entry><entry><id>https://github.com/Quitino/gitblog/issues/6</id><title>脱离混沌</title><updated>2026-05-08T02:40:09.110506+00:00</updated><content type="html"><![CDATA[<p>fork了这个仓库后总会有种想记录的冲动，不知道是好事还是坏事，是为了装 * 还是真的想尝试改变。whatever 先试试。</p>
 <ul>
 <li><input disabled="" type="checkbox"> 个人周总结</li>
 </ul>
@@ -1016,7 +2163,7 @@ your-project/
 <li>每周的手机使用时间控制，这个能不能自动化一下</li>
 <li>周末自己做饭？</li>
 </ul>
-]]></content><link href="https://github.com/Quitino/gitblog/issues/6"/><category term="todo"/><published>2026-04-20T02:07:09+00:00</published></entry><entry><id>https://github.com/Quitino/gitblog/issues/5</id><title>学习《强化学习》</title><updated>2026-05-08T02:22:21.312591+00:00</updated><content type="html"><![CDATA[<ul>
+]]></content><link href="https://github.com/Quitino/gitblog/issues/6"/><category term="todo"/><published>2026-04-20T02:07:09+00:00</published></entry><entry><id>https://github.com/Quitino/gitblog/issues/5</id><title>学习《强化学习》</title><updated>2026-05-08T02:40:09.292843+00:00</updated><content type="html"><![CDATA[<ul>
 <li><input disabled="" type="checkbox"> 学习《强化学习的数学原理》</li>
 </ul>
 <p>学习《强化学习》，以 <a href="https://www.bilibili.com/video/BV1sd4y167NS/?spm_id_from=333.337.search-card.all.click&amp;vd_source=6d96ad3d63238e8488f65de89e674efa">B站教程</a>为主，共 11 课时，加上扩展学习的需求，每日计划约 1.5h 用于学习，每两天学 1 个课时，每周学习五天周末两天为机动时间。</p>
@@ -1255,7 +2402,7 @@ your-project/
 <li>若某日进度提前完成，可将后续内容前移，保持节奏灵活。</li>
 </ul>
 </blockquote>
-]]></content><link href="https://github.com/Quitino/gitblog/issues/5"/><category term="todo"/><published>2026-04-20T02:00:22+00:00</published></entry><entry><id>https://github.com/Quitino/gitblog/issues/4</id><title>北京延庆区玉渡山转山龙庆峡游水</title><updated>2026-05-08T02:22:21.496403+00:00</updated><content type="html"><![CDATA[<h2>1.旅程</h2>
+]]></content><link href="https://github.com/Quitino/gitblog/issues/5"/><category term="todo"/><published>2026-04-20T02:00:22+00:00</published></entry><entry><id>https://github.com/Quitino/gitblog/issues/4</id><title>北京延庆区玉渡山转山龙庆峡游水</title><updated>2026-05-08T02:40:09.496239+00:00</updated><content type="html"><![CDATA[<h2>1.旅程</h2>
 <p>星期六，整体天气还可以，多云🌤️。徒步的里程有12公里，摆渡船6公里，差不多走了五个小时左右。</p>
 <p>中途修整了一次，上了一次厕所。出发前想着距离比较近带个面包和一些水就够了，事实也是这样。全程都在峡谷的河流两岸穿梭。</p>
 <p>四月下旬，北方的山里还是有点荒芜，树木还没完全发芽，有的背阴面上人造冰还没化完。</p>
@@ -1269,12 +2416,12 @@ your-project/
 <p><img src="https://github.com/user-attachments/assets/6a9d6936-2244-42a4-95d2-3a1d410c7827" alt="image" /></p>
 <p>在最后景区出口处有一株双生玉兰花，上面有紫色的花和白色的花，很漂亮。</p>
 <p><img src="https://github.com/user-attachments/assets/70676652-653c-4613-8417-9e8b14d57e22" alt="image" /></p>
-]]></content><link href="https://github.com/Quitino/gitblog/issues/4"/><category term="游玩"/><published>2026-04-18T08:15:19+00:00</published></entry><entry><id>https://github.com/Quitino/gitblog/issues/3</id><title>doc_index</title><updated>2026-05-08T02:22:21.678307+00:00</updated><content type="html"><![CDATA[<ul>
+]]></content><link href="https://github.com/Quitino/gitblog/issues/4"/><category term="游玩"/><published>2026-04-18T08:15:19+00:00</published></entry><entry><id>https://github.com/Quitino/gitblog/issues/3</id><title>doc_index</title><updated>2026-05-08T02:40:09.665497+00:00</updated><content type="html"><![CDATA[<ul>
 <li><a href="https://github.com/Quitino/RL_NOTE?tab=readme-ov-file">强化学习</a></li>
 <li><a href="https://github.com/Quitino/CPP-Note">cpp-note</a></li>
 <li><a href="https://github.com/Quitino/leetcode-note">leetcode-note</a></li>
 </ul>
-]]></content><link href="https://github.com/Quitino/gitblog/issues/3"/><category term="top"/><published>2026-04-14T11:41:54+00:00</published></entry><entry><id>https://github.com/Quitino/gitblog/issues/2</id><title>同一电脑多git账号配置</title><updated>2026-05-08T02:22:21.849172+00:00</updated><content type="html"><![CDATA[<blockquote>
+]]></content><link href="https://github.com/Quitino/gitblog/issues/3"/><category term="top"/><published>2026-04-14T11:41:54+00:00</published></entry><entry><id>https://github.com/Quitino/gitblog/issues/2</id><title>同一电脑多git账号配置</title><updated>2026-05-08T02:40:09.842811+00:00</updated><content type="html"><![CDATA[<blockquote>
 <p>如果你的电脑全局配置的是公司 Git 账号，但这个项目需要用个人 GitHub 账号，
 需要解决两个问题：<strong>提交身份</strong> 和 <strong>推送认证</strong>。</p>
 </blockquote>
@@ -1410,7 +2557,7 @@ git remote set-url origin https://Quitino:&lt;TOKEN&gt;@github.com/Quitino/proje
 □ git remote -v 显示 github-personal 别名地址
 □ git push origin master 能成功推送
 </code></pre>
-]]></content><link href="https://github.com/Quitino/gitblog/issues/2"/><category term="技术"/><published>2026-04-14T09:42:11+00:00</published></entry><entry><id>https://github.com/Quitino/gitblog/issues/1</id><title>第一篇博客</title><updated>2026-05-08T02:22:22.035700+00:00</updated><content type="html"><![CDATA[<h1>用 GitHub Issues + GitHub Actions 搭建个人博客教程</h1>
+]]></content><link href="https://github.com/Quitino/gitblog/issues/2"/><category term="技术"/><published>2026-04-14T09:42:11+00:00</published></entry><entry><id>https://github.com/Quitino/gitblog/issues/1</id><title>第一篇博客</title><updated>2026-05-08T02:40:10.028495+00:00</updated><content type="html"><![CDATA[<h1>用 GitHub Issues + GitHub Actions 搭建个人博客教程</h1>
 <blockquote>
 <p>参考仓库：<a href="https://github.com/yihong0618/gitblog">yihong0618/gitblog</a>
 核心思路：用 GitHub Issues 写文章，用 GitHub Actions 自动将 Issues 汇总生成 README，并可选部署为静态网站。</p>
