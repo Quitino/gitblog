@@ -1,6 +1,7 @@
 # [doc_index](https://github.com/Quitino/gitblog/issues/3)
 
 - [3dgs](https://quitino.github.io/3dgs/)
+- [index_fund](https://quitino.github.io/index_fund/)
 - [fund_investment](https://quitino.github.io/fund_investment/)
 - [investment](https://quitino.github.io/investment/)
 - [stock_knowledge](https://quitino.github.io/stock_knowledge/)
