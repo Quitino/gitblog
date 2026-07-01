@@ -6,11 +6,11 @@ My personal blog using issues and GitHub Actions
 - [2026 Weekly Report](https://github.com/Quitino/gitblog/issues/7)--2026-04-23
 - [doc_index](https://github.com/Quitino/gitblog/issues/3)--2026-04-14
 ## 最近更新
+- [房产卖出](https://github.com/Quitino/gitblog/issues/12)--2026-07-01
 - [2026饮食参考](https://github.com/Quitino/gitblog/issues/11)--2026-05-08
 - [AI Agent 横向对比：OpenClaw / Hermes Agent / Codex / Claude Code](https://github.com/Quitino/gitblog/issues/10)--2026-05-07
 - [五一山东烟台](https://github.com/Quitino/gitblog/issues/9)--2026-05-06
 - [北京中轴线citywalk](https://github.com/Quitino/gitblog/issues/8)--2026-04-28
-- [脱离混沌](https://github.com/Quitino/gitblog/issues/6)--2026-04-20
 ## 周记 (1)
 
 - [2026 Weekly Report](https://github.com/Quitino/gitblog/issues/7)--2026-04-23
@@ -19,8 +19,9 @@ My personal blog using issues and GitHub Actions
 - [AI Agent 横向对比：OpenClaw / Hermes Agent / Codex / Claude Code](https://github.com/Quitino/gitblog/issues/10)--2026-05-07
 - [同一电脑多git账号配置](https://github.com/Quitino/gitblog/issues/2)--2026-04-14
 - [第一篇博客](https://github.com/Quitino/gitblog/issues/1)--2026-04-14
-## 生活 (1)
+## 生活 (2)
 
+- [房产卖出](https://github.com/Quitino/gitblog/issues/12)--2026-07-01
 - [2026饮食参考](https://github.com/Quitino/gitblog/issues/11)--2026-05-08
 ## 游玩 (3)
 
@@ -38,4 +39,4 @@ TODO list from [学习《强化学习》](https://github.com/Quitino/gitblog/iss
 
 
 ---
-文章总数：**11** ｜ 最近更新：**2026-06-05**
+文章总数：**12** ｜ 最近更新：**2026-07-01**
