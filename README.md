@@ -6,7 +6,7 @@ My personal blog using issues and GitHub Actions
 - [2026 Weekly Report](https://github.com/Quitino/gitblog/issues/7)--2026-04-23
 - [doc_index](https://github.com/Quitino/gitblog/issues/3)--2026-04-14
 ## 最近更新
-- [让自己成为自己让他们成为他们](https://github.com/Quitino/gitblog/issues/13)--2026-07-17
+- [让自己成为自己让他们成为他们](https://github.com/Quitino/gitblog/issues/14)--2026-07-17
 - [2026房产卖出](https://github.com/Quitino/gitblog/issues/12)--2026-07-01
 - [2026饮食参考](https://github.com/Quitino/gitblog/issues/11)--2026-05-08
 - [AI Agent 横向对比：OpenClaw / Hermes Agent / Codex / Claude Code](https://github.com/Quitino/gitblog/issues/10)--2026-05-07
@@ -20,7 +20,7 @@ My personal blog using issues and GitHub Actions
 - [第一篇博客](https://github.com/Quitino/gitblog/issues/1)--2026-04-14
 ## 生活 (3)
 
-- [让自己成为自己让他们成为他们](https://github.com/Quitino/gitblog/issues/13)--2026-07-17
+- [让自己成为自己让他们成为他们](https://github.com/Quitino/gitblog/issues/14)--2026-07-17
 - [2026房产卖出](https://github.com/Quitino/gitblog/issues/12)--2026-07-01
 - [2026饮食参考](https://github.com/Quitino/gitblog/issues/11)--2026-05-08
 ## 游玩 (3)
