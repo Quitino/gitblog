@@ -9,6 +9,7 @@ on:
       - reopened
       - labeled
       - unlabeled
+      - deleted
   issue_comment:
     types:
       - created

@@ -5,7 +5,7 @@ import re
 
 import markdown
 from feedgen.feed import FeedGenerator
-from github import Github
+from github import Github, GithubException, UnknownObjectException
 from lxml.etree import CDATA
 from marko.ext.gfm import gfm as marko
 
@@ -293,18 +293,51 @@ def update_site_config(repo, me, config_path="config.toml"):
         f.write(new_content)
 
 
+def get_backup_issue_files(dir_name):
+    issue_files = {}
+    for filename in os.listdir(dir_name):
+        issue_number = filename.split("_")[0]
+        if not issue_number.isdigit():
+            continue
+        issue_files.setdefault(int(issue_number), []).append(filename)
+    return issue_files
+
+
+def issue_exists(repo, issue_number):
+    try:
+        repo.get_issue(int(issue_number))
+        return True
+    except UnknownObjectException:
+        return False
+    except GithubException as e:
+        if e.status == 404:
+            return False
+        raise
+
+
+def remove_deleted_backup_files(repo, dir_name):
+    for issue_number, filenames in get_backup_issue_files(dir_name).items():
+        if issue_exists(repo, issue_number):
+            continue
+        for filename in filenames:
+            os.remove(os.path.join(dir_name, filename))
+
+
 def get_to_generate_issues(repo, dir_name, issue_number=None):
-    md_files = os.listdir(dir_name)
-    generated_issues_numbers = [
-        int(i.split("_")[0]) for i in md_files if i.split("_")[0].isdigit()
-    ]
+    generated_issues_numbers = set(get_backup_issue_files(dir_name).keys())
     to_generate_issues = [
         i
         for i in list(repo.get_issues())
         if int(i.number) not in generated_issues_numbers
     ]
     if issue_number:
-        to_generate_issues.append(repo.get_issue(int(issue_number)))
+        try:
+            to_generate_issues.append(repo.get_issue(int(issue_number)))
+        except UnknownObjectException:
+            pass
+        except GithubException as e:
+            if e.status != 404:
+                raise
     return to_generate_issues
 
 
@@ -347,6 +380,7 @@ def main(token, repo_name, issue_number=None, dir_name=BACKUP_DIR):
     update_site_config(repo, me)
 
     generate_rss_feed(repo, "feed.xml", me)
+    remove_deleted_backup_files(repo, dir_name)
     to_generate_issues = get_to_generate_issues(repo, dir_name, issue_number)
 
     # save md files to backup folder
